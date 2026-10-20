@@ -1,0 +1,112 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 600" width="900" height="600" font-family="Inter, Arial, sans-serif" fill="#16181d">
+  <defs>
+    <marker id="ah" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#000AB5"/>
+    </marker>
+    <marker id="ahk" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#8a909c"/>
+    </marker>
+  </defs>
+  <rect width="900" height="600" fill="#fff"/>
+  <text x="450" y="30" text-anchor="middle" font-size="20" font-weight="700">Robot-Template: who makes what (arrows = "creates" or "calls")</text>
+
+  <!-- Main / Robot -->
+  <rect x="30" y="60" width="150" height="50" rx="8" fill="#f4f5f9" stroke="#8a909c" stroke-width="2"/>
+  <text x="105" y="83" text-anchor="middle" font-size="15" font-weight="700">Main.java</text>
+  <text x="105" y="101" text-anchor="middle" font-size="13">starts it, never edit</text>
+
+  <rect x="30" y="150" width="150" height="70" rx="8" fill="#fff" stroke="#000AB5" stroke-width="2"/>
+  <text x="105" y="174" text-anchor="middle" font-size="15" font-weight="700">Robot.java</text>
+  <text x="105" y="192" text-anchor="middle" font-size="13">20 ms loop, modes,</text>
+  <text x="105" y="208" text-anchor="middle" font-size="13">stays almost empty</text>
+  <line x1="105" y1="110" x2="105" y2="148" stroke="#000AB5" stroke-width="2.5" marker-end="url(#ah)"/>
+
+  <!-- RobotLog -->
+  <rect x="30" y="270" width="150" height="70" rx="8" fill="#fff" stroke="#000AB5" stroke-width="2"/>
+  <text x="105" y="294" text-anchor="middle" font-size="15" font-weight="700">RobotLog.java</text>
+  <text x="105" y="312" text-anchor="middle" font-size="13">logs to USB stick</text>
+  <text x="105" y="328" text-anchor="middle" font-size="13">(guide 19)</text>
+  <line x1="105" y1="220" x2="105" y2="268" stroke="#000AB5" stroke-width="2.5" marker-end="url(#ah)"/>
+  <text x="112" y="250" font-size="13">start() first</text>
+
+  <!-- RobotContainer -->
+  <rect x="250" y="140" width="200" height="90" rx="8" fill="#FFA700" stroke="#000AB5" stroke-width="2.5"/>
+  <text x="350" y="166" text-anchor="middle" font-size="16" font-weight="700">RobotContainer</text>
+  <text x="350" y="186" text-anchor="middle" font-size="13">makes every subsystem,</text>
+  <text x="350" y="203" text-anchor="middle" font-size="13">binds buttons, default</text>
+  <text x="350" y="220" text-anchor="middle" font-size="13">commands, brownout rumble</text>
+  <line x1="180" y1="185" x2="248" y2="185" stroke="#000AB5" stroke-width="2.5" marker-end="url(#ah)"/>
+
+  <!-- Constants -->
+  <rect x="250" y="60" width="200" height="50" rx="8" fill="#FFA700" stroke="#000AB5" stroke-width="2.5"/>
+  <text x="350" y="83" text-anchor="middle" font-size="15" font-weight="700">Constants.java</text>
+  <text x="350" y="101" text-anchor="middle" font-size="13">every number + units</text>
+  <text x="460" y="80" font-size="13" fill="#555">used by everything</text>
+  <text x="460" y="97" font-size="13" fill="#555">(CAN IDs, cameras, PIDs)</text>
+
+  <!-- subsystems column -->
+  <rect x="520" y="130" width="360" height="300" rx="10" fill="none" stroke="#16181d" stroke-width="1.5" stroke-dasharray="6 5"/>
+  <text x="535" y="152" font-size="14" font-weight="700">subsystems/</text>
+
+  <rect x="535" y="165" width="200" height="56" rx="8" fill="#fff" stroke="#000AB5" stroke-width="2"/>
+  <text x="635" y="188" text-anchor="middle" font-size="14" font-weight="700">CommandSwerveDrivetrain</text>
+  <text x="635" y="206" text-anchor="middle" font-size="13">swerve subsystem</text>
+  <rect x="750" y="165" width="120" height="56" rx="8" fill="#f4f5f9" stroke="#8a909c" stroke-width="2"/>
+  <text x="810" y="188" text-anchor="middle" font-size="13" font-weight="700">TunerConstants</text>
+  <text x="810" y="206" text-anchor="middle" font-size="13">regenerate</text>
+  <line x1="748" y1="193" x2="737" y2="193" stroke="#8a909c" stroke-width="2" marker-end="url(#ahk)"/>
+
+  <rect x="535" y="240" width="200" height="56" rx="8" fill="#fff" stroke="#000AB5" stroke-width="2"/>
+  <text x="635" y="263" text-anchor="middle" font-size="14" font-weight="700">Vision</text>
+  <text x="635" y="281" text-anchor="middle" font-size="13">Limelights fix the pose</text>
+  <rect x="750" y="240" width="120" height="56" rx="8" fill="#f4f5f9" stroke="#8a909c" stroke-width="2"/>
+  <text x="810" y="263" text-anchor="middle" font-size="13" font-weight="700">LimelightHelpers</text>
+  <text x="810" y="281" text-anchor="middle" font-size="13">don't edit</text>
+  <line x1="748" y1="268" x2="737" y2="268" stroke="#8a909c" stroke-width="2" marker-end="url(#ahk)"/>
+
+  <rect x="535" y="315" width="200" height="56" rx="8" fill="#FFA700" stroke="#000AB5" stroke-width="2.5"/>
+  <text x="635" y="338" text-anchor="middle" font-size="14" font-weight="700">ExampleRoller</text>
+  <text x="635" y="356" text-anchor="middle" font-size="13">COPY ME (not created)</text>
+  <rect x="750" y="315" width="120" height="56" rx="8" fill="#fff" stroke="#000AB5" stroke-width="2" stroke-dasharray="5 4"/>
+  <text x="810" y="338" text-anchor="middle" font-size="13" font-weight="700">Your Intake,</text>
+  <text x="810" y="356" text-anchor="middle" font-size="13" font-weight="700">Shooter, ...</text>
+  <line x1="737" y1="343" x2="748" y2="343" stroke="#000AB5" stroke-width="2" marker-end="url(#ah)"/>
+
+  <text x="535" y="395" font-size="13">Vision gets the drivetrain so it can call</text>
+  <text x="535" y="413" font-size="13">addVisionMeasurement().</text>
+
+  <!-- RobotContainer -> subsystems -->
+  <path d="M450,170 H520 V193 H533" fill="none" stroke="#000AB5" stroke-width="2.5" marker-end="url(#ah)"/>
+  <path d="M450,200 H500 V268 H533" fill="none" stroke="#000AB5" stroke-width="2.5" marker-end="url(#ah)"/>
+  <path d="M450,220 H485 V343 H533" fill="none" stroke="#000AB5" stroke-width="2.5" stroke-dasharray="6 4" marker-end="url(#ah)"/>
+
+  <!-- AutonContainer -->
+  <rect x="250" y="300" width="200" height="92" rx="8" fill="#FFA700" stroke="#000AB5" stroke-width="2.5"/>
+  <text x="350" y="324" text-anchor="middle" font-size="15" font-weight="700">commands/</text>
+  <text x="350" y="342" text-anchor="middle" font-size="15" font-weight="700">AutonContainer</text>
+  <text x="350" y="364" text-anchor="middle" font-size="13">PathPlanner setup, named</text>
+  <text x="350" y="381" text-anchor="middle" font-size="13">commands, auto chooser</text>
+  <line x1="350" y1="230" x2="350" y2="298" stroke="#000AB5" stroke-width="2.5" marker-end="url(#ah)"/>
+
+  <!-- deploy pathplanner -->
+  <rect x="250" y="440" width="200" height="60" rx="8" fill="#fff" stroke="#000AB5" stroke-width="2"/>
+  <text x="350" y="464" text-anchor="middle" font-size="14" font-weight="700">deploy/pathplanner/</text>
+  <text x="350" y="484" text-anchor="middle" font-size="13">paths + autos (PathPlanner app)</text>
+  <line x1="350" y1="438" x2="350" y2="394" stroke="#000AB5" stroke-width="2.5" marker-end="url(#ah)"/>
+  <text x="358" y="421" font-size="13">loaded by name</text>
+
+  <!-- wrappers -->
+  <rect x="535" y="450" width="345" height="50" rx="8" fill="#fff" stroke="#000AB5" stroke-width="2"/>
+  <text x="707" y="472" text-anchor="middle" font-size="14" font-weight="700">wrappers/  LimitSwitch, LaserDetector, DigitalLED</text>
+  <text x="707" y="490" text-anchor="middle" font-size="13">simple DIO sensor classes, use inside a subsystem</text>
+
+  <!-- legend -->
+  <rect x="20" y="520" width="860" height="68" rx="8" fill="#f4f5f9" stroke="#c9ced8"/>
+  <rect x="36" y="535" width="30" height="16" rx="3" fill="#FFA700" stroke="#000AB5"/>
+  <text x="76" y="548" font-size="13">You edit these all the time</text>
+  <rect x="300" y="535" width="30" height="16" rx="3" fill="#fff" stroke="#000AB5"/>
+  <text x="340" y="548" font-size="13">Edit sometimes, carefully</text>
+  <rect x="560" y="535" width="30" height="16" rx="3" fill="#f4f5f9" stroke="#8a909c"/>
+  <text x="600" y="548" font-size="13">Generated or library: don't hand-edit</text>
+  <text x="36" y="576" font-size="13">Boot order: Main → Robot() → RobotLog.start() → RobotContainer() → subsystems → AutonContainer → bindings</text>
+</svg>

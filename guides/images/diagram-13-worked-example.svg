@@ -1,0 +1,67 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 105 860 415" width="860" height="415" font-family="Inter, Arial, sans-serif">
+  <rect x="0" y="105" width="860" height="415" fill="#ffffff"/>
+  <defs>
+    <marker id="arrB" viewBox="0 0 10 10" refX="9" refY="5" markerUnits="userSpaceOnUse" markerWidth="14" markerHeight="14" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#000AB5"/>
+    </marker>
+    <marker id="arrK" viewBox="0 0 10 10" refX="9" refY="5" markerUnits="userSpaceOnUse" markerWidth="11" markerHeight="11" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#16181d"/>
+    </marker>
+  </defs>
+
+  <text x="430" y="135" text-anchor="middle" font-size="16" font-weight="700" fill="#16181d">Worked example: blue robot at (2.0, 4.035) facing 180°, aiming at the hub</text>
+
+  <!-- scale: 190 units per meter; robot center (220,260), hub (720,260) -->
+  <!-- robot (about 0.74 m square) -->
+  <rect x="150" y="190" width="140" height="140" rx="8" fill="#f4f5f9" stroke="#000AB5" stroke-width="3.5"/>
+  <!-- intake on the robot front = field left side because heading 180 -->
+  <rect x="136" y="205" width="16" height="110" rx="3" fill="#000AB5"/>
+  <text x="128" y="266" text-anchor="end" font-size="13" fill="#16181d">intake</text>
+  <text x="128" y="282" text-anchor="end" font-size="13" fill="#16181d">(front)</text>
+
+  <!-- heading arrow -->
+  <line x1="220" y1="260" x2="168" y2="260" stroke="#16181d" stroke-width="2.5" marker-end="url(#arrK)"/>
+  <circle cx="220" cy="260" r="5" fill="#16181d"/>
+  <text x="220" y="352" text-anchor="middle" font-size="13" fill="#16181d">robot center (2.0, 4.035)</text>
+  <text x="220" y="370" text-anchor="middle" font-size="13" fill="#16181d">heading 180°: front points -x</text>
+
+  <!-- turret at (244,231) -->
+  <line x1="220" y1="260" x2="244" y2="260" stroke="#16181d" stroke-width="1.2" stroke-dasharray="3 3"/>
+  <line x1="244" y1="260" x2="244" y2="231" stroke="#16181d" stroke-width="1.2" stroke-dasharray="3 3"/>
+  <circle cx="244" cy="231" r="14" fill="#ffffff" stroke="#000AB5" stroke-width="3"/>
+  <circle cx="244" cy="231" r="4" fill="#000AB5"/>
+  <text x="244" y="168" text-anchor="middle" font-size="13" font-weight="700" fill="#000AB5">Step 1: turret (2.127, 4.187)</text>
+  <text x="244" y="184" text-anchor="middle" font-size="13" fill="#16181d">offset (-0.127, -0.152) rotated 180°</text>
+
+  <!-- turret zero direction = robot back = field +x -->
+  <line x1="244" y1="231" x2="560" y2="231" stroke="#FFA700" stroke-width="3" marker-end="url(#arrK)"/>
+  <text x="430" y="198" font-size="13" font-weight="700" fill="#16181d">turret zero = robot back</text>
+  <text x="430" y="214" font-size="13" fill="#16181d">(field angle 180° + 180° = 0°)</text>
+
+  <!-- line of sight to hub -->
+  <line x1="244" y1="231" x2="678" y2="257.4" stroke="#000AB5" stroke-width="3" marker-end="url(#arrB)"/>
+
+  <!-- angle arc (radius 200) between zero (0) and -3.5 deg -->
+  <path d="M444,231 A200,200 0 0,1 443.6,243.2" fill="none" stroke="#16181d" stroke-width="2"/>
+  <line x1="452" y1="238" x2="470" y2="300" stroke="#16181d" stroke-width="1.2"/>
+  <text x="470" y="318" text-anchor="middle" font-size="14" font-weight="700" fill="#16181d">-3.5° (clockwise)</text>
+
+  <!-- hub -->
+  <circle cx="720" cy="260" r="40" fill="#f4f5f9" stroke="#16181d" stroke-width="2.5"/>
+  <circle cx="720" cy="260" r="4" fill="#16181d"/>
+  <text x="720" y="322" text-anchor="middle" font-size="13" font-weight="700" fill="#16181d">hub center</text>
+  <text x="720" y="338" text-anchor="middle" font-size="13" fill="#16181d">(4.625, 4.035)</text>
+
+  <!-- field axes -->
+  <line x1="40" y1="480" x2="100" y2="480" stroke="#16181d" stroke-width="2" marker-end="url(#arrK)"/>
+  <line x1="40" y1="480" x2="40" y2="420" stroke="#16181d" stroke-width="2" marker-end="url(#arrK)"/>
+  <text x="106" y="485" font-size="13" fill="#16181d">field +x</text>
+  <text x="48" y="425" font-size="13" fill="#16181d">field +y</text>
+
+  <!-- step summary -->
+  <rect x="180" y="395" width="650" height="105" rx="10" fill="#f4f5f9" stroke="#c9ced8" stroke-width="1.5"/>
+  <text x="196" y="420" font-size="13" fill="#16181d"><tspan font-weight="700">Step 2:</tspan> dx = 2.498, dy = -0.152, field angle = atan2(-0.152, 2.498) = -3.5°</text>
+  <text x="196" y="442" font-size="13" fill="#16181d"><tspan font-weight="700">Steps 3-4:</tspan> -3.5° - 180° (heading) - 180° (zero offset) = -363.5°, same as -3.5°</text>
+  <text x="196" y="464" font-size="13" fill="#16181d"><tspan font-weight="700">Steps 5-6:</tspan> -3.5 / 360 = -0.0097 turret rotations, inside ±0.30</text>
+  <text x="196" y="486" font-size="13" fill="#16181d"><tspan font-weight="700">Step 7:</tspan> -0.0097 × 12.5 = -0.12 motor rotations to Motion Magic</text>
+</svg>

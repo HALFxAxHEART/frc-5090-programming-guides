@@ -1,0 +1,73 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 860 690" width="860" height="690" font-family="Inter, Arial, sans-serif">
+  <rect x="0" y="0" width="860" height="690" fill="#ffffff"/>
+  <defs>
+    <marker id="arrB" viewBox="0 0 10 10" refX="9" refY="5" markerUnits="userSpaceOnUse" markerWidth="18" markerHeight="18" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#000AB5"/>
+    </marker>
+    <marker id="arrK" viewBox="0 0 10 10" refX="9" refY="5" markerUnits="userSpaceOnUse" markerWidth="12" markerHeight="12" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#16181d"/>
+    </marker>
+    <pattern id="hatch" width="10" height="10" patternUnits="userSpaceOnUse" patternTransform="rotate(45)">
+      <line x1="0" y1="0" x2="0" y2="10" stroke="#c9ced8" stroke-width="3"/>
+    </pattern>
+  </defs>
+
+  <!-- turret at (470,350); coverage radius 230 -->
+  <!-- blind spot wedge (front 144 deg) -->
+  <path d="M470,350 L251.3,278.9 A230,230 0 0,1 688.7,278.9 Z" fill="url(#hatch)" stroke="#c9ced8" stroke-width="1.5"/>
+  <!-- coverage wedge (216 deg through the back) -->
+  <path d="M470,350 L251.3,278.9 A230,230 0 1,0 688.7,278.9 Z" fill="#FFA700" fill-opacity="0.22" stroke="#FFA700" stroke-width="3"/>
+
+  <!-- robot frame -->
+  <rect x="250" y="140" width="320" height="320" rx="10" fill="#f4f5f9" fill-opacity="0.85" stroke="#000AB5" stroke-width="4"/>
+  <!-- intake on the front -->
+  <rect x="280" y="116" width="260" height="26" rx="4" fill="#000AB5"/>
+  <text x="410" y="134" text-anchor="middle" font-size="14" font-weight="700" fill="#ffffff">INTAKE</text>
+  <text x="410" y="40" text-anchor="middle" font-size="16" font-weight="700" fill="#16181d">FRONT of robot</text>
+
+  <!-- blind spot label -->
+  <text x="730" y="100" text-anchor="middle" font-size="14" font-weight="700" fill="#16181d">144° blind spot</text>
+  <text x="730" y="118" text-anchor="middle" font-size="13" fill="#16181d">(toward the front)</text>
+  <line x1="700" y1="128" x2="628" y2="200" stroke="#16181d" stroke-width="1.5" marker-end="url(#arrK)"/>
+
+  <!-- robot axes at center (410,300) -->
+  <line x1="410" y1="300" x2="410" y2="222" stroke="#16181d" stroke-width="2" marker-end="url(#arrK)"/>
+  <text x="418" y="232" font-size="13" fill="#16181d">+x forward</text>
+  <line x1="410" y1="300" x2="332" y2="300" stroke="#16181d" stroke-width="2" marker-end="url(#arrK)"/>
+  <text x="336" y="290" font-size="13" fill="#16181d">+y left</text>
+  <circle cx="410" cy="300" r="5" fill="#16181d"/>
+
+  <!-- turret offset dimensions (10 units per inch) -->
+  <line x1="410" y1="300" x2="470" y2="300" stroke="#16181d" stroke-width="1.5" stroke-dasharray="3 3"/>
+  <line x1="470" y1="300" x2="470" y2="350" stroke="#16181d" stroke-width="1.5" stroke-dasharray="3 3"/>
+  <text x="440" y="293" font-size="13" fill="#16181d" text-anchor="middle">6 in</text>
+  <text x="478" y="317" font-size="13" fill="#16181d">5 in</text>
+
+  <!-- turret -->
+  <circle cx="470" cy="350" r="24" fill="none" stroke="#000AB5" stroke-width="3"/>
+  <circle cx="470" cy="350" r="6" fill="#000AB5"/>
+
+  <!-- zero direction -->
+  <line x1="470" y1="350" x2="470" y2="578" stroke="#000AB5" stroke-width="4" marker-end="url(#arrB)"/>
+  <text x="460" y="545" text-anchor="end" font-size="14" font-weight="700" fill="#000AB5">0° (turret zero)</text>
+  <!-- limits -->
+  <line x1="470" y1="350" x2="688.7" y2="278.9" stroke="#000AB5" stroke-width="2.5" stroke-dasharray="7 4"/>
+  <line x1="470" y1="350" x2="251.3" y2="278.9" stroke="#000AB5" stroke-width="2.5" stroke-dasharray="7 4"/>
+  <text x="700" y="268" font-size="16" font-weight="700" fill="#16181d">+108°</text>
+  <text x="700" y="288" font-size="13" fill="#16181d">(+0.30 turret rot)</text>
+  <text x="238" y="268" font-size="16" font-weight="700" fill="#16181d" text-anchor="end">-108°</text>
+  <text x="238" y="288" font-size="13" fill="#16181d" text-anchor="end">(-0.30 turret rot)</text>
+
+  <!-- CCW positive arrow: from bottom toward right -->
+  <path d="M470,440 A90,90 0 0,0 533.6,413.6" fill="none" stroke="#16181d" stroke-width="2" marker-end="url(#arrK)"/>
+  <text x="585" y="440" font-size="13" fill="#16181d">+ = counter-clockwise</text>
+  <text x="585" y="457" font-size="13" fill="#16181d">seen from above</text>
+
+  <!-- coverage label -->
+  <text x="330" y="500" text-anchor="middle" font-size="14" font-weight="700" fill="#16181d">216° coverage:</text>
+  <text x="330" y="518" text-anchor="middle" font-size="13" fill="#16181d">back and sides</text>
+
+  <text x="410" y="630" text-anchor="middle" font-size="16" font-weight="700" fill="#16181d">BACK of robot</text>
+  <text x="410" y="660" text-anchor="middle" font-size="13" fill="#16181d">Top view. Black dot = robot center; blue circle = turret, 5 in back and 6 in right of center.</text>
+  <text x="410" y="678" text-anchor="middle" font-size="13" fill="#16181d">kTurretZeroOffset = 180°, so turret zero points straight back.</text>
+</svg>

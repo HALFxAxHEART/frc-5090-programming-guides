@@ -1,0 +1,77 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 560" width="900" height="560" font-family="Inter, Arial, sans-serif" fill="#16181d">
+  <defs>
+    <marker id="ah" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#000AB5"/>
+    </marker>
+  </defs>
+  <rect width="900" height="560" fill="#fff"/>
+  <text x="450" y="30" text-anchor="middle" font-size="20" font-weight="700">What happens when a Pro feature runs without a license</text>
+
+  <!-- start -->
+  <rect x="270" y="50" width="360" height="50" rx="10" fill="#000AB5"/>
+  <text x="450" y="80" text-anchor="middle" font-size="15" font-weight="700" fill="#fff">Code uses a Pro feature</text>
+  <line x1="450" y1="100" x2="450" y2="126" stroke="#000AB5" stroke-width="3" marker-end="url(#ah)"/>
+
+  <!-- decision -->
+  <polygon points="450,130 640,180 450,230 260,180" fill="#f4f5f9" stroke="#000AB5" stroke-width="2.5"/>
+  <text x="450" y="172" text-anchor="middle" font-size="14" font-weight="700">Device (or its CANivore)</text>
+  <text x="450" y="192" text-anchor="middle" font-size="14" font-weight="700">licensed for THIS season?</text>
+
+  <!-- yes -->
+  <line x1="640" y1="180" x2="716" y2="180" stroke="#000AB5" stroke-width="3" marker-end="url(#ah)"/>
+  <text x="668" y="170" font-size="13" font-weight="700">yes</text>
+  <rect x="720" y="152" width="160" height="56" rx="10" fill="#fff" stroke="#000AB5" stroke-width="2"/>
+  <text x="800" y="185" text-anchor="middle" font-size="14" font-weight="700">Feature works</text>
+
+  <!-- no -->
+  <line x1="450" y1="230" x2="450" y2="262" stroke="#000AB5" stroke-width="3"/>
+  <text x="460" y="252" font-size="13" font-weight="700">no: depends on the feature</text>
+  <line x1="155" y1="262" x2="745" y2="262" stroke="#000AB5" stroke-width="3"/>
+  <line x1="155" y1="262" x2="155" y2="284" stroke="#000AB5" stroke-width="3" marker-end="url(#ah)"/>
+  <line x1="450" y1="262" x2="450" y2="284" stroke="#000AB5" stroke-width="3" marker-end="url(#ah)"/>
+  <line x1="745" y1="262" x2="745" y2="284" stroke="#000AB5" stroke-width="3" marker-end="url(#ah)"/>
+
+  <!-- branch 1 -->
+  <rect x="20" y="288" width="270" height="92" rx="10" fill="#f4f5f9" stroke="#c9ced8" stroke-width="2"/>
+  <text x="155" y="312" text-anchor="middle" font-size="14" font-weight="700">Optional FOC</text>
+  <text x="155" y="334" text-anchor="middle" font-size="13">.withEnableFOC(true) on</text>
+  <text x="155" y="352" text-anchor="middle" font-size="13">VelocityVoltage, DutyCycleOut,</text>
+  <text x="155" y="370" text-anchor="middle" font-size="13">MotionMagicVoltage ...</text>
+
+  <rect x="315" y="288" width="270" height="92" rx="10" fill="#f4f5f9" stroke="#c9ced8" stroke-width="2"/>
+  <text x="450" y="312" text-anchor="middle" font-size="14" font-weight="700">Pro-only requests</text>
+  <text x="450" y="334" text-anchor="middle" font-size="13">TorqueCurrentFOC family,</text>
+  <text x="450" y="352" text-anchor="middle" font-size="13">Dynamic Motion Magic</text>
+  <text x="450" y="370" text-anchor="middle" font-size="13">(Dynamic MM also needs a CANivore)</text>
+
+  <rect x="610" y="288" width="270" height="92" rx="10" fill="#f4f5f9" stroke="#c9ced8" stroke-width="2"/>
+  <text x="745" y="312" text-anchor="middle" font-size="14" font-weight="700">Fused / Sync sensor</text>
+  <text x="745" y="334" text-anchor="middle" font-size="13">Feedback source</text>
+  <text x="745" y="352" text-anchor="middle" font-size="13">FusedCANcoder or SyncCANcoder</text>
+  <text x="745" y="370" text-anchor="middle" font-size="13">(and the CANdi versions)</text>
+
+  <line x1="155" y1="380" x2="155" y2="406" stroke="#000AB5" stroke-width="3" marker-end="url(#ah)"/>
+  <line x1="450" y1="380" x2="450" y2="406" stroke="#000AB5" stroke-width="3" marker-end="url(#ah)"/>
+  <line x1="745" y1="380" x2="745" y2="406" stroke="#000AB5" stroke-width="3" marker-end="url(#ah)"/>
+
+  <!-- results -->
+  <rect x="20" y="410" width="270" height="92" rx="10" fill="#fff" stroke="#000AB5" stroke-width="2"/>
+  <text x="155" y="434" text-anchor="middle" font-size="14" font-weight="700">Quietly falls back</text>
+  <text x="155" y="456" text-anchor="middle" font-size="13">to trapezoidal. Motor runs,</text>
+  <text x="155" y="474" text-anchor="middle" font-size="13">just weaker (no FOC power).</text>
+  <text x="155" y="492" text-anchor="middle" font-size="13">Easy to miss!</text>
+
+  <rect x="315" y="410" width="270" height="92" rx="10" fill="#FFA700" stroke="#16181d" stroke-width="2"/>
+  <text x="450" y="434" text-anchor="middle" font-size="14" font-weight="700">Output DISABLED</text>
+  <text x="450" y="456" text-anchor="middle" font-size="13">Motor does nothing.</text>
+  <text x="450" y="474" text-anchor="middle" font-size="13">Fault: UnlicensedFeatureInUse</text>
+  <text x="450" y="492" text-anchor="middle" font-size="13">LEDs blink red / green</text>
+
+  <rect x="610" y="410" width="270" height="92" rx="10" fill="#fff" stroke="#000AB5" stroke-width="2"/>
+  <text x="745" y="434" text-anchor="middle" font-size="14" font-weight="700">Falls back to Remote...</text>
+  <text x="745" y="456" text-anchor="middle" font-size="13">Still works, less smooth.</text>
+  <text x="745" y="474" text-anchor="middle" font-size="13">Talon fault: UsingFused-</text>
+  <text x="745" y="492" text-anchor="middle" font-size="13">CANcoderWhileUnlicensed</text>
+
+  <text x="450" y="536" text-anchor="middle" font-size="13">Season Pass licenses only count when the roboRIO is set to team 5090. Simulation never needs a license.</text>
+</svg>

@@ -1,0 +1,39 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 860 330" width="860" height="330" font-family="Inter, Arial, sans-serif">
+  <defs>
+    <marker id="a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#000AB5"/></marker>
+  </defs>
+  <rect width="860" height="330" fill="#ffffff"/>
+  <text x="430" y="30" text-anchor="middle" font-size="20" font-weight="700" fill="#16181d">Game-piece state (owned by the claw, separate from where the arm is)</text>
+
+  <rect x="340" y="120" width="180" height="70" rx="35" fill="#FFA700"/>
+  <text x="430" y="152" text-anchor="middle" font-size="18" font-weight="700" fill="#16181d">EMPTY</text>
+  <text x="430" y="173" text-anchor="middle" font-size="13" fill="#16181d">no piece seen</text>
+
+  <rect x="30" y="120" width="200" height="70" rx="35" fill="#000AB5"/>
+  <text x="130" y="152" text-anchor="middle" font-size="18" font-weight="700" fill="#ffffff">HOLDING_CORAL</text>
+  <text x="130" y="173" text-anchor="middle" font-size="13" fill="#ffffff">rollers off</text>
+
+  <rect x="630" y="120" width="200" height="70" rx="35" fill="#000AB5"/>
+  <text x="730" y="152" text-anchor="middle" font-size="18" font-weight="700" fill="#ffffff">HOLDING_ALGAE</text>
+  <text x="730" y="173" text-anchor="middle" font-size="13" fill="#ffffff">small hold voltage</text>
+
+  <!-- empty -> coral (top) -->
+  <path d="M 360 120 C 320 70, 220 70, 175 116" fill="none" stroke="#000AB5" stroke-width="2.5" marker-end="url(#a)"/>
+  <text x="268" y="62" text-anchor="middle" font-size="13" fill="#16181d">intaking coral AND</text>
+  <text x="268" y="79" text-anchor="middle" font-size="13" fill="#16181d">piece seen for 0.1 s</text>
+  <!-- coral -> empty (bottom) -->
+  <path d="M 175 194 C 220 245, 320 245, 360 194" fill="none" stroke="#000AB5" stroke-width="2.5" marker-end="url(#a)"/>
+  <text x="268" y="262" text-anchor="middle" font-size="13" fill="#16181d">piece gone for 0.1 s</text>
+  <text x="268" y="279" text-anchor="middle" font-size="13" fill="#16181d">(scored, ejected or dropped)</text>
+
+  <!-- empty -> algae (top) -->
+  <path d="M 500 120 C 540 70, 640 70, 685 116" fill="none" stroke="#000AB5" stroke-width="2.5" marker-end="url(#a)"/>
+  <text x="592" y="62" text-anchor="middle" font-size="13" fill="#16181d">intaking algae AND</text>
+  <text x="592" y="79" text-anchor="middle" font-size="13" fill="#16181d">piece seen for 0.1 s</text>
+  <!-- algae -> empty -->
+  <path d="M 685 194 C 640 245, 540 245, 500 194" fill="none" stroke="#000AB5" stroke-width="2.5" marker-end="url(#a)"/>
+  <text x="592" y="262" text-anchor="middle" font-size="13" fill="#16181d">piece gone for 0.1 s</text>
+  <text x="592" y="279" text-anchor="middle" font-size="13" fill="#16181d">(scored, ejected or dropped)</text>
+
+  <text x="430" y="315" text-anchor="middle" font-size="13" fill="#16181d">No arrow from HOLDING_CORAL straight to HOLDING_ALGAE: this claw holds one piece at a time.</text>
+</svg>

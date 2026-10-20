@@ -1,0 +1,51 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 860 420" font-family="Inter, Arial, sans-serif">
+  <defs>
+    <marker id="a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="5" markerHeight="5" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#000AB5"/>
+    </marker>
+    <marker id="k" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="5" markerHeight="5" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#16181d"/>
+    </marker>
+  </defs>
+  <rect width="860" height="420" fill="#ffffff"/>
+  <text x="430" y="30" text-anchor="middle" font-size="20" font-weight="700" fill="#16181d">Leader and follower (2026 shooter IDs)</text>
+
+  <!-- code boxes -->
+  <rect x="30" y="52" width="330" height="70" rx="8" fill="#f4f5f9" stroke="#c9ced8" stroke-width="2"/>
+  <text x="44" y="76" font-size="13" font-weight="700" fill="#16181d">Your code, every loop while shooting:</text>
+  <text x="44" y="100" font-size="14" font-family="Consolas, Menlo, monospace" fill="#000AB5">VelocityVoltage(target RPS)</text>
+
+  <rect x="500" y="52" width="330" height="70" rx="8" fill="#f4f5f9" stroke="#c9ced8" stroke-width="2"/>
+  <text x="514" y="76" font-size="13" font-weight="700" fill="#16181d">Once, at startup:</text>
+  <text x="514" y="100" font-size="14" font-family="Consolas, Menlo, monospace" fill="#000AB5">Follower(27, Opposed)</text>
+
+  <line x1="195" y1="122" x2="195" y2="166" stroke="#000AB5" stroke-width="3" marker-end="url(#a)"/>
+  <line x1="665" y1="122" x2="665" y2="166" stroke="#000AB5" stroke-width="3" marker-end="url(#a)"/>
+
+  <!-- shaft + flywheel -->
+  <rect x="300" y="206" width="260" height="16" fill="#c9ced8" stroke="#16181d" stroke-width="1.5"/>
+  <rect x="405" y="172" width="50" height="84" rx="6" fill="#FFA700" stroke="#16181d" stroke-width="1.5"/>
+  <text x="430" y="280" text-anchor="middle" font-size="13" font-weight="700" fill="#16181d">flywheel</text>
+  <text x="430" y="297" text-anchor="middle" font-size="13" fill="#16181d">one shaft</text>
+
+  <!-- leader motor (face points right, toward shaft) -->
+  <rect x="110" y="170" width="170" height="88" rx="10" fill="#000AB5"/>
+  <rect x="280" y="196" width="20" height="36" fill="#000AB5"/>
+  <text x="195" y="206" text-anchor="middle" font-size="16" font-weight="700" fill="#fff">Leader</text>
+  <text x="195" y="226" text-anchor="middle" font-size="14" fill="#fff">Kraken X60</text>
+  <text x="195" y="246" text-anchor="middle" font-size="14" font-weight="700" fill="#FFA700">CAN ID 27</text>
+
+  <!-- follower motor (face points left) -->
+  <rect x="580" y="170" width="170" height="88" rx="10" fill="#000AB5"/>
+  <rect x="560" y="196" width="20" height="36" fill="#000AB5"/>
+  <text x="665" y="206" text-anchor="middle" font-size="16" font-weight="700" fill="#fff">Follower</text>
+  <text x="665" y="226" text-anchor="middle" font-size="14" fill="#fff">Kraken X60</text>
+  <text x="665" y="246" text-anchor="middle" font-size="14" font-weight="700" fill="#FFA700">CAN ID 15</text>
+
+  <!-- explanation -->
+  <text x="430" y="336" text-anchor="middle" font-size="14" fill="#16181d">When two motors face each other (mirror-image mounting), turning the shaft one way means each</text>
+  <text x="430" y="355" text-anchor="middle" font-size="14" fill="#16181d">motor spins the opposite way as seen from its own face. That is <tspan font-weight="700">MotorAlignmentValue.Opposed</tspan>.</text>
+
+  <rect x="110" y="372" width="640" height="34" rx="6" fill="#FFA700" fill-opacity="0.18" stroke="#FFA700" stroke-width="2"/>
+  <text x="430" y="394" text-anchor="middle" font-size="14" fill="#16181d"><tspan font-weight="700">Both</tspan> motors get their own config (current limits, coast). Followers copy output, not config.</text>
+</svg>

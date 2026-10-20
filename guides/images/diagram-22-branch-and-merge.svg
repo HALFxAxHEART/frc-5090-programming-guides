@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 330" width="900" height="330">
+<defs>
+  <marker id="ar" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#000AB5"/></marker>
+</defs>
+<rect width="900" height="330" fill="#ffffff"/>
+<g font-family="Inter, Arial, sans-serif" fill="#16181d">
+  <!-- main line -->
+  <line x1="40" y1="90" x2="860" y2="90" stroke="#000AB5" stroke-width="5"/>
+  <text x="40" y="58" font-size="17" font-weight="700" fill="#000AB5">main</text>
+  <text x="95" y="58" font-size="14">(what's on the robot at events; c3 during the 2026 season)</text>
+  <!-- branch line -->
+  <path d="M200,90 C230,90 240,220 290,220 L620,220 C690,220 700,90 740,90" fill="none" stroke="#FFA700" stroke-width="5"/>
+  <text x="290" y="290" font-size="17" font-weight="700">intake-homing</text>
+  <text x="420" y="290" font-size="14">(your branch: commit small and often)</text>
+  <!-- main commits -->
+  <circle cx="100" cy="90" r="11" fill="#000AB5"/>
+  <circle cx="200" cy="90" r="11" fill="#000AB5"/>
+  <text x="190" y="125" font-size="13" text-anchor="end">pull, then branch</text>
+  <circle cx="470" cy="90" r="11" fill="#000AB5"/>
+  <text x="470" y="125" font-size="13" text-anchor="middle">teammate's fix</text>
+  <text x="470" y="141" font-size="13" text-anchor="middle">(pull it before you push)</text>
+  <circle cx="740" cy="90" r="13" fill="#ffffff" stroke="#000AB5" stroke-width="4"/>
+  <text x="740" y="125" font-size="13" font-weight="700" text-anchor="middle">merge</text>
+  <circle cx="830" cy="90" r="11" fill="#000AB5"/>
+  <!-- branch commits -->
+  <circle cx="330" cy="220" r="11" fill="#FFA700" stroke="#16181d" stroke-width="1.5"/>
+  <text x="330" y="256" font-size="13" text-anchor="middle">"Add intake homing"</text>
+  <circle cx="470" cy="220" r="11" fill="#FFA700" stroke="#16181d" stroke-width="1.5"/>
+  <text x="470" y="256" font-size="13" text-anchor="middle">"Tune intake kP"</text>
+  <!-- PR box -->
+  <rect x="555" y="196" width="130" height="48" rx="8" fill="#f4f5f9" stroke="#000AB5" stroke-width="2"/>
+  <text x="620" y="216" font-size="14" font-weight="700" text-anchor="middle">pull request</text>
+  <text x="620" y="234" font-size="13" text-anchor="middle">teammate reviews</text>
+</g>
+</svg>

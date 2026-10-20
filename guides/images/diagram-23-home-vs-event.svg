@@ -1,0 +1,71 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 435" width="900" height="435" font-family="Inter, Arial, sans-serif" fill="#16181d">
+  <defs>
+    <marker id="ah" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#000AB5"/>
+    </marker>
+  </defs>
+  <rect width="900" height="435" fill="#fff"/>
+  <text x="450" y="30" text-anchor="middle" font-size="20" font-weight="700">Do the internet jobs at home. The event has no internet.</text>
+
+  <!-- column 1 -->
+  <rect x="20" y="55" width="270" height="300" rx="10" fill="#f4f5f9" stroke="#000AB5" stroke-width="2"/>
+  <rect x="20" y="55" width="270" height="40" rx="10" fill="#000AB5"/>
+  <rect x="20" y="80" width="270" height="15" fill="#000AB5"/>
+  <text x="155" y="81" text-anchor="middle" font-size="16" font-weight="700" fill="#fff">1. At home (internet)</text>
+  <g font-size="14">
+    <text x="36" y="122">Windows updates, then pause</text>
+    <text x="36" y="148">Install same WPILib version</text>
+    <text x="36" y="166">  as every other team laptop</text>
+    <text x="36" y="192">Pull our repo, then</text>
+    <text x="36" y="210" font-weight="700">  Build once (Gradle downloads</text>
+    <text x="36" y="228" font-weight="700">  libraries into its cache)</text>
+    <text x="36" y="254">Open Tuner X once so it</text>
+    <text x="36" y="272">  downloads firmware files</text>
+    <text x="36" y="298">Update PathPlanner, Tuner X,</text>
+    <text x="36" y="316">  Limelight Hardware Manager</text>
+    <text x="36" y="342">Test with the real robot</text>
+  </g>
+
+  <line x1="292" y1="205" x2="322" y2="205" stroke="#000AB5" stroke-width="4" marker-end="url(#ah)"/>
+
+  <!-- column 2 -->
+  <rect x="325" y="55" width="250" height="300" rx="10" fill="#fff7e6" stroke="#FFA700" stroke-width="2.5"/>
+  <rect x="325" y="55" width="250" height="40" rx="10" fill="#FFA700"/>
+  <rect x="325" y="80" width="250" height="15" fill="#FFA700"/>
+  <text x="450" y="81" text-anchor="middle" font-size="16" font-weight="700">2. Pack the USB stick</text>
+  <g font-size="14">
+    <text x="341" y="122">WPILib installer .iso</text>
+    <text x="341" y="140">  (same version, 2.4 GB)</text>
+    <text x="341" y="166">FRC Game Tools offline</text>
+    <text x="341" y="184">  installer</text>
+    <text x="341" y="210">Phoenix offline installer</text>
+    <text x="341" y="236">Radio firmware file</text>
+    <text x="341" y="262">Copy of our repo (zip)</text>
+    <text x="341" y="288">Limelight pipeline backups</text>
+    <text x="341" y="314">A sheet with every version</text>
+    <text x="341" y="332">  number we use</text>
+  </g>
+
+  <line x1="577" y1="205" x2="607" y2="205" stroke="#000AB5" stroke-width="4" marker-end="url(#ah)"/>
+
+  <!-- column 3 -->
+  <rect x="610" y="55" width="270" height="300" rx="10" fill="#f4f5f9" stroke="#16181d" stroke-width="2" stroke-dasharray="8 5"/>
+  <rect x="610" y="55" width="270" height="40" rx="10" fill="#16181d"/>
+  <rect x="610" y="80" width="270" height="15" fill="#16181d"/>
+  <text x="745" y="81" text-anchor="middle" font-size="16" font-weight="700" fill="#fff">3. At the event (offline)</text>
+  <g font-size="14">
+    <text x="626" y="122">Build and deploy work, because</text>
+    <text x="626" y="140">  the libraries are cached</text>
+    <text x="626" y="166">Wi-Fi off, firewall off</text>
+    <text x="626" y="184">  (DS laptop)</text>
+    <text x="626" y="210">A new laptop or a fresh</text>
+    <text x="626" y="228">  install? Use the USB stick</text>
+    <text x="626" y="254" font-weight="700">Do NOT update anything</text>
+    <text x="626" y="272" font-weight="700">  or add a new vendordep</text>
+    <text x="626" y="298">Need help? Control System</text>
+    <text x="626" y="316">  Advisor (CSA) in the pits</text>
+  </g>
+
+  <rect x="20" y="372" width="860" height="50" rx="8" fill="#fff" stroke="#c9ced8"/>
+  <text x="450" y="392" text-anchor="middle" font-size="14">A first build with NO internet fails if any library isn't on the laptop yet (PathPlannerLib, or a</text><text x="450" y="411" text-anchor="middle" font-size="14">Phoenix version newer than the offline installer). One online build at home caches them all.</text>
+</svg>

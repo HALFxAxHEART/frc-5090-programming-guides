@@ -1,0 +1,72 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 400" width="900" height="400">
+<rect width="900" height="400" fill="#ffffff"/>
+<g font-family="Inter, Arial, sans-serif" fill="#16181d">
+<text x="450" y="30" font-size="19" font-weight="700" text-anchor="middle">Remainders by 3 and by 5: every pair shows up exactly once in 0 to 14</text>
+<rect x="509" y="54" width="48" height="150" rx="6" fill="#FFA700" opacity="0.35" stroke="#FFA700" stroke-width="3"/>
+<rect x="845" y="60" width="48" height="138" fill="#f4f5f9"/>
+<line x1="20" y1="106" x2="893" y2="106" stroke="#c9ced8"/>
+<text x="20" y="89" font-size="14" font-weight="700">n (the number)</text>
+<text x="149.0" y="90" font-size="17" font-weight="700" fill="#16181d" text-anchor="middle">0</text>
+<text x="197.0" y="90" font-size="17" font-weight="700" fill="#16181d" text-anchor="middle">1</text>
+<text x="245.0" y="90" font-size="17" font-weight="700" fill="#16181d" text-anchor="middle">2</text>
+<text x="293.0" y="90" font-size="17" font-weight="700" fill="#16181d" text-anchor="middle">3</text>
+<text x="341.0" y="90" font-size="17" font-weight="700" fill="#16181d" text-anchor="middle">4</text>
+<text x="389.0" y="90" font-size="17" font-weight="700" fill="#16181d" text-anchor="middle">5</text>
+<text x="437.0" y="90" font-size="17" font-weight="700" fill="#16181d" text-anchor="middle">6</text>
+<text x="485.0" y="90" font-size="17" font-weight="700" fill="#16181d" text-anchor="middle">7</text>
+<text x="533.0" y="90" font-size="17" font-weight="700" fill="#16181d" text-anchor="middle">8</text>
+<text x="581.0" y="90" font-size="17" font-weight="700" fill="#16181d" text-anchor="middle">9</text>
+<text x="629.0" y="90" font-size="17" font-weight="700" fill="#16181d" text-anchor="middle">10</text>
+<text x="677.0" y="90" font-size="17" font-weight="700" fill="#16181d" text-anchor="middle">11</text>
+<text x="725.0" y="90" font-size="17" font-weight="700" fill="#16181d" text-anchor="middle">12</text>
+<text x="773.0" y="90" font-size="17" font-weight="700" fill="#16181d" text-anchor="middle">13</text>
+<text x="821.0" y="90" font-size="17" font-weight="700" fill="#16181d" text-anchor="middle">14</text>
+<text x="869.0" y="90" font-size="17" font-weight="700" fill="#9aa0ab" text-anchor="middle">15</text>
+<line x1="20" y1="152" x2="893" y2="152" stroke="#c9ced8"/>
+<text x="20" y="135" font-size="14" font-weight="700">remainder ÷ 3</text>
+<text x="149.0" y="136" font-size="17" font-weight="400" fill="#000AB5" text-anchor="middle">0</text>
+<text x="197.0" y="136" font-size="17" font-weight="400" fill="#000AB5" text-anchor="middle">1</text>
+<text x="245.0" y="136" font-size="17" font-weight="400" fill="#000AB5" text-anchor="middle">2</text>
+<text x="293.0" y="136" font-size="17" font-weight="400" fill="#000AB5" text-anchor="middle">0</text>
+<text x="341.0" y="136" font-size="17" font-weight="400" fill="#000AB5" text-anchor="middle">1</text>
+<text x="389.0" y="136" font-size="17" font-weight="400" fill="#000AB5" text-anchor="middle">2</text>
+<text x="437.0" y="136" font-size="17" font-weight="400" fill="#000AB5" text-anchor="middle">0</text>
+<text x="485.0" y="136" font-size="17" font-weight="400" fill="#000AB5" text-anchor="middle">1</text>
+<text x="533.0" y="136" font-size="17" font-weight="700" fill="#000AB5" text-anchor="middle">2</text>
+<text x="581.0" y="136" font-size="17" font-weight="400" fill="#000AB5" text-anchor="middle">0</text>
+<text x="629.0" y="136" font-size="17" font-weight="400" fill="#000AB5" text-anchor="middle">1</text>
+<text x="677.0" y="136" font-size="17" font-weight="400" fill="#000AB5" text-anchor="middle">2</text>
+<text x="725.0" y="136" font-size="17" font-weight="400" fill="#000AB5" text-anchor="middle">0</text>
+<text x="773.0" y="136" font-size="17" font-weight="400" fill="#000AB5" text-anchor="middle">1</text>
+<text x="821.0" y="136" font-size="17" font-weight="400" fill="#000AB5" text-anchor="middle">2</text>
+<text x="869.0" y="136" font-size="17" font-weight="400" fill="#9aa0ab" text-anchor="middle">0</text>
+<line x1="20" y1="198" x2="893" y2="198" stroke="#c9ced8"/>
+<text x="20" y="181" font-size="14" font-weight="700">remainder ÷ 5</text>
+<text x="149.0" y="182" font-size="17" font-weight="400" fill="#000AB5" text-anchor="middle">0</text>
+<text x="197.0" y="182" font-size="17" font-weight="400" fill="#000AB5" text-anchor="middle">1</text>
+<text x="245.0" y="182" font-size="17" font-weight="400" fill="#000AB5" text-anchor="middle">2</text>
+<text x="293.0" y="182" font-size="17" font-weight="400" fill="#000AB5" text-anchor="middle">3</text>
+<text x="341.0" y="182" font-size="17" font-weight="400" fill="#000AB5" text-anchor="middle">4</text>
+<text x="389.0" y="182" font-size="17" font-weight="400" fill="#000AB5" text-anchor="middle">0</text>
+<text x="437.0" y="182" font-size="17" font-weight="400" fill="#000AB5" text-anchor="middle">1</text>
+<text x="485.0" y="182" font-size="17" font-weight="400" fill="#000AB5" text-anchor="middle">2</text>
+<text x="533.0" y="182" font-size="17" font-weight="700" fill="#000AB5" text-anchor="middle">3</text>
+<text x="581.0" y="182" font-size="17" font-weight="400" fill="#000AB5" text-anchor="middle">4</text>
+<text x="629.0" y="182" font-size="17" font-weight="400" fill="#000AB5" text-anchor="middle">0</text>
+<text x="677.0" y="182" font-size="17" font-weight="400" fill="#000AB5" text-anchor="middle">1</text>
+<text x="725.0" y="182" font-size="17" font-weight="400" fill="#000AB5" text-anchor="middle">2</text>
+<text x="773.0" y="182" font-size="17" font-weight="400" fill="#000AB5" text-anchor="middle">3</text>
+<text x="821.0" y="182" font-size="17" font-weight="400" fill="#000AB5" text-anchor="middle">4</text>
+<text x="869.0" y="182" font-size="17" font-weight="400" fill="#9aa0ab" text-anchor="middle">0</text>
+<line x1="125" y1="60" x2="125" y2="198" stroke="#c9ced8"/>
+<line x1="845" y1="60" x2="845" y2="198" stroke="#16181d" stroke-dasharray="4 3"/>
+<text x="533.0" y="226" font-size="14" font-weight="700" text-anchor="middle">8 is the only n</text>
+<text x="533.0" y="244" font-size="14" text-anchor="middle">with remainders (2, 3)</text>
+<text x="884" y="226" font-size="13" text-anchor="end">15 = (0, 0)</text>
+<text x="884" y="244" font-size="13" text-anchor="end">same as 0:</text>
+<text x="884" y="262" font-size="13" text-anchor="end">it repeats</text>
+<rect x="20" y="288" width="860" height="92" rx="8" fill="#f4f5f9" stroke="#c9ced8"/>
+<text x="40" y="314" font-size="14">The ÷3 row repeats every 3, the ÷5 row every 5. Together they line up again only at 3 x 5 = 15.</text>
+<text x="40" y="338" font-size="14">So within 0 to 14 the two remainders work like a unique ID for n. On a turret, "n" is how many ring</text>
+<text x="40" y="362" font-size="14">teeth have gone by, and the two encoders are the two remainders (by 19 and by 23 instead of 3 and 5).</text>
+</g></svg>

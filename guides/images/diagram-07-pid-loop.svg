@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 860 310" width="860" height="310" font-family="Inter, Arial, sans-serif" fill="#16181d">
+  <defs>
+    <marker id="ah" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#000AB5"/></marker>
+    <marker id="ahi" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#16181d"/></marker>
+    <marker id="ahg" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#c07d00"/></marker>
+  </defs>
+  <rect width="860" height="310" fill="#fff"/>
+<text x="430" y="30" font-size="19" text-anchor="middle" font-weight="700">The closed loop: measure, compare, correct, repeat</text>
+  <text x="20" y="115" font-size="15" text-anchor="start" font-weight="700">Setpoint</text>
+  <text x="20" y="134" font-size="13" text-anchor="start" fill="#5a6070">where you want to be</text>
+  <polyline points="100,110 154,110" fill="none" stroke="#000AB5" stroke-width="2" marker-end="url(#ah)"/>
+  <circle cx="170" cy="110" r="16" fill="#fff" stroke="#000AB5" stroke-width="2"/><line x1="162" y1="110" x2="178" y2="110" stroke="#000AB5" stroke-width="2"/><line x1="170" y1="102" x2="170" y2="118" stroke="#000AB5" stroke-width="2"/>
+  <text x="146" y="88" font-size="16" text-anchor="start" font-weight="700">+</text>
+  <text x="178" y="150" font-size="18" text-anchor="start" font-weight="700">−</text>
+  <polyline points="186,110 262,110" fill="none" stroke="#000AB5" stroke-width="2" marker-end="url(#ah)"/>
+  <text x="224" y="100" font-size="14" text-anchor="middle" font-weight="700">error</text>
+  <rect x="266" y="72" width="170" height="76" rx="8" fill="#fff8e8" stroke="#c07d00" stroke-width="2"/>
+  <text x="351" y="102" font-size="18" text-anchor="middle" font-weight="700">P + I + D</text>
+  <text x="351" y="126" font-size="13" text-anchor="middle">kP·error + kI·sum</text>
+  <text x="351" y="141" font-size="13" text-anchor="middle">+ kD·rate</text>
+  <polyline points="436,110 518,110" fill="none" stroke="#000AB5" stroke-width="2" marker-end="url(#ah)"/>
+  <text x="477" y="88" font-size="14" text-anchor="middle" font-weight="700">output</text>
+  <text x="477" y="102" font-size="13" text-anchor="middle">(volts)</text>
+  <rect x="522" y="80" width="120" height="60" rx="8" fill="#f4f5f9" stroke="#000AB5" stroke-width="2"/>
+  <text x="582" y="115" font-size="16" text-anchor="middle" font-weight="700">Motor</text>
+  <polyline points="642,110 692,110" fill="none" stroke="#000AB5" stroke-width="2" marker-end="url(#ah)"/>
+  <rect x="696" y="80" width="150" height="60" rx="8" fill="#f4f5f9" stroke="#000AB5" stroke-width="2"/>
+  <text x="771" y="115" font-size="16" text-anchor="middle" font-weight="700">Mechanism</text>
+  <polyline points="771,140 771,235 656,235" fill="none" stroke="#000AB5" stroke-width="2" marker-end="url(#ah)"/>
+  <rect x="500" y="209" width="152" height="52" rx="8" fill="#fff" stroke="#000AB5" stroke-width="2"/>
+  <text x="576" y="232" font-size="15" text-anchor="middle" font-weight="700">Sensor</text>
+  <text x="576" y="250" font-size="13" text-anchor="middle">(built-in encoder)</text>
+  <polyline points="500,235 170,235 170,130" fill="none" stroke="#000AB5" stroke-width="2" marker-end="url(#ah)"/>
+  <text x="335" y="225" font-size="14" text-anchor="middle">measurement: where you actually are</text>
+  <text x="430" y="290" font-size="13" text-anchor="middle" fill="#5a6070">error = setpoint − measurement. The loop runs again and again (1000 times a second on a Talon).</text>
+</svg>

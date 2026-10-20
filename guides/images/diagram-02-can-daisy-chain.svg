@@ -1,0 +1,62 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 880 430" width="880" height="430" font-family="Inter, Arial, sans-serif" fill="#16181d">
+  <rect width="880" height="430" fill="#fff"/>
+  <text x="440" y="30" text-anchor="middle" font-size="20" font-weight="700">CAN is one line, with a 120 Ω terminator at each end</text>
+
+  <!-- RIGHT -->
+  <text x="30" y="72" font-size="15" font-weight="700" fill="#000AB5">RIGHT: a single daisy chain</text>
+  <!-- wires -->
+  <line x1="130" y1="118" x2="770" y2="118" stroke="#FFA700" stroke-width="5"/>
+  <line x1="130" y1="132" x2="770" y2="132" stroke="#2e7d32" stroke-width="5" stroke-dasharray="10 4"/>
+  <!-- devices -->
+  <g font-size="14" font-weight="700" text-anchor="middle">
+    <rect x="30" y="95" width="110" height="60" rx="8" fill="#000AB5"/><text x="85" y="122" fill="#fff">roboRIO</text><text x="85" y="141" font-size="13" font-weight="400" fill="#fff">or CANivore</text>
+    <rect x="200" y="100" width="90" height="50" rx="8" fill="#f4f5f9" stroke="#000AB5" stroke-width="2"/><text x="245" y="130">Talon</text>
+    <rect x="345" y="100" width="90" height="50" rx="8" fill="#f4f5f9" stroke="#000AB5" stroke-width="2"/><text x="390" y="130">Talon</text>
+    <rect x="490" y="100" width="110" height="50" rx="8" fill="#f4f5f9" stroke="#000AB5" stroke-width="2"/><text x="545" y="130">CANcoder</text>
+    <rect x="655" y="100" width="110" height="50" rx="8" fill="#f4f5f9" stroke="#000AB5" stroke-width="2"/><text x="710" y="130">last device</text>
+  </g>
+  <!-- terminators -->
+  <g font-size="13" text-anchor="middle">
+    <rect x="45" y="165" width="80" height="26" rx="13" fill="#FFA700"/><text x="85" y="183" font-weight="700">120 Ω</text>
+    <text x="85" y="210">roboRIO: built in</text>
+    <text x="85" y="227">CANivore: toggle</text>
+    <text x="85" y="244">in Tuner X</text>
+    <rect x="785" y="111" width="80" height="28" rx="14" fill="#FFA700"/><text x="825" y="130" font-weight="700">120 Ω</text>
+    <text x="805" y="170">plug, or</text>
+    <text x="805" y="187">the device's</text>
+    <text x="805" y="204">switch ON</text>
+  </g>
+  <line x1="770" y1="125" x2="785" y2="125" stroke="#16181d" stroke-width="3"/>
+  <!-- legend -->
+  <line x1="230" y1="190" x2="270" y2="190" stroke="#FFA700" stroke-width="5"/>
+  <text x="278" y="195" font-size="13">yellow = CAN High</text>
+  <line x1="420" y1="190" x2="460" y2="190" stroke="#2e7d32" stroke-width="5" stroke-dasharray="10 4"/>
+  <text x="468" y="195" font-size="13">green = CAN Low</text>
+  <text x="230" y="220" font-size="13">Yellow always goes to yellow, green to green.</text>
+
+  <!-- WRONG -->
+  <text x="30" y="290" font-size="15" font-weight="700" fill="#b00020">WRONG: a "Y" split or long side branch</text>
+  <line x1="130" y1="330" x2="440" y2="330" stroke="#16181d" stroke-width="4"/>
+  <line x1="300" y1="330" x2="300" y2="390" stroke="#16181d" stroke-width="4"/>
+  <g font-size="14" font-weight="700" text-anchor="middle">
+    <rect x="30" y="305" width="100" height="50" rx="8" fill="#c9ced8"/><text x="80" y="335">controller</text>
+    <rect x="200" y="310" width="70" height="40" rx="8" fill="#f4f5f9" stroke="#16181d"/><text x="235" y="335">dev</text>
+    <rect x="440" y="310" width="70" height="40" rx="8" fill="#f4f5f9" stroke="#16181d"/><text x="475" y="335">dev</text>
+    <rect x="265" y="385" width="70" height="35" rx="8" fill="#f4f5f9" stroke="#16181d"/><text x="300" y="408">dev</text>
+  </g>
+  <g stroke="#b00020" stroke-width="5" stroke-linecap="round">
+    <line x1="285" y1="345" x2="315" y2="375"/><line x1="315" y1="345" x2="285" y2="375"/>
+  </g>
+  <text x="350" y="385" font-size="13">works on the bench,</text><text x="350" y="402" font-size="13">flaky on the robot</text>
+
+  <!-- METER -->
+  <rect x="570" y="265" width="295" height="155" rx="10" fill="#f4f5f9" stroke="#c9ced8"/>
+  <text x="585" y="290" font-size="15" font-weight="700">Meter test (power OFF)</text>
+  <text x="585" y="310" font-size="13">Measure CAN High to CAN Low:</text>
+  <g font-size="13">
+    <text x="585" y="335" font-weight="700" fill="#000AB5">about 60 Ω</text><text x="700" y="335">good: two terminators</text>
+    <text x="585" y="356" font-weight="700">about 120 Ω</text><text x="700" y="356">one end missing</text>
+    <text x="585" y="377" font-weight="700">about 40 Ω</text><text x="700" y="377">one too many</text>
+    <text x="585" y="398" font-weight="700">open</text><text x="700" y="398">broken wire or connector</text>
+  </g>
+</svg>

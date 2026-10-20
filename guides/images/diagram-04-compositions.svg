@@ -1,0 +1,62 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 860 540" font-family="Inter, Arial, sans-serif">
+  <defs>
+    <pattern id="hatch" width="8" height="8" patternUnits="userSpaceOnUse" patternTransform="rotate(45)">
+      <rect width="8" height="8" fill="#ffffff"/>
+      <line x1="0" y1="0" x2="0" y2="8" stroke="#c9ced8" stroke-width="4"/>
+    </pattern>
+  </defs>
+  <rect width="860" height="540" fill="#ffffff"/>
+  <text x="430" y="30" text-anchor="middle" font-size="20" font-weight="700" fill="#16181d">When does a group end?  (a = 2 s, b = 3 s by themselves)</text>
+
+  <!-- time axis -->
+  <g font-size="13" fill="#16181d">
+    <line x1="230" y1="486" x2="790" y2="486" stroke="#16181d" stroke-width="1.5"/>
+    <line x1="230" y1="481" x2="230" y2="491" stroke="#16181d"/><text x="230" y="508" text-anchor="middle">0 s</text>
+    <line x1="342" y1="481" x2="342" y2="491" stroke="#16181d"/><text x="342" y="508" text-anchor="middle">1</text>
+    <line x1="454" y1="481" x2="454" y2="491" stroke="#16181d"/><text x="454" y="508" text-anchor="middle">2</text>
+    <line x1="566" y1="481" x2="566" y2="491" stroke="#16181d"/><text x="566" y="508" text-anchor="middle">3</text>
+    <line x1="678" y1="481" x2="678" y2="491" stroke="#16181d"/><text x="678" y="508" text-anchor="middle">4</text>
+    <line x1="790" y1="481" x2="790" y2="491" stroke="#16181d"/><text x="790" y="508" text-anchor="middle">5 s</text>
+    <text x="510" y="530" text-anchor="middle" font-weight="700">time</text>
+  </g>
+
+  <!-- Row 1: sequence -->
+  <text x="20" y="80" font-size="16" font-weight="700" fill="#16181d">Sequence</text>
+  <text x="20" y="100" font-size="13" fill="#16181d">a.andThen(b)</text>
+  <rect x="230" y="66" width="224" height="34" rx="5" fill="#000AB5"/><text x="342" y="88" text-anchor="middle" font-size="15" font-weight="700" fill="#fff">a</text>
+  <rect x="454" y="66" width="336" height="34" rx="5" fill="#000AB5" stroke="#fff" stroke-width="2"/><text x="622" y="88" text-anchor="middle" font-size="15" font-weight="700" fill="#fff">b</text>
+  <line x1="790" y1="54" x2="790" y2="112" stroke="#FFA700" stroke-width="4"/>
+  <text x="800" y="88" font-size="13" font-weight="700" fill="#16181d">end</text>
+  <text x="230" y="124" font-size="13" fill="#16181d">one after the other: ends when the last one ends (5 s)</text>
+
+  <!-- Row 2: parallel -->
+  <text x="20" y="175" font-size="16" font-weight="700" fill="#16181d">Parallel</text>
+  <text x="20" y="195" font-size="13" fill="#16181d">a.alongWith(b)</text>
+  <rect x="230" y="156" width="224" height="28" rx="5" fill="#000AB5"/><text x="342" y="175" text-anchor="middle" font-size="14" font-weight="700" fill="#fff">a</text>
+  <rect x="230" y="188" width="336" height="28" rx="5" fill="#000AB5"/><text x="398" y="207" text-anchor="middle" font-size="14" font-weight="700" fill="#fff">b</text>
+  <line x1="566" y1="146" x2="566" y2="226" stroke="#FFA700" stroke-width="4"/>
+  <text x="576" y="190" font-size="13" font-weight="700" fill="#16181d">end</text>
+  <text x="230" y="240" font-size="13" fill="#16181d">same time: ends when ALL have ended (3 s)</text>
+
+  <!-- Row 3: race -->
+  <text x="20" y="285" font-size="16" font-weight="700" fill="#16181d">Race</text>
+  <text x="20" y="305" font-size="13" fill="#16181d">a.raceWith(b)</text>
+  <rect x="230" y="266" width="224" height="28" rx="5" fill="#000AB5"/><text x="342" y="285" text-anchor="middle" font-size="14" font-weight="700" fill="#fff">a</text>
+  <rect x="230" y="298" width="224" height="28" rx="5" fill="#000AB5"/><text x="342" y="317" text-anchor="middle" font-size="14" font-weight="700" fill="#fff">b</text>
+  <rect x="454" y="298" width="112" height="28" rx="5" fill="url(#hatch)" stroke="#c9ced8" stroke-width="1.5" stroke-dasharray="5 3"/>
+  <text x="576" y="317" font-size="13" fill="#16181d">b cancelled: end(true)</text>
+  <line x1="454" y1="256" x2="454" y2="336" stroke="#FFA700" stroke-width="4"/>
+  <text x="464" y="285" font-size="13" font-weight="700" fill="#16181d">end</text>
+  <text x="230" y="350" font-size="13" fill="#16181d">same time: ends when ANY one ends (2 s), the rest are cancelled</text>
+
+  <!-- Row 4: deadline -->
+  <text x="20" y="395" font-size="16" font-weight="700" fill="#16181d">Deadline</text>
+  <text x="20" y="415" font-size="13" fill="#16181d">a.deadlineFor(b)</text>
+  <rect x="230" y="376" width="224" height="28" rx="5" fill="#FFA700" stroke="#16181d" stroke-width="1.5"/><text x="342" y="395" text-anchor="middle" font-size="14" font-weight="700" fill="#16181d">a (the deadline)</text>
+  <rect x="230" y="408" width="224" height="28" rx="5" fill="#000AB5"/><text x="342" y="427" text-anchor="middle" font-size="14" font-weight="700" fill="#fff">b</text>
+  <rect x="454" y="408" width="112" height="28" rx="5" fill="url(#hatch)" stroke="#c9ced8" stroke-width="1.5" stroke-dasharray="5 3"/>
+  <text x="576" y="427" font-size="13" fill="#16181d">b cancelled: end(true)</text>
+  <line x1="454" y1="366" x2="454" y2="446" stroke="#FFA700" stroke-width="4"/>
+  <text x="464" y="395" font-size="13" font-weight="700" fill="#16181d">end</text>
+  <text x="230" y="460" font-size="13" fill="#16181d">ends when the deadline (a) ends; the others are cancelled (b ending first would not end it)</text>
+</svg>

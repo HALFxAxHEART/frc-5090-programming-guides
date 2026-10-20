@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 860 340" width="860" height="340" font-family="Inter, Arial, sans-serif">
+  <rect width="860" height="340" fill="#ffffff"/>
+  <text x="430" y="30" text-anchor="middle" font-size="20" font-weight="700" fill="#16181d">The same elevator, two ways to organize it</text>
+
+  <rect x="20" y="52" width="330" height="270" rx="12" fill="#f4f5f9" stroke="#c9ced8" stroke-width="2"/>
+  <text x="185" y="80" text-anchor="middle" font-size="16" font-weight="700" fill="#000AB5">Our style (5090 today)</text>
+  <rect x="45" y="100" width="280" height="60" rx="8" fill="#000AB5"/>
+  <text x="185" y="126" text-anchor="middle" font-size="15" font-weight="700" fill="#ffffff">Elevator.java</text>
+  <text x="185" y="146" text-anchor="middle" font-size="13" fill="#ffffff">logic + TalonFX calls together</text>
+  <text x="45" y="196" font-size="13" fill="#16181d">Logging: RobotLog + SmartDashboard keys</text>
+  <text x="45" y="216" font-size="13" fill="#16181d">+ CTRE SignalLogger (.hoot)</text>
+  <text x="45" y="246" font-size="13" fill="#16181d">Sim: simulationPeriodic() in the</text>
+  <text x="45" y="266" font-size="13" fill="#16181d">same file (guide 20)</text>
+  <text x="185" y="304" text-anchor="middle" font-size="14" font-weight="700" fill="#16181d">1 file</text>
+
+  <rect x="380" y="52" width="460" height="270" rx="12" fill="#ffffff" stroke="#000AB5" stroke-width="2.5"/>
+  <text x="610" y="80" text-anchor="middle" font-size="16" font-weight="700" fill="#000AB5">AdvantageKit style (e.g. 6328)</text>
+  <rect x="400" y="98" width="200" height="56" rx="8" fill="#000AB5"/>
+  <text x="500" y="122" text-anchor="middle" font-size="14" font-weight="700" fill="#ffffff">Elevator.java</text>
+  <text x="500" y="141" text-anchor="middle" font-size="13" fill="#ffffff">logic only</text>
+  <rect x="620" y="98" width="200" height="56" rx="8" fill="#FFA700"/>
+  <text x="720" y="122" text-anchor="middle" font-size="14" font-weight="700" fill="#16181d">ElevatorIO.java</text>
+  <text x="720" y="141" text-anchor="middle" font-size="13" fill="#16181d">interface + @AutoLog inputs</text>
+  <rect x="400" y="168" width="200" height="56" rx="8" fill="#ffffff" stroke="#000AB5" stroke-width="2"/>
+  <text x="500" y="192" text-anchor="middle" font-size="14" font-weight="700" fill="#16181d">ElevatorIOTalonFX.java</text>
+  <text x="500" y="211" text-anchor="middle" font-size="13" fill="#16181d">real hardware</text>
+  <rect x="620" y="168" width="200" height="56" rx="8" fill="#ffffff" stroke="#000AB5" stroke-width="2"/>
+  <text x="720" y="192" text-anchor="middle" font-size="14" font-weight="700" fill="#16181d">ElevatorIOSim.java</text>
+  <text x="720" y="211" text-anchor="middle" font-size="13" fill="#16181d">physics model</text>
+  <rect x="400" y="238" width="420" height="44" rx="8" fill="#f4f5f9" stroke="#c9ced8" stroke-width="2" stroke-dasharray="6 4"/>
+  <text x="610" y="265" text-anchor="middle" font-size="13" fill="#16181d">ElevatorIOInputsAutoLogged (generated at build time)</text>
+  <text x="610" y="306" text-anchor="middle" font-size="14" font-weight="700" fill="#16181d">4 files you write, per mechanism</text>
+</svg>

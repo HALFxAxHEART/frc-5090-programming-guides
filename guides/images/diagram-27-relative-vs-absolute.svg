@@ -1,0 +1,77 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 520" width="900" height="520">
+<rect width="900" height="520" fill="#ffffff"/>
+<defs>
+  <marker id="arr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+    <path d="M0,0 L10,5 L0,10 z" fill="#000AB5"/>
+  </marker>
+</defs>
+<g font-family="Inter, Arial, sans-serif" fill="#16181d">
+<text x="450" y="30" font-size="19" font-weight="700" text-anchor="middle">Same arm, same moment: what each encoder says</text>
+<text x="450" y="52" font-size="14" text-anchor="middle">Someone left the arm raised 40° when they turned the robot on.</text>
+
+<!-- column headers -->
+<rect x="20" y="70" width="420" height="40" rx="6" fill="#f4f5f9" stroke="#c9ced8"/>
+<text x="230" y="96" font-size="16" font-weight="700" text-anchor="middle">Relative (motor's built-in encoder)</text>
+<rect x="460" y="70" width="420" height="40" rx="6" fill="#f4f5f9" stroke="#c9ced8"/>
+<text x="670" y="96" font-size="16" font-weight="700" text-anchor="middle">Absolute (CANcoder on the arm shaft)</text>
+
+<!-- row labels -->
+<text x="20" y="140" font-size="14" font-weight="700">1. Power on</text>
+<text x="20" y="305" font-size="14" font-weight="700">2. Arm moves up 10°</text>
+
+<!-- ===== Row 1, relative ===== -->
+<!-- pivot + arm at 40 deg: length 110, end = (110+110*cos40, 230-110*sin40) = (194.3, 159.3) -->
+<line x1="80" y1="230" x2="210" y2="230" stroke="#c9ced8" stroke-width="2" stroke-dasharray="5 4"/>
+<line x1="110" y1="230" x2="194.3" y2="159.3" stroke="#000AB5" stroke-width="10" stroke-linecap="round"/>
+<circle cx="110" cy="230" r="9" fill="#16181d"/>
+<path d="M160,230 A50,50 0 0 0 148.3,197.9" fill="none" stroke="#FFA700" stroke-width="3"/>
+<text x="166" y="214" font-size="14" font-weight="700">40°</text>
+<rect x="240" y="160" width="190" height="80" rx="8" fill="#ffffff" stroke="#16181d" stroke-width="1.5"/>
+<text x="335" y="183" font-size="13" text-anchor="middle">Actual angle: 40°</text>
+<text x="335" y="210" font-size="17" font-weight="700" text-anchor="middle" fill="#b00020">Encoder says: 0°</text>
+<text x="335" y="230" font-size="13" text-anchor="middle">(it starts counting here)</text>
+
+<!-- ===== Row 1, absolute ===== -->
+<line x1="520" y1="230" x2="650" y2="230" stroke="#c9ced8" stroke-width="2" stroke-dasharray="5 4"/>
+<line x1="550" y1="230" x2="634.3" y2="159.3" stroke="#000AB5" stroke-width="10" stroke-linecap="round"/>
+<circle cx="550" cy="230" r="9" fill="#16181d"/>
+<path d="M600,230 A50,50 0 0 0 588.3,197.9" fill="none" stroke="#FFA700" stroke-width="3"/>
+<text x="606" y="214" font-size="14" font-weight="700">40°</text>
+<rect x="680" y="160" width="190" height="80" rx="8" fill="#ffffff" stroke="#16181d" stroke-width="1.5"/>
+<text x="775" y="183" font-size="13" text-anchor="middle">Actual angle: 40°</text>
+<text x="775" y="210" font-size="17" font-weight="700" text-anchor="middle" fill="#000AB5">Encoder says: 40°</text>
+<text x="775" y="230" font-size="13" text-anchor="middle">(reads the magnet's angle)</text>
+
+<!-- ===== Row 2, relative: 50 deg end = (110+110cos50, 395-110 sin50) = (180.7, 310.7) ===== -->
+<line x1="80" y1="395" x2="210" y2="395" stroke="#c9ced8" stroke-width="2" stroke-dasharray="5 4"/>
+<line x1="110" y1="395" x2="180.7" y2="310.7" stroke="#000AB5" stroke-width="10" stroke-linecap="round"/>
+<circle cx="110" cy="395" r="9" fill="#16181d"/>
+<path d="M160,395 A50,50 0 0 0 142.1,356.7" fill="none" stroke="#FFA700" stroke-width="3"/>
+<text x="164" y="372" font-size="14" font-weight="700">50°</text>
+<rect x="240" y="325" width="190" height="80" rx="8" fill="#ffffff" stroke="#16181d" stroke-width="1.5"/>
+<text x="335" y="348" font-size="13" text-anchor="middle">Actual angle: 50°</text>
+<text x="335" y="375" font-size="17" font-weight="700" text-anchor="middle" fill="#b00020">Encoder says: 10°</text>
+<text x="335" y="395" font-size="13" text-anchor="middle">(counted the change perfectly)</text>
+
+<!-- ===== Row 2, absolute ===== -->
+<line x1="520" y1="395" x2="650" y2="395" stroke="#c9ced8" stroke-width="2" stroke-dasharray="5 4"/>
+<line x1="550" y1="395" x2="620.7" y2="310.7" stroke="#000AB5" stroke-width="10" stroke-linecap="round"/>
+<circle cx="550" cy="395" r="9" fill="#16181d"/>
+<path d="M600,395 A50,50 0 0 0 582.1,356.7" fill="none" stroke="#FFA700" stroke-width="3"/>
+<text x="604" y="372" font-size="14" font-weight="700">50°</text>
+<rect x="680" y="325" width="190" height="80" rx="8" fill="#ffffff" stroke="#16181d" stroke-width="1.5"/>
+<text x="775" y="348" font-size="13" text-anchor="middle">Actual angle: 50°</text>
+<text x="775" y="375" font-size="17" font-weight="700" text-anchor="middle" fill="#000AB5">Encoder says: 50°</text>
+<text x="775" y="395" font-size="13" text-anchor="middle">(still the real angle)</text>
+
+<!-- bottom notes -->
+<rect x="20" y="430" width="420" height="74" rx="6" fill="#f4f5f9"/>
+<text x="34" y="454" font-size="14">Knows <tspan font-weight="700">how far it moved</tspan>, very precisely.</text>
+<text x="34" y="474" font-size="14">Does not know <tspan font-weight="700">where it is</tspan>. Off by 40°</text>
+<text x="34" y="494" font-size="14">for the whole match unless something re-zeros it.</text>
+<rect x="460" y="430" width="420" height="74" rx="6" fill="#f4f5f9"/>
+<text x="474" y="454" font-size="14">Knows <tspan font-weight="700">where it is</tspan> the instant it powers on.</text>
+<text x="474" y="474" font-size="14">Catch: only within one turn of the sensor.</text>
+<text x="474" y="494" font-size="14">400° and 40° look the same to it.</text>
+</g>
+</svg>

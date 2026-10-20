@@ -1,0 +1,55 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 860 490" width="860" height="490" font-family="Inter, Arial, sans-serif">
+<rect width="860" height="490" fill="#ffffff"/>
+<text x="430.0" y="34" text-anchor="middle" font-size="20" font-weight="700" fill="#16181d">Transition table: write this on paper before any code</text>
+<rect x="20" y="60" width="820" height="40" fill="#000AB5"/>
+<text x="30" y="86" font-size="15" font-weight="700" fill="#ffffff">From</text>
+<text x="140" y="86" font-size="15" font-weight="700" fill="#ffffff">To</text>
+<text x="290" y="86" font-size="15" font-weight="700" fill="#ffffff">Guard</text>
+<text x="440" y="86" font-size="15" font-weight="700" fill="#ffffff">Safe path the superstructure takes</text>
+<rect x="20" y="100" width="820" height="40" fill="#ffffff" stroke="#c9ced8" stroke-width="1"/>
+<text x="30" y="126" font-size="14" font-weight="700" fill="#16181d">STOW</text>
+<text x="140" y="126" font-size="14" font-weight="700" fill="#16181d">L4</text>
+<text x="290" y="126" font-size="14" fill="#16181d">has coral</text>
+<text x="440" y="126" font-size="14" fill="#16181d">tuck arm → elevator up 52 in → arm + wrist out</text>
+<rect x="20" y="140" width="820" height="40" fill="#f4f5f9" stroke="#c9ced8" stroke-width="1"/>
+<text x="30" y="166" font-size="14" font-weight="700" fill="#16181d">L2</text>
+<text x="140" y="166" font-size="14" font-weight="700" fill="#16181d">L3</text>
+<text x="290" y="166" font-size="14" fill="#16181d">has coral</text>
+<text x="440" y="166" font-size="14" fill="#16181d">tuck arm → elevator up → arm + wrist out</text>
+<rect x="20" y="180" width="820" height="40" fill="#ffffff" stroke="#c9ced8" stroke-width="1"/>
+<text x="30" y="206" font-size="14" font-weight="700" fill="#16181d">L4</text>
+<text x="140" y="206" font-size="14" font-weight="700" fill="#16181d">STOW</text>
+<text x="290" y="206" font-size="14" fill="#16181d">none</text>
+<text x="440" y="206" font-size="14" fill="#16181d">tuck arm → elevator down → wrist stow</text>
+<rect x="20" y="220" width="820" height="40" fill="#f4f5f9" stroke="#c9ced8" stroke-width="1"/>
+<text x="30" y="246" font-size="14" font-weight="700" fill="#16181d">STOW</text>
+<text x="140" y="246" font-size="14" font-weight="700" fill="#16181d">CORAL_STATION</text>
+<text x="290" y="246" font-size="14" fill="#16181d">claw empty</text>
+<text x="440" y="246" font-size="14" fill="#16181d">elevator barely moves: arm + wrist move together</text>
+<rect x="20" y="260" width="820" height="40" fill="#ffffff" stroke="#c9ced8" stroke-width="1"/>
+<text x="30" y="286" font-size="14" font-weight="700" fill="#16181d">L4</text>
+<text x="140" y="286" font-size="14" font-weight="700" fill="#16181d">CORAL_STATION</text>
+<text x="290" y="286" font-size="14" fill="#16181d">claw empty</text>
+<text x="440" y="286" font-size="14" fill="#16181d">tuck arm → elevator down → arm + wrist out</text>
+<rect x="20" y="300" width="820" height="40" fill="#f4f5f9" stroke="#c9ced8" stroke-width="1"/>
+<text x="30" y="326" font-size="14" font-weight="700" fill="#16181d">any</text>
+<text x="140" y="326" font-size="14" font-weight="700" fill="#16181d">ALGAE_HIGH</text>
+<text x="290" y="326" font-size="14" fill="#16181d">claw empty</text>
+<text x="440" y="326" font-size="14" fill="#16181d">tuck arm → elevator up → arm + wrist out</text>
+<rect x="20" y="340" width="820" height="40" fill="#FFA700" stroke="#c9ced8" stroke-width="1"/>
+<text x="30" y="366" font-size="14" font-weight="700" fill="#16181d">any</text>
+<text x="140" y="366" font-size="14" font-weight="700" fill="#16181d">L1–L4</text>
+<text x="290" y="366" font-size="14" font-weight="700" fill="#16181d">holding algae</text>
+<text x="440" y="366" font-size="14" font-weight="700" fill="#16181d">REFUSED: stay put, log it, rumble the operator</text>
+<rect x="20" y="380" width="820" height="40" fill="#f4f5f9" stroke="#c9ced8" stroke-width="1"/>
+<text x="30" y="406" font-size="14" font-weight="700" fill="#16181d">L3</text>
+<text x="140" y="406" font-size="14" font-weight="700" fill="#16181d">L3</text>
+<text x="290" y="406" font-size="14" fill="#16181d">—</text>
+<text x="440" y="406" font-size="14" fill="#16181d">already there: nothing to do</text>
+<line x1="130" y1="60" x2="130" y2="420" stroke="#c9ced8" stroke-width="1"/>
+<line x1="280" y1="60" x2="280" y2="420" stroke="#c9ced8" stroke-width="1"/>
+<line x1="430" y1="60" x2="430" y2="420" stroke="#c9ced8" stroke-width="1"/>
+<rect x="20" y="60" width="820" height="360" fill="none" stroke="#000AB5" stroke-width="2"/>
+<text x="430.0" y="450" text-anchor="middle" font-size="14" fill="#16181d">Rule behind every row: the arm is tucked whenever the elevator has to travel more than 2 in.</text>
+<text x="430.0" y="472" text-anchor="middle" font-size="14" fill="#16181d">Each step finishes when isAtGoal() is true, or gives up after its timeout.</text>
+</svg>

@@ -1,0 +1,80 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 860 600" width="860" height="600" font-family="Inter, Arial, sans-serif">
+  <defs>
+    <marker id="a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#000AB5"/></marker>
+    <marker id="k" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#16181d"/></marker>
+  </defs>
+  <rect width="860" height="600" fill="#ffffff"/>
+  <text x="430" y="30" text-anchor="middle" font-size="20" font-weight="700" fill="#16181d">Superstructure states for a 2025-style coral + algae robot</text>
+
+  <!-- STOW -->
+  <rect x="350" y="250" width="160" height="74" rx="37" fill="#000AB5"/>
+  <text x="430" y="284" text-anchor="middle" font-size="19" font-weight="700" fill="#ffffff">STOW</text>
+  <text x="430" y="305" text-anchor="middle" font-size="13" fill="#ffffff">safe home</text>
+
+  <!-- CORAL_STATION -->
+  <rect x="30" y="70" width="220" height="70" rx="12" fill="#ffffff" stroke="#000AB5" stroke-width="2.5"/>
+  <text x="140" y="100" text-anchor="middle" font-size="16" font-weight="700" fill="#16181d">CORAL_STATION</text>
+  <text x="140" y="121" text-anchor="middle" font-size="13" fill="#16181d">intake from the chute</text>
+
+  <!-- ALGAE -->
+  <rect x="30" y="430" width="220" height="90" rx="12" fill="#ffffff" stroke="#000AB5" stroke-width="2.5"/>
+  <text x="140" y="458" text-anchor="middle" font-size="16" font-weight="700" fill="#16181d">ALGAE_LOW</text>
+  <text x="140" y="480" text-anchor="middle" font-size="16" font-weight="700" fill="#16181d">ALGAE_HIGH</text>
+  <text x="140" y="503" text-anchor="middle" font-size="13" fill="#16181d">pull algae off the reef</text>
+
+  <!-- L group -->
+  <rect x="610" y="56" width="225" height="270" rx="12" fill="#f4f5f9" stroke="#000AB5" stroke-width="2.5"/>
+  <text x="722" y="80" text-anchor="middle" font-size="15" font-weight="700" fill="#16181d">SCORE CORAL</text>
+  <rect x="640" y="92" width="165" height="38" rx="8" fill="#ffffff" stroke="#000AB5" stroke-width="2"/>
+  <text x="722" y="117" text-anchor="middle" font-size="15" font-weight="700" fill="#16181d">L4</text>
+  <rect x="640" y="138" width="165" height="38" rx="8" fill="#ffffff" stroke="#000AB5" stroke-width="2"/>
+  <text x="722" y="163" text-anchor="middle" font-size="15" font-weight="700" fill="#16181d">L3</text>
+  <rect x="640" y="184" width="165" height="38" rx="8" fill="#ffffff" stroke="#000AB5" stroke-width="2"/>
+  <text x="722" y="209" text-anchor="middle" font-size="15" font-weight="700" fill="#16181d">L2</text>
+  <rect x="640" y="230" width="165" height="38" rx="8" fill="#ffffff" stroke="#000AB5" stroke-width="2"/>
+  <text x="722" y="255" text-anchor="middle" font-size="15" font-weight="700" fill="#16181d">L1 (trough)</text>
+  <text x="722" y="292" text-anchor="middle" font-size="13" fill="#16181d">levels move directly;</text>
+  <text x="722" y="310" text-anchor="middle" font-size="13" fill="#16181d">arm tucks during the lift</text>
+
+  <!-- PROCESSOR -->
+  <rect x="610" y="440" width="225" height="70" rx="12" fill="#ffffff" stroke="#000AB5" stroke-width="2.5"/>
+  <text x="722" y="470" text-anchor="middle" font-size="16" font-weight="700" fill="#16181d">PROCESSOR</text>
+  <text x="722" y="491" text-anchor="middle" font-size="13" fill="#16181d">score algae low</text>
+
+  <!-- STOW <-> CORAL_STATION -->
+  <line x1="365" y1="256" x2="238" y2="146" stroke="#000AB5" stroke-width="2.5" marker-end="url(#a)"/>
+  <line x1="222" y1="148" x2="352" y2="268" stroke="#16181d" stroke-width="2" stroke-dasharray="7 5" marker-end="url(#k)"/>
+  <text x="300" y="168" font-size="13" fill="#000AB5" font-weight="700">Intake button</text>
+  <text x="300" y="185" font-size="13" fill="#000AB5">[claw empty]</text>
+  <text x="262" y="222" text-anchor="end" font-size="13" fill="#16181d" font-style="italic">CANrange:</text>
+  <text x="262" y="239" text-anchor="end" font-size="13" fill="#16181d" font-style="italic">coral in</text>
+
+  <!-- STOW <-> ALGAE -->
+  <line x1="360" y1="318" x2="240" y2="430" stroke="#000AB5" stroke-width="2.5" marker-end="url(#a)"/>
+  <line x1="226" y1="424" x2="350" y2="308" stroke="#16181d" stroke-width="2" stroke-dasharray="7 5" marker-end="url(#k)"/>
+  <text x="305" y="400" font-size="13" fill="#000AB5" font-weight="700">Algae button</text>
+  <text x="305" y="417" font-size="13" fill="#000AB5">[claw empty]</text>
+  <text x="268" y="345" text-anchor="end" font-size="13" fill="#16181d" font-style="italic">CANrange:</text>
+  <text x="268" y="362" text-anchor="end" font-size="13" fill="#16181d" font-style="italic">algae in</text>
+
+  <!-- STOW <-> L group -->
+  <line x1="512" y1="272" x2="604" y2="212" stroke="#000AB5" stroke-width="2.5" marker-end="url(#a)"/>
+  <line x1="604" y1="236" x2="514" y2="294" stroke="#16181d" stroke-width="2" stroke-dasharray="7 5" marker-end="url(#k)"/>
+  <text x="510" y="200" font-size="13" fill="#000AB5" font-weight="700" text-anchor="middle">L1–L4 btn</text>
+  <text x="510" y="217" font-size="13" fill="#000AB5" text-anchor="middle">[has coral]</text>
+  <text x="560" y="322" font-size="13" fill="#16181d" font-style="italic" text-anchor="middle">coral gone</text>
+
+  <!-- STOW <-> PROCESSOR -->
+  <line x1="505" y1="310" x2="606" y2="452" stroke="#000AB5" stroke-width="2.5" marker-end="url(#a)"/>
+  <line x1="606" y1="476" x2="490" y2="322" stroke="#16181d" stroke-width="2" stroke-dasharray="7 5" marker-end="url(#k)"/>
+  <text x="590" y="380" font-size="13" fill="#000AB5" font-weight="700">Processor btn</text>
+  <text x="590" y="397" font-size="13" fill="#000AB5">[has algae]</text>
+  <text x="470" y="420" font-size="13" fill="#16181d" font-style="italic" text-anchor="middle">algae gone</text>
+
+  <!-- legend -->
+  <line x1="40" y1="562" x2="90" y2="562" stroke="#000AB5" stroke-width="2.5" marker-end="url(#a)"/>
+  <text x="98" y="567" font-size="13" fill="#16181d">request (button)  [guard must be true]</text>
+  <line x1="420" y1="562" x2="470" y2="562" stroke="#16181d" stroke-width="2" stroke-dasharray="7 5" marker-end="url(#k)"/>
+  <text x="478" y="567" font-size="13" fill="#16181d" font-style="italic">automatic event (sensor)</text>
+  <text x="430" y="590" text-anchor="middle" font-size="13" fill="#16181d">The Stow button works from every state. After a disable, re-plan from the measured positions (tuck first).</text>
+</svg>

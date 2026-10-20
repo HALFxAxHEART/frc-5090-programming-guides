@@ -1,0 +1,83 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 640" width="900" height="640" font-family="Inter, Arial, sans-serif" fill="#16181d">
+  <rect width="900" height="640" fill="#fff"/>
+  <text x="450" y="30" text-anchor="middle" font-size="20" font-weight="700">Which device goes on which bus (2026 robot)</text>
+
+  <!-- roboRIO -->
+  <rect x="20" y="250" width="120" height="96" rx="10" fill="#000AB5"/>
+  <text x="80" y="285" text-anchor="middle" font-size="16" font-weight="700" fill="#fff">roboRIO</text>
+  <text x="80" y="306" text-anchor="middle" font-size="13" fill="#fff">10.50.90.2</text>
+  <text x="80" y="328" text-anchor="middle" font-size="13" fill="#fff">CAN port + USB</text>
+
+  <!-- wires -->
+  <path d="M140,262 H170 V100 H220" fill="none" stroke="#16181d" stroke-width="3"/>
+  <path d="M140,290 H220" fill="none" stroke="#000AB5" stroke-width="3"/>
+  <path d="M140,318 H170 V450 H220" fill="none" stroke="#000AB5" stroke-width="3"/>
+  <text x="176" y="128" font-size="13">CAN</text>
+  <text x="176" y="282" font-size="13">USB</text>
+  <text x="176" y="442" font-size="13">USB</text>
+
+  <!-- rio bus -->
+  <rect x="220" y="55" width="660" height="110" rx="10" fill="#f4f5f9" stroke="#c9ced8" stroke-width="2"/>
+  <text x="236" y="80" font-size="16" font-weight="700">"rio" bus: classic CAN 2.0</text>
+  <text x="236" y="100" font-size="13">The only home for CAN 2.0-only devices.</text>
+  <rect x="236" y="112" width="190" height="40" rx="6" fill="#fff" stroke="#16181d"/>
+  <text x="331" y="137" text-anchor="middle" font-size="14" font-weight="700">PDH  ID 1 (REV)</text>
+  <rect x="440" y="112" width="425" height="40" rx="6" fill="#fff" stroke="#16181d" stroke-dasharray="5 4"/>
+  <text x="652" y="130" text-anchor="middle" font-size="13">Redux Canandcolor goes here (we use it for color)</text>
+  <text x="652" y="146" text-anchor="middle" font-size="13">(CAN 2.0 only; Stingray 2025's two Canandcolors were here)</text>
+
+  <!-- Jarvis -->
+  <rect x="220" y="182" width="660" height="196" rx="10" fill="#fff" stroke="#000AB5" stroke-width="3"/>
+  <text x="236" y="208" font-size="16" font-weight="700" fill="#000AB5">CANivore "Jarvis": CAN FD, swerve only</text>
+  <text x="236" y="228" font-size="13">All swerve devices must share one bus (CTRE swerve rule).</text>
+  <g font-size="13">
+    <rect x="236" y="242" width="200" height="120" rx="8" fill="#f4f5f9" stroke="#000AB5"/>
+    <text x="250" y="264" font-size="14" font-weight="700">8 x Kraken X60</text>
+    <text x="250" y="284">(Talon FX inside)</text>
+    <text x="250" y="308">drive  40, 41, 42, 43</text>
+    <text x="250" y="330">steer  30, 31, 32, 33</text>
+    <text x="250" y="352">TalonFX class</text>
+
+    <rect x="450" y="242" width="200" height="120" rx="8" fill="#f4f5f9" stroke="#000AB5"/>
+    <text x="464" y="264" font-size="14" font-weight="700">4 x CANcoder</text>
+    <text x="464" y="284">one per module</text>
+    <text x="464" y="308">IDs 50, 51, 52, 53</text>
+    <text x="464" y="330">fused into the steer</text>
+    <text x="464" y="352">motors (Pro)</text>
+
+    <rect x="664" y="242" width="200" height="120" rx="8" fill="#FFA700" stroke="#16181d"/>
+    <text x="678" y="264" font-size="14" font-weight="700">Pigeon 2</text>
+    <text x="678" y="284">robot heading</text>
+    <text x="678" y="308">ID 0</text>
+    <text x="678" y="330">(the code once said 24:</text>
+    <text x="678" y="352">no heading at all)</text>
+  </g>
+
+  <!-- Upper -->
+  <rect x="220" y="395" width="660" height="170" rx="10" fill="#fff" stroke="#000AB5" stroke-width="3"/>
+  <text x="236" y="421" font-size="16" font-weight="700" fill="#000AB5">CANivore "Upper": CAN FD, mechanisms (IDs 10-29)</text>
+  <text x="236" y="441" font-size="13">Every device on a CANivore must support CAN FD. (+N) = follower motor.</text>
+  <g font-size="13">
+    <rect x="236" y="453" width="250" height="98" rx="8" fill="#f4f5f9" stroke="#c9ced8"/>
+    <text x="250" y="474" font-size="14" font-weight="700">Talon FX (Krakens)</text>
+    <text x="250" y="495">shooter 27 (+15), hood 20</text>
+    <text x="250" y="516">intake wheels 12, floor 13</text>
+    <text x="250" y="537">belts 21 / 22</text>
+
+    <rect x="498" y="453" width="170" height="98" rx="8" fill="#f4f5f9" stroke="#c9ced8"/>
+    <text x="512" y="474" font-size="14" font-weight="700">Talon FXS</text>
+    <text x="512" y="495">turret 16 (Minion)</text>
+    <text x="512" y="516">intake rack 11 (+14)</text>
+    <text x="512" y="537">(NEO Vortex)</text>
+
+    <rect x="680" y="453" width="185" height="98" rx="8" fill="#fff" stroke="#16181d" stroke-dasharray="5 4"/>
+    <text x="694" y="474" font-size="14" font-weight="700">New sensors go here</text>
+    <text x="694" y="495">CANrange, CANdi,</text>
+    <text x="694" y="516">CANcoder, CANdle</text>
+    <text x="694" y="537">(all CAN FD)</text>
+  </g>
+
+  <!-- Ethernet -->
+  <rect x="220" y="578" width="660" height="44" rx="10" fill="#f4f5f9" stroke="#c9ced8" stroke-width="2"/>
+  <text x="236" y="605" font-size="14"><tspan font-weight="700">Not CAN:</tspan> Limelight on the robot's Ethernet network, 10.50.90.11 (guide 17).</text>
+</svg>

@@ -1,0 +1,94 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 860 520" font-family="Inter, Arial, sans-serif">
+  <defs>
+    <marker id="ah" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#000AB5"/>
+    </marker>
+    <marker id="ahk" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#16181d"/>
+    </marker>
+    <pattern id="hatch" width="8" height="8" patternUnits="userSpaceOnUse" patternTransform="rotate(45)">
+      <rect width="8" height="8" fill="#f4f5f9"/>
+      <line x1="0" y1="0" x2="0" y2="8" stroke="#16181d" stroke-width="2"/>
+    </pattern>
+  </defs>
+  <rect width="860" height="520" fill="#fff"/>
+
+  <!-- ===== Mechanism (side view, schematic) ===== -->
+  <text x="30" y="30" font-size="16" font-weight="bold" fill="#16181d">1. The drivetrain of the rack (schematic)</text>
+
+  <!-- motor -->
+  <rect x="30" y="70" width="120" height="70" rx="8" fill="#f4f5f9" stroke="#000AB5" stroke-width="2.5"/>
+  <text x="90" y="100" font-size="14" text-anchor="middle" fill="#16181d">motor</text>
+  <text x="90" y="118" font-size="14" text-anchor="middle" fill="#16181d">(Vortex)</text>
+  <line x1="150" y1="105" x2="182" y2="105" stroke="#16181d" stroke-width="4"/>
+
+  <!-- chain: tangent lines between r=18 at (200,105) and r=32 at (340,105) -->
+  <line x1="198" y1="87" x2="337" y2="73" stroke="#16181d" stroke-width="2" stroke-dasharray="5 3"/>
+  <line x1="198" y1="123" x2="337" y2="137" stroke="#16181d" stroke-width="2" stroke-dasharray="5 3"/>
+  <circle cx="200" cy="105" r="18" fill="#fff" stroke="#000AB5" stroke-width="3"/>
+  <circle cx="340" cy="105" r="32" fill="#fff" stroke="#000AB5" stroke-width="3"/>
+  <circle cx="200" cy="105" r="3" fill="#16181d"/>
+  <circle cx="340" cy="105" r="3" fill="#16181d"/>
+  <text x="200" y="64" font-size="14" text-anchor="middle" fill="#16181d">14T</text>
+  <text x="340" y="62" font-size="14" text-anchor="middle" fill="#16181d">24T</text>
+  <text x="270" y="110" font-size="13" text-anchor="middle" fill="#16181d">chain</text>
+
+  <!-- shaft down to pinion -->
+  <line x1="340" y1="140" x2="340" y2="172" stroke="#16181d" stroke-width="2" stroke-dasharray="3 3"/>
+  <text x="350" y="160" font-size="13" fill="#16181d">same shaft</text>
+
+  <!-- pinion and rack -->
+  <circle cx="340" cy="190" r="18" fill="#FFA700" stroke="#000AB5" stroke-width="3"/>
+  <circle cx="340" cy="190" r="3" fill="#16181d"/>
+  <text x="312" y="170" font-size="14" text-anchor="end" fill="#16181d">10T pinion</text>
+  <text x="312" y="187" font-size="13" text-anchor="end" fill="#16181d">1.0 in pitch dia.</text>
+  <rect x="230" y="208" width="400" height="16" fill="#f4f5f9" stroke="#000AB5" stroke-width="2"/>
+  <path d="M230,208 l5,-5 l5,5 l5,-5 l5,5 l5,-5 l5,5 l5,-5 l5,5 l5,-5 l5,5 l5,-5 l5,5 l5,-5 l5,5 l5,-5 l5,5 l5,-5 l5,5 l5,-5 l5,5 l5,-5 l5,5 l5,-5 l5,5 l5,-5 l5,5 l5,-5 l5,5 l5,-5 l5,5 l5,-5 l5,5 l5,-5 l5,5 l5,-5 l5,5 l5,-5 l5,5 l5,-5 l5,5 l5,-5 l5,5 l5,-5 l5,5 l5,-5 l5,5 l5,-5 l5,5 l5,-5 l5,5 l5,-5 l5,5 l5,-5 l5,5 l5,-5 l5,5 l5,-5 l5,5 l5,-5 l5,5 l5,-5 l5,5 l5,-5 l5,5 l5,-5 l5,5 l5,-5 l5,5 l5,-5 l5,5 l5,-5 l5,5 l5,-5 l5,5 l5,-5 l5,5 l5,-5 l5,5 l5,-5 l5,5" fill="none" stroke="#000AB5" stroke-width="1.5"/>
+  <text x="430" y="244" font-size="14" text-anchor="middle" fill="#16181d">gear rack (the intake rides on it)</text>
+  <line x1="470" y1="190" x2="620" y2="190" stroke="#000AB5" stroke-width="3" marker-end="url(#ah)"/>
+  <text x="545" y="180" font-size="14" text-anchor="middle" fill="#16181d">slides out</text>
+
+  <!-- math steps -->
+  <rect x="560" y="44" width="280" height="122" rx="8" fill="#f4f5f9" stroke="#c9ced8"/>
+  <text x="574" y="68" font-size="14" fill="#16181d"><tspan font-weight="bold">Chain:</tspan> 24 / 14 = 1.714</text>
+  <text x="574" y="85" font-size="13" fill="#16181d">motor turns per pinion turn</text>
+  <text x="574" y="110" font-size="14" fill="#16181d"><tspan font-weight="bold">Pinion:</tspan> π × 1.0 in = 3.14 in</text>
+  <text x="574" y="127" font-size="13" fill="#16181d">of rack per pinion turn</text>
+  <text x="574" y="153" font-size="14" fill="#000AB5" font-weight="bold">1.714 / 3.14 = 0.546 rot per inch</text>
+
+  <!-- ===== Travel scale ===== -->
+  <text x="30" y="300" font-size="16" font-weight="bold" fill="#16181d">2. Rack travel: inches (top) and motor rotations (bottom), rotations = inches × 0.546</text>
+
+  <!-- allowed command range -->
+  <rect x="89" y="372" width="688.5" height="16" fill="#FFA700" fill-opacity="0.45"/>
+  <line x1="80" y1="388" x2="800" y2="388" stroke="#16181d" stroke-width="2"/>
+  <rect x="800" y="340" width="26" height="70" fill="url(#hatch)" stroke="#16181d" stroke-width="1.5"/>
+
+  <!-- ticks: x = 80 + 45*inches -->
+  <g stroke="#16181d" stroke-width="2">
+    <line x1="80" y1="378" x2="80" y2="398"/>
+    <line x1="89" y1="378" x2="89" y2="398"/>
+    <line x1="440" y1="378" x2="440" y2="398"/>
+    <line x1="710" y1="378" x2="710" y2="398"/>
+    <line x1="777.5" y1="378" x2="777.5" y2="398"/>
+    <line x1="800" y1="378" x2="800" y2="398"/>
+  </g>
+
+  <!-- inch labels (top) -->
+  <text x="80" y="347" font-size="14" text-anchor="start" fill="#16181d">0 in (all the way in)</text>
+  <text x="89" y="366" font-size="13" text-anchor="start" fill="#16181d">0.2 in = min command</text>
+  <text x="440" y="366" font-size="14" text-anchor="middle" fill="#16181d">8 in (agitate in)</text>
+  <text x="700" y="366" font-size="14" text-anchor="end" fill="#16181d">14 in (out)</text>
+  <text x="790" y="330" font-size="13" text-anchor="end" fill="#16181d">15.5 in max command</text>
+  <line x1="777.5" y1="334" x2="777.5" y2="368" stroke="#16181d" stroke-width="1" stroke-dasharray="2 2"/>
+  <text x="840" y="430" font-size="13" text-anchor="end" fill="#16181d">16 in hard stop</text>
+
+  <!-- rotation labels (bottom) -->
+  <text x="80" y="418" font-size="14" text-anchor="middle" fill="#000AB5">0</text>
+  <text x="440" y="418" font-size="14" text-anchor="middle" fill="#000AB5">4.37 rot</text>
+  <text x="710" y="418" font-size="14" text-anchor="middle" fill="#000AB5">7.64 rot</text>
+  <text x="790" y="452" font-size="13" text-anchor="end" fill="#000AB5">15.5 in = 8.46 rot, 16 in = 8.73 rot</text>
+
+  <text x="430" y="480" font-size="13" text-anchor="middle" fill="#16181d">gold = range the code is allowed to command (clamped short of both stops)</text>
+  <text x="430" y="500" font-size="13" text-anchor="middle" fill="#16181d">speeds convert the same way: 40 in/s × 0.546 = 21.8 motor rot/s</text>
+</svg>

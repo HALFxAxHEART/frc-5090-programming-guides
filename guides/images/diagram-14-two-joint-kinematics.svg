@@ -1,0 +1,79 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 860 560" width="860" height="560" font-family="Inter, Arial, sans-serif">
+  <rect x="0" y="0" width="860" height="560" fill="#ffffff"/>
+  <defs>
+    <marker id="arrB" viewBox="0 0 10 10" refX="9" refY="5" markerUnits="userSpaceOnUse" markerWidth="11" markerHeight="11" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#000AB5"/>
+    </marker>
+    <marker id="arrK" viewBox="0 0 10 10" refX="9" refY="5" markerUnits="userSpaceOnUse" markerWidth="11" markerHeight="11" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#16181d"/>
+    </marker>
+  </defs>
+  <!-- shoulder (140,400); L1 = 280 at a1 = 60 deg; elbow (280,157.5); a2 = -50 deg; forearm at 10 deg; end (516.4,115.8) -->
+
+  <!-- robot body -->
+  <rect x="60" y="400" width="170" height="40" rx="4" fill="#f4f5f9" stroke="#c9ced8" stroke-width="2"/>
+  <text x="145" y="425" text-anchor="middle" font-size="13" fill="#16181d">robot</text>
+
+  <!-- coordinate axes at shoulder -->
+  <line x1="140" y1="400" x2="140" y2="330" stroke="#16181d" stroke-width="1.5" marker-end="url(#arrK)"/>
+  <text x="120" y="340" text-anchor="end" font-size="13" fill="#16181d">y up</text>
+  <line x1="140" y1="400" x2="230" y2="400" stroke="#16181d" stroke-width="1.5" stroke-dasharray="5 4"/>
+
+  <!-- dashed extension of the upper arm (where a2 = 0 would point) -->
+  <line x1="280" y1="157.5" x2="345" y2="44.9" stroke="#16181d" stroke-width="1.5" stroke-dasharray="6 4"/>
+  <text x="352" y="44" font-size="13" fill="#16181d">a2 = 0 (forearm in line)</text>
+  <!-- horizontal reference at elbow -->
+  <line x1="280" y1="157.5" x2="440" y2="157.5" stroke="#16181d" stroke-width="1.5" stroke-dasharray="5 4"/>
+
+  <!-- links -->
+  <line x1="140" y1="400" x2="280" y2="157.5" stroke="#000AB5" stroke-width="12" stroke-linecap="round"/>
+  <line x1="280" y1="157.5" x2="516.4" y2="115.8" stroke="#000AB5" stroke-width="10" stroke-linecap="round"/>
+  <circle cx="140" cy="400" r="11" fill="#ffffff" stroke="#16181d" stroke-width="3"/>
+  <circle cx="280" cy="157.5" r="10" fill="#ffffff" stroke="#16181d" stroke-width="3"/>
+  <circle cx="516.4" cy="115.8" r="9" fill="#FFA700" stroke="#16181d" stroke-width="2"/>
+
+  <text x="186" y="268" text-anchor="end" font-size="15" font-weight="700" fill="#000AB5">L1</text>
+  <text x="186" y="286" text-anchor="end" font-size="13" fill="#16181d">upper arm</text>
+  <text x="475" y="104" text-anchor="middle" font-size="15" fill="#000AB5"><tspan font-weight="700">L2</tspan> <tspan font-size="13" fill="#16181d">(forearm)</tspan></text>
+  <text x="128" y="386" text-anchor="end" font-size="13" font-weight="700" fill="#16181d">shoulder</text>
+  <text x="266" y="160" text-anchor="end" font-size="13" font-weight="700" fill="#16181d">elbow</text>
+  <text x="505" y="84" font-size="13" font-weight="700" fill="#16181d">end effector (x, y)</text>
+
+  <!-- a1 arc at shoulder, r 60, 0 -> 60 deg -->
+  <path d="M200,400 A60,60 0 0,0 170,348.0" fill="none" stroke="#FFA700" stroke-width="3"/>
+  <text x="206" y="378" font-size="15" font-weight="700" fill="#16181d">a1</text>
+
+  <!-- a2 arc at elbow, r 70, 60 -> 10 deg (clockwise = negative) -->
+  <path d="M315,96.9 A70,70 0 0,1 348.9,145.3" fill="none" stroke="#FFA700" stroke-width="3" marker-end="url(#arrK)"/>
+  <text x="352" y="106" font-size="15" font-weight="700" fill="#16181d">a2</text>
+
+  <!-- a1+a2 arc at elbow, r 135, 0 -> 10 deg -->
+  <path d="M415,157.5 A135,135 0 0,0 412.9,134.1" fill="none" stroke="#16181d" stroke-width="2"/>
+  <text x="446" y="152" font-size="13" font-weight="700" fill="#16181d">a1 + a2</text>
+  <text x="446" y="168" font-size="13" fill="#16181d">(forearm from horizontal)</text>
+
+  <!-- projection guides -->
+  <line x1="516.4" y1="115.8" x2="516.4" y2="470" stroke="#c9ced8" stroke-width="1.5" stroke-dasharray="4 4"/>
+  <line x1="280" y1="157.5" x2="280" y2="470" stroke="#c9ced8" stroke-width="1.5" stroke-dasharray="4 4"/>
+  <line x1="140" y1="440" x2="140" y2="470" stroke="#c9ced8" stroke-width="1.5" stroke-dasharray="4 4"/>
+  <line x1="516.4" y1="115.8" x2="690" y2="115.8" stroke="#c9ced8" stroke-width="1.5" stroke-dasharray="4 4"/>
+  <line x1="290" y1="157.5" x2="690" y2="157.5" stroke="#c9ced8" stroke-width="1.5" stroke-dasharray="4 4"/>
+  <line x1="152" y1="400" x2="690" y2="400" stroke="#c9ced8" stroke-width="1.5" stroke-dasharray="4 4"/>
+
+  <!-- horizontal dimensions -->
+  <line x1="140" y1="465" x2="280" y2="465" stroke="#000AB5" stroke-width="2" marker-start="url(#arrB)" marker-end="url(#arrB)"/>
+  <text x="210" y="488" text-anchor="middle" font-size="13" font-weight="700" fill="#000AB5">L1·cos(a1)</text>
+  <line x1="280" y1="465" x2="516.4" y2="465" stroke="#000AB5" stroke-width="2" marker-start="url(#arrB)" marker-end="url(#arrB)"/>
+  <text x="398" y="488" text-anchor="middle" font-size="13" font-weight="700" fill="#000AB5">L2·cos(a1 + a2)</text>
+
+  <!-- vertical dimensions -->
+  <line x1="680" y1="400" x2="680" y2="157.5" stroke="#000AB5" stroke-width="2" marker-start="url(#arrB)" marker-end="url(#arrB)"/>
+  <text x="692" y="284" font-size="13" font-weight="700" fill="#000AB5">L1·sin(a1)</text>
+  <line x1="680" y1="157.5" x2="680" y2="115.8" stroke="#000AB5" stroke-width="2" marker-start="url(#arrB)" marker-end="url(#arrB)"/>
+  <text x="692" y="142" font-size="13" font-weight="700" fill="#000AB5">L2·sin(a1 + a2)</text>
+
+  <!-- equations -->
+  <text x="220" y="522" text-anchor="middle" font-size="14" fill="#16181d"><tspan font-weight="700">x</tspan> = L1·cos(a1) + L2·cos(a1 + a2)</text>
+  <text x="620" y="522" text-anchor="middle" font-size="14" fill="#16181d"><tspan font-weight="700">y</tspan> = L1·sin(a1) + L2·sin(a1 + a2)</text>
+  <text x="430" y="545" text-anchor="middle" font-size="13" fill="#16181d">Angles counter-clockwise positive. a1 from horizontal; a2 from the dashed line, so it is negative here.</text>
+</svg>

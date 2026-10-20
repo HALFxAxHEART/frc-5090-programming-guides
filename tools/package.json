@@ -1,0 +1,16 @@
+{
+  "name": "5090-guides-print-tools",
+  "private": true,
+  "type": "module",
+  "description": "Builds the printable PDF binder from the Markdown guides (Bun + Puppeteer, then Python + PyMuPDF)",
+  "dependencies": {
+    "@fontsource/inter": "^5.3.0",
+    "@fontsource/jetbrains-mono": "^5.3.0",
+    "@fontsource/oswald": "^5.3.0",
+    "highlight.js": "^11.12.0",
+    "marked": "^18.1.1",
+    "marked-highlight": "^2.2.4",
+    "puppeteer": "^25.14.0",
+    "qrcode": "^1.5.4"
+  }
+}

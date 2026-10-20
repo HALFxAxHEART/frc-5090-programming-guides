@@ -1,0 +1,59 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 820 500" width="820" height="500" font-family="Inter, Arial, sans-serif">
+  <rect x="0" y="0" width="820" height="500" fill="#ffffff"/>
+  <defs>
+    <marker id="arrB" viewBox="0 0 10 10" refX="9" refY="5" markerUnits="userSpaceOnUse" markerWidth="14" markerHeight="14" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#000AB5"/>
+    </marker>
+    <marker id="arrG" viewBox="0 0 10 10" refX="9" refY="5" markerUnits="userSpaceOnUse" markerWidth="14" markerHeight="14" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#FFA700"/>
+    </marker>
+    <marker id="arrK" viewBox="0 0 10 10" refX="9" refY="5" markerUnits="userSpaceOnUse" markerWidth="13" markerHeight="13" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#16181d"/>
+    </marker>
+  </defs>
+  <!-- scale 100 units per meter. robot (330,410); real target (330,110); virtual target (430,110) -->
+
+  <!-- real hub -->
+  <circle cx="330" cy="110" r="34" fill="#f4f5f9" stroke="#16181d" stroke-width="2.5"/>
+  <circle cx="330" cy="110" r="4" fill="#16181d"/>
+  <text x="285" y="105" text-anchor="end" font-size="14" font-weight="700" fill="#16181d">real target</text>
+  <text x="285" y="123" text-anchor="end" font-size="13" fill="#16181d">(hub, ball lands here)</text>
+
+  <!-- virtual target -->
+  <circle cx="430" cy="110" r="12" fill="none" stroke="#000AB5" stroke-width="3" stroke-dasharray="4 3"/>
+  <line x1="422" y1="102" x2="438" y2="118" stroke="#000AB5" stroke-width="2.5"/>
+  <line x1="438" y1="102" x2="422" y2="118" stroke="#000AB5" stroke-width="2.5"/>
+  <text x="452" y="96" font-size="14" font-weight="700" fill="#000AB5">virtual target (aim here)</text>
+  <text x="452" y="114" font-size="13" fill="#16181d">= real target - velocity × time of flight</text>
+
+  <!-- drift arrow: from virtual to real (the ball drifts with the robot's velocity) -->
+  <line x1="418" y1="70" x2="342" y2="70" stroke="#FFA700" stroke-width="4" marker-end="url(#arrG)"/>
+  <line x1="430" y1="60" x2="430" y2="96" stroke="#c9ced8" stroke-width="1.5"/>
+  <line x1="330" y1="60" x2="330" y2="74" stroke="#c9ced8" stroke-width="1.5"/>
+  <text x="380" y="50" text-anchor="middle" font-size="13" font-weight="700" fill="#16181d">drift 1 m</text>
+
+  <!-- aim direction (relative to robot) -->
+  <line x1="330" y1="410" x2="426" y2="126" stroke="#000AB5" stroke-width="3" stroke-dasharray="9 6" marker-end="url(#arrB)"/>
+  <text x="400" y="270" font-size="13" fill="#000AB5" font-weight="700">turret aims here</text>
+  <!-- actual ball path -->
+  <line x1="330" y1="410" x2="330" y2="148" stroke="#16181d" stroke-width="3.5" marker-end="url(#arrK)"/>
+  <text x="318" y="270" text-anchor="end" font-size="13" font-weight="700" fill="#16181d">ball's real path</text>
+  <text x="318" y="288" text-anchor="end" font-size="13" fill="#16181d">over the field</text>
+  <text x="318" y="306" text-anchor="end" font-size="13" fill="#16181d">(distance 3 m)</text>
+
+  <!-- robot -->
+  <rect x="300" y="390" width="60" height="44" rx="6" fill="#f4f5f9" stroke="#000AB5" stroke-width="3"/>
+  <circle cx="330" cy="410" r="5" fill="#000AB5"/>
+  <line x1="296" y1="455" x2="196" y2="455" stroke="#FFA700" stroke-width="4" marker-end="url(#arrG)"/>
+  <text x="370" y="460" font-size="13" font-weight="700" fill="#16181d">robot drives left at 2 m/s</text>
+  <text x="370" y="478" font-size="13" fill="#16181d">(field-relative velocity; the ball keeps it)</text>
+
+  <!-- math box -->
+  <rect x="560" y="200" width="245" height="140" rx="10" fill="#f4f5f9" stroke="#c9ced8" stroke-width="1.5"/>
+  <text x="575" y="225" font-size="13" font-weight="700" fill="#16181d">time of flight</text>
+  <text x="575" y="244" font-size="13" fill="#16181d">= distance / ball speed</text>
+  <text x="575" y="263" font-size="13" fill="#16181d">= 3 m / 6.0 m/s = 0.5 s</text>
+  <text x="575" y="292" font-size="13" font-weight="700" fill="#16181d">drift = velocity × time</text>
+  <text x="575" y="311" font-size="13" fill="#16181d">= 2 m/s × 0.5 s = 1 m left,</text>
+  <text x="575" y="330" font-size="13" fill="#16181d">so aim 1 m to the right</text>
+</svg>

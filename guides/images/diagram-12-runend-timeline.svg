@@ -1,0 +1,56 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 860 420" width="860" height="420" font-family="Inter, Arial, sans-serif">
+  <rect x="0" y="0" width="860" height="420" fill="#ffffff"/>
+  <defs>
+    <marker id="arr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#16181d"/>
+    </marker>
+  </defs>
+
+  <!-- event lines -->
+  <line x1="330" y1="40" x2="330" y2="330" stroke="#FFA700" stroke-width="2.5" stroke-dasharray="6 4"/>
+  <line x1="620" y1="40" x2="620" y2="330" stroke="#FFA700" stroke-width="2.5" stroke-dasharray="6 4"/>
+  <text x="330" y="30" text-anchor="middle" font-size="15" font-weight="700" fill="#16181d">PRESS</text>
+  <text x="620" y="30" text-anchor="middle" font-size="15" font-weight="700" fill="#16181d">RELEASE</text>
+
+  <!-- Row labels -->
+  <text x="20" y="82" font-size="15" font-weight="700" fill="#16181d">Left bumper</text>
+  <text x="20" y="100" font-size="13" fill="#16181d">(whileTrue)</text>
+  <text x="20" y="160" font-size="15" font-weight="700" fill="#16181d">Command using</text>
+  <text x="20" y="178" font-size="15" font-weight="700" fill="#16181d">the subsystem</text>
+  <text x="20" y="250" font-size="15" font-weight="700" fill="#16181d">Flap position</text>
+  <text x="20" y="268" font-size="13" fill="#16181d">(Motion Magic)</text>
+
+  <!-- Row 1: button waveform -->
+  <polyline points="170,100 330,100 330,62 620,62 620,100 830,100" fill="none" stroke="#000AB5" stroke-width="3"/>
+  <text x="250" y="92" text-anchor="middle" font-size="13" fill="#16181d">up</text>
+  <text x="475" y="54" text-anchor="middle" font-size="13" fill="#16181d">held down</text>
+  <text x="725" y="92" text-anchor="middle" font-size="13" fill="#16181d">up</text>
+
+  <!-- Row 2: commands -->
+  <rect x="170" y="145" width="160" height="40" rx="6" fill="#f4f5f9" stroke="#c9ced8" stroke-width="2"/>
+  <text x="250" y="170" text-anchor="middle" font-size="13" fill="#16181d">default: hold stowed</text>
+  <rect x="330" y="145" width="290" height="40" rx="6" fill="#000AB5"/>
+  <text x="475" y="170" text-anchor="middle" font-size="14" font-weight="700" fill="#ffffff">runEnd: run = moveTo(deployed)</text>
+  <rect x="620" y="145" width="210" height="40" rx="6" fill="#f4f5f9" stroke="#c9ced8" stroke-width="2"/>
+  <text x="725" y="170" text-anchor="middle" font-size="13" fill="#16181d">default: hold stowed</text>
+  <!-- end() marker -->
+  <rect x="598" y="140" width="44" height="50" rx="6" fill="#FFA700" stroke="#16181d" stroke-width="1.5"/>
+  <text x="620" y="170" text-anchor="middle" font-size="13" font-weight="700" fill="#16181d">end</text>
+
+  <!-- Row 3: position -->
+  <line x1="170" y1="290" x2="830" y2="290" stroke="#c9ced8" stroke-width="1.5"/>
+  <line x1="170" y1="225" x2="830" y2="225" stroke="#c9ced8" stroke-width="1.5"/>
+  <text x="835" y="229" font-size="13" fill="#16181d" text-anchor="end" dy="-8">deployed 0.30</text>
+  <text x="835" y="294" font-size="13" fill="#16181d" text-anchor="end" dy="18">stowed 0.0</text>
+  <path d="M170,290 L330,290 C370,290 380,225 420,225 L620,225 C660,225 670,290 710,290 L830,290" fill="none" stroke="#000AB5" stroke-width="4"/>
+
+  <!-- time axis -->
+  <line x1="170" y1="330" x2="840" y2="330" stroke="#16181d" stroke-width="2" marker-end="url(#arr)"/>
+  <text x="840" y="350" text-anchor="end" font-size="13" fill="#16181d">time</text>
+
+  <!-- notes -->
+  <text x="330" y="368" text-anchor="middle" font-size="13" fill="#16181d">default command interrupted;</text>
+  <text x="330" y="386" text-anchor="middle" font-size="13" fill="#16181d">run() repeats every 20 ms</text>
+  <text x="620" y="368" text-anchor="middle" font-size="13" fill="#16181d">end() ALWAYS runs: moveTo(stowed);</text>
+  <text x="620" y="386" text-anchor="middle" font-size="13" fill="#16181d">then the default command takes over again</text>
+</svg>

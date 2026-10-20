@@ -1,0 +1,66 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 860 400" width="860" height="400" font-family="Inter, Arial, sans-serif" fill="#16181d">
+  <defs>
+    <marker id="ah" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto">
+      <path d="M0,0 L10,5 L0,10 z" fill="#000AB5"/>
+    </marker>
+  </defs>
+  <rect width="860" height="400" fill="#fff"/>
+  <text x="430" y="30" text-anchor="middle" font-size="20" font-weight="700">VH-109 ports and power (what each one is for)</text>
+  <text x="430" y="52" text-anchor="middle" font-size="13" fill="#555">Schematic only: the physical order of the ports on the real radio may differ.</text>
+
+  <!-- radio body -->
+  <rect x="40" y="75" width="780" height="120" rx="12" fill="#000AB5"/>
+  <text x="60" y="100" font-size="15" font-weight="700" fill="#fff">VH-109 radio</text>
+
+  <!-- ports: RIO, AUX1, AUX2, DS, 12V -->
+  <g font-size="15" font-weight="700" text-anchor="middle">
+    <rect x="70" y="120" width="120" height="50" rx="4" fill="#fff"/><text x="130" y="151">RIO</text>
+    <rect x="220" y="120" width="120" height="50" rx="4" fill="#fff"/><text x="280" y="151">AUX1</text>
+    <rect x="370" y="120" width="120" height="50" rx="4" fill="#fff"/><text x="430" y="151">AUX2</text>
+    <rect x="520" y="120" width="120" height="50" rx="4" fill="#FFA700"/><text x="580" y="151">DS</text>
+    <rect x="670" y="120" width="130" height="50" rx="4" fill="#16181d" stroke="#fff" stroke-width="2"/><text x="735" y="142" fill="#fff">12 V in</text><text x="735" y="161" font-size="13" fill="#fff">Weidmuller</text>
+  </g>
+
+  <!-- arrows down to descriptions -->
+  <g stroke="#000AB5" stroke-width="2.5">
+    <line x1="130" y1="198" x2="130" y2="232"/>
+    <line x1="355" y1="198" x2="355" y2="232"/>
+    <line x1="580" y1="198" x2="580" y2="232"/>
+    <line x1="735" y1="198" x2="735" y2="232"/>
+  </g>
+  <path d="M280,198 v10 h150 v-10" fill="none" stroke="#000AB5" stroke-width="2.5"/>
+
+  <!-- descriptions -->
+  <g font-size="13">
+    <rect x="50" y="232" width="160" height="150" rx="8" fill="#f4f5f9" stroke="#c9ced8"/>
+    <text x="62" y="254" font-weight="700" font-size="14">roboRIO</text>
+    <text x="62" y="272">(2027: SystemCore)</text>
+    <text x="62" y="296">Can RECEIVE PoE,</text>
+    <text x="62" y="313">4.5 to 19 V</text>
+    <text x="62" y="337">10/100</text>
+
+    <rect x="225" y="232" width="260" height="150" rx="8" fill="#f4f5f9" stroke="#c9ced8"/>
+    <text x="237" y="254" font-weight="700" font-size="14">Limelight, network switch</text>
+    <text x="237" y="278">Can SEND PoE, but OFF by default</text>
+    <text x="237" y="295">(DIP switches 1 and 2)</text>
+    <text x="237" y="319">10/100</text>
+    <text x="237" y="343">With the REV RPM, PoE out is 18 V:</text>
+    <text x="237" y="360">most cameras can't take that</text>
+
+    <rect x="500" y="232" width="160" height="150" rx="8" fill="#fff7e6" stroke="#FFA700" stroke-width="2"/>
+    <text x="512" y="254" font-weight="700" font-size="14">Laptop</text>
+    <text x="512" y="278">Setup page and</text>
+    <text x="512" y="295">pit tether</text>
+    <text x="512" y="319">No PoE</text>
+    <text x="512" y="343">10/100/1000</text>
+
+    <rect x="672" y="232" width="148" height="150" rx="8" fill="#f4f5f9" stroke="#c9ced8"/>
+    <text x="684" y="254" font-weight="700" font-size="14">Robot power</text>
+    <text x="684" y="278">PDH channel 20-22</text>
+    <text x="684" y="295">10 A fuse</text>
+    <text x="684" y="312">18 AWG wire</text>
+    <text x="684" y="336" font-weight="700">Never with the</text>
+    <text x="684" y="353" font-weight="700">REV RPM at the</text>
+    <text x="684" y="370" font-weight="700">same time</text>
+  </g>
+</svg>

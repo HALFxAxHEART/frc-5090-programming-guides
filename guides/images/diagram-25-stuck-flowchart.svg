@@ -1,0 +1,118 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 700" width="900" height="700" font-family="Inter, Arial, sans-serif" fill="#16181d">
+  <defs>
+    <marker id="ah" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#000AB5"/>
+    </marker>
+    <marker id="ahg" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#c07d00"/>
+    </marker>
+  </defs>
+  <rect width="900" height="700" fill="#fff"/>
+  <text x="450" y="30" text-anchor="middle" font-size="20" font-weight="700">I'm stuck. Where do I look, and in what order?</text>
+
+  <!-- start -->
+  <rect x="120" y="50" width="240" height="40" rx="20" fill="#16181d"/>
+  <text x="240" y="76" text-anchor="middle" font-size="15" font-weight="700" fill="#fff">I'm stuck</text>
+  <line x1="240" y1="90" x2="240" y2="104" stroke="#000AB5" stroke-width="3" marker-end="url(#ah)"/>
+
+  <!-- steps -->
+  <g font-size="13">
+    <rect x="60" y="106" width="360" height="62" rx="8" fill="#fff" stroke="#000AB5" stroke-width="2"/>
+    <text x="76" y="129" font-size="15" font-weight="700">1. Read what the robot told you</text>
+    <text x="76" y="150">Whole error message, DS log, the logs (guide 19)</text>
+
+    <rect x="60" y="192" width="360" height="62" rx="8" fill="#fff" stroke="#000AB5" stroke-width="2"/>
+    <text x="76" y="215" font-size="15" font-weight="700">2. Our guides and our own code</text>
+    <text x="76" y="236">Did we already solve it? Search our repos</text>
+
+    <rect x="60" y="278" width="360" height="62" rx="8" fill="#fff" stroke="#000AB5" stroke-width="2"/>
+    <text x="76" y="301" font-size="15" font-weight="700">3. Official docs + vendor examples</text>
+    <text x="76" y="322">WPILib, CTRE, Limelight, PathPlanner, AScope</text>
+
+    <rect x="60" y="364" width="360" height="62" rx="8" fill="#fff" stroke="#000AB5" stroke-width="2"/>
+    <text x="76" y="387" font-size="15" font-weight="700">4. Search Chief Delphi</text>
+    <text x="76" y="408">Newest first, this season's software</text>
+
+    <rect x="60" y="450" width="360" height="62" rx="8" fill="#fff" stroke="#000AB5" stroke-width="2"/>
+    <text x="76" y="473" font-size="15" font-weight="700">5. Other teams' public code</text>
+    <text x="76" y="494">Same libraries, same year. Check the license</text>
+
+    <rect x="60" y="536" width="360" height="62" rx="8" fill="#FFA700" stroke="#000AB5" stroke-width="2.5"/>
+    <text x="76" y="559" font-size="15" font-weight="700">6. Ask a person</text>
+    <text x="76" y="580">Teammate, mentor, Discord, a new CD post</text>
+  </g>
+  <g stroke="#000AB5" stroke-width="2.5">
+    <line x1="240" y1="168" x2="240" y2="190" marker-end="url(#ah)"/>
+    <line x1="240" y1="254" x2="240" y2="276" marker-end="url(#ah)"/>
+    <line x1="240" y1="340" x2="240" y2="362" marker-end="url(#ah)"/>
+    <line x1="240" y1="426" x2="240" y2="448" marker-end="url(#ah)"/>
+    <line x1="240" y1="512" x2="240" y2="534" marker-end="url(#ah)"/>
+  </g>
+  <text x="250" y="184" font-size="13" fill="#555">not solved</text>
+  <text x="250" y="270" font-size="13" fill="#555">not solved</text>
+  <text x="250" y="356" font-size="13" fill="#555">not solved</text>
+  <text x="250" y="442" font-size="13" fill="#555">not solved</text>
+  <text x="250" y="528" font-size="13" fill="#555">not solved</text>
+
+  <!-- found arrows to collector -->
+  <g stroke="#c07d00" stroke-width="2.5" fill="none">
+    <path d="M420,137 H500" />
+    <path d="M420,223 H500" />
+    <path d="M420,309 H500" />
+    <path d="M420,395 H500" />
+    <path d="M420,481 H500" />
+    <path d="M420,567 H500" />
+    <path d="M500,137 V567" />
+    <path d="M500,352 H538" marker-end="url(#ahg)"/>
+  </g>
+  <text x="432" y="130" font-size="13" fill="#7a4f00" font-weight="700">found</text>
+
+  <!-- pipeline -->
+  <rect x="540" y="60" width="340" height="480" rx="10" fill="#f4f5f9" stroke="#000AB5" stroke-width="2"/>
+  <text x="710" y="88" text-anchor="middle" font-size="16" font-weight="700">Found an answer? Before you use it:</text>
+  <g font-size="13">
+    <rect x="560" y="105" width="300" height="70" rx="8" fill="#fff" stroke="#000AB5" stroke-width="2"/>
+    <text x="576" y="128" font-size="14" font-weight="700">a. Right version?</text>
+    <text x="576" y="147">2026 WPILib, Phoenix 6 (not 5), PathPlanner</text>
+    <text x="576" y="164">2026. Old code won't compile.</text>
+
+    <rect x="560" y="195" width="300" height="70" rx="8" fill="#fff" stroke="#000AB5" stroke-width="2"/>
+    <text x="576" y="218" font-size="14" font-weight="700">b. Do I understand every line?</text>
+    <text x="576" y="237">If not, go back to the docs for the</text>
+    <text x="576" y="254">parts you don't understand.</text>
+
+    <rect x="560" y="285" width="300" height="70" rx="8" fill="#fff" stroke="#000AB5" stroke-width="2"/>
+    <text x="576" y="308" font-size="14" font-weight="700">c. Write it OUR way</text>
+    <text x="576" y="327">Our names, Constants with units, current</text>
+    <text x="576" y="344">limits, FOC. Credit the source.</text>
+
+    <rect x="560" y="375" width="300" height="70" rx="8" fill="#fff" stroke="#000AB5" stroke-width="2"/>
+    <text x="576" y="398" font-size="14" font-weight="700">d. Test: sim, blocks, floor</text>
+    <text x="576" y="417">The robot is the final judge, not the</text>
+    <text x="576" y="434">forum post and not the AI.</text>
+
+    <rect x="560" y="465" width="300" height="56" rx="8" fill="#FFA700" stroke="#000AB5" stroke-width="2"/>
+    <text x="710" y="488" text-anchor="middle" font-size="14" font-weight="700">Works? Commit, and write down</text>
+    <text x="710" y="506" text-anchor="middle" font-size="14" font-weight="700">what you learned for the next person</text>
+  </g>
+  <g stroke="#000AB5" stroke-width="2.5">
+    <line x1="710" y1="175" x2="710" y2="193" marker-end="url(#ah)"/>
+    <line x1="710" y1="265" x2="710" y2="283" marker-end="url(#ah)"/>
+    <line x1="710" y1="355" x2="710" y2="373" marker-end="url(#ah)"/>
+    <line x1="710" y1="445" x2="710" y2="463" marker-end="url(#ah)"/>
+  </g>
+
+  <!-- side notes -->
+  <rect x="20" y="618" width="460" height="68" rx="8" fill="#fff" stroke="#c9ced8" stroke-width="2"/>
+  <text x="36" y="642" font-size="14" font-weight="700">Stuck more than 30 minutes on one step?</text>
+  <text x="36" y="662" font-size="13">Ask a teammate or mentor. Asking early is good.</text>
+  <text x="36" y="679" font-size="13">Bring what you tried (step 6 in the guide).</text>
+
+  <rect x="540" y="556" width="340" height="134" rx="8" fill="#fff" stroke="#000AB5" stroke-width="2" stroke-dasharray="7 5"/>
+  <text x="556" y="580" font-size="14" font-weight="700">AI: a helper at any step, never the answer</text>
+  <text x="556" y="601" font-size="13">Good for: explaining an error or a concept,</text>
+  <text x="556" y="619" font-size="13">summarizing a long page, comparing two</text>
+  <text x="556" y="637" font-size="13">approaches, quizzing you.</text>
+  <text x="556" y="659" font-size="13">It can be confidently wrong and invent</text>
+  <text x="556" y="677" font-size="13">methods. Its answers go through a to d too.</text>
+</svg>

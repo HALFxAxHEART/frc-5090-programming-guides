@@ -1,0 +1,89 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 470" width="900" height="470" font-family="Inter, Arial, sans-serif" fill="#16181d">
+  <defs>
+    <marker id="ah" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#000AB5"/>
+    </marker>
+    <marker id="ahr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#b00020"/>
+    </marker>
+  </defs>
+  <rect width="900" height="470" fill="#fff"/>
+  <text x="450" y="30" text-anchor="middle" font-size="20" font-weight="700">From template to a new robot</text>
+
+  <!-- template (read only) -->
+  <rect x="20" y="60" width="200" height="110" rx="10" fill="#f4f5f9" stroke="#8a909c" stroke-width="2"/>
+  <text x="120" y="86" text-anchor="middle" font-size="15" font-weight="700">Robot-Template</text>
+  <text x="120" y="106" text-anchor="middle" font-size="13">branch 2026 on GitHub</text>
+  <text x="120" y="130" text-anchor="middle" font-size="14" font-weight="700" fill="#b00020">READ ONLY</text>
+  <text x="120" y="150" text-anchor="middle" font-size="13">mentors maintain it</text>
+
+  <line x1="222" y1="115" x2="268" y2="115" stroke="#000AB5" stroke-width="3" marker-end="url(#ah)"/>
+  <text x="245" y="104" text-anchor="middle" font-size="13">clone</text>
+
+  <!-- local copy -->
+  <rect x="270" y="60" width="200" height="110" rx="10" fill="#fff" stroke="#000AB5" stroke-width="2"/>
+  <text x="370" y="86" text-anchor="middle" font-size="15" font-weight="700">Your laptop</text>
+  <text x="370" y="106" text-anchor="middle" font-size="13">folder renamed, e.g.</text>
+  <text x="370" y="124" text-anchor="middle" font-size="13" font-weight="700">Robot-2027-Offseason</text>
+  <text x="370" y="146" text-anchor="middle" font-size="13">template remote REMOVED</text>
+
+  <line x1="472" y1="115" x2="518" y2="115" stroke="#000AB5" stroke-width="3" marker-end="url(#ah)"/>
+  <text x="495" y="104" text-anchor="middle" font-size="13">push</text>
+
+  <!-- new repo -->
+  <rect x="520" y="60" width="200" height="110" rx="10" fill="#FFA700" stroke="#000AB5" stroke-width="2.5"/>
+  <text x="620" y="86" text-anchor="middle" font-size="15" font-weight="700">NEW repo</text>
+  <text x="620" y="106" text-anchor="middle" font-size="13">in TorqueNados-FRC5090</text>
+  <text x="620" y="126" text-anchor="middle" font-size="13">(a mentor creates it,</text>
+  <text x="620" y="144" text-anchor="middle" font-size="13">empty, no README)</text>
+
+  <!-- red no-arrow back to template -->
+  <path d="M370,172 C370,215 120,215 120,174" fill="none" stroke="#b00020" stroke-width="2.5" stroke-dasharray="6 4" marker-end="url(#ahr)"/>
+  <text x="245" y="228" text-anchor="middle" font-size="13" fill="#b00020" font-weight="700">never push here</text>
+
+  <text x="745" y="96" font-size="13">Check before</text>
+  <text x="745" y="114" font-size="13">the first push:</text>
+  <text x="745" y="132" font-size="13" font-weight="700">git remote -v</text>
+  <text x="745" y="150" font-size="13">shows the NEW repo</text>
+
+  <!-- steps row -->
+  <text x="20" y="268" font-size="15" font-weight="700">Then, in the new repo, in this order:</text>
+  <g font-size="13">
+    <rect x="20" y="285" width="160" height="100" rx="8" fill="#fff" stroke="#000AB5" stroke-width="2"/>
+    <text x="100" y="307" text-anchor="middle" font-weight="700" font-size="14">1. Team + names</text>
+    <text x="100" y="327" text-anchor="middle">team number 5090,</text>
+    <text x="100" y="344" text-anchor="middle">CANivore names,</text>
+    <text x="100" y="361" text-anchor="middle">README</text>
+
+    <rect x="196" y="285" width="160" height="100" rx="8" fill="#fff" stroke="#000AB5" stroke-width="2"/>
+    <text x="276" y="307" text-anchor="middle" font-weight="700" font-size="14">2. Swerve</text>
+    <text x="276" y="327" text-anchor="middle">regenerate</text>
+    <text x="276" y="344" text-anchor="middle">TunerConstants,</text>
+    <text x="276" y="361" text-anchor="middle">re-apply edits (g. 16)</text>
+
+    <rect x="372" y="285" width="160" height="100" rx="8" fill="#fff" stroke="#000AB5" stroke-width="2"/>
+    <text x="452" y="307" text-anchor="middle" font-weight="700" font-size="14">3. Constants</text>
+    <text x="452" y="327" text-anchor="middle">CAN IDs by our</text>
+    <text x="452" y="344" text-anchor="middle">scheme, ports,</text>
+    <text x="452" y="361" text-anchor="middle">robot mass/MOI</text>
+
+    <rect x="548" y="285" width="160" height="100" rx="8" fill="#fff" stroke="#000AB5" stroke-width="2"/>
+    <text x="628" y="307" text-anchor="middle" font-weight="700" font-size="14">4. Cameras</text>
+    <text x="628" y="327" text-anchor="middle">hostname + IP on</text>
+    <text x="628" y="344" text-anchor="middle">each Limelight,</text>
+    <text x="628" y="361" text-anchor="middle">kCameras (g. 17)</text>
+
+    <rect x="724" y="285" width="156" height="100" rx="8" fill="#fff" stroke="#000AB5" stroke-width="2"/>
+    <text x="802" y="307" text-anchor="middle" font-weight="700" font-size="14">5. Mechanisms</text>
+    <text x="802" y="327" text-anchor="middle">copy ExampleRoller</text>
+    <text x="802" y="344" text-anchor="middle">per mechanism,</text>
+    <text x="802" y="361" text-anchor="middle">then autos (g. 18)</text>
+  </g>
+  <line x1="180" y1="335" x2="194" y2="335" stroke="#000AB5" stroke-width="3" marker-end="url(#ah)"/>
+  <line x1="356" y1="335" x2="370" y2="335" stroke="#000AB5" stroke-width="3" marker-end="url(#ah)"/>
+  <line x1="532" y1="335" x2="546" y2="335" stroke="#000AB5" stroke-width="3" marker-end="url(#ah)"/>
+  <line x1="708" y1="335" x2="722" y2="335" stroke="#000AB5" stroke-width="3" marker-end="url(#ah)"/>
+
+  <rect x="20" y="405" width="860" height="50" rx="8" fill="#fff7e6" stroke="#FFA700" stroke-width="2"/>
+  <text x="450" y="436" text-anchor="middle" font-size="14">After EVERY step: build, test in simulation, then on blocks, then on the floor. Commit when it works.</text>
+</svg>

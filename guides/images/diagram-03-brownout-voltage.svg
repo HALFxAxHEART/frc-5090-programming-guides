@@ -1,0 +1,49 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 880 330" width="880" height="330" font-family="Inter, Arial, sans-serif" fill="#16181d">
+<defs><linearGradient id="rg" x1="0" x2="1"><stop offset="0" stop-color="#FFA700"/><stop offset="1" stop-color="#FFA700" stop-opacity="0.1"/></linearGradient></defs>
+<rect width="880" height="330" fill="#fff"/>
+<text x="440.0" y="30" text-anchor="middle" font-size="20" font-weight="700">Battery voltage: what the robot does as it drops</text>
+<rect x="60.0" y="120" width="43.33333333333333" height="50" fill="#16181d"/>
+<rect x="103.33333333333333" y="120" width="195.00000000000006" height="50" fill="#c9ced8"/>
+<rect x="298.33333333333337" y="120" width="64.99999999999994" height="50" fill="url(#rg)"/>
+<rect x="363.3333333333333" y="120" width="433.3333333333333" height="50" fill="#f4f5f9"/>
+<rect x="796.6666666666666" y="120" width="43.33333333333337" height="50" fill="#000AB5"/>
+<rect x="60" y="120" width="780" height="50" fill="none" stroke="#16181d" stroke-width="1.5"/>
+<line x1="60.0" y1="170" x2="60.0" y2="177" stroke="#16181d"/>
+<text x="60.0" y="194" text-anchor="middle" font-size="13">4 V</text>
+<line x1="146.66666666666666" y1="170" x2="146.66666666666666" y2="177" stroke="#16181d"/>
+<text x="146.66666666666666" y="194" text-anchor="middle" font-size="13">5 V</text>
+<line x1="233.33333333333331" y1="170" x2="233.33333333333331" y2="177" stroke="#16181d"/>
+<text x="233.33333333333331" y="194" text-anchor="middle" font-size="13">6 V</text>
+<line x1="320.0" y1="170" x2="320.0" y2="177" stroke="#16181d"/>
+<text x="320.0" y="194" text-anchor="middle" font-size="13">7 V</text>
+<line x1="406.66666666666663" y1="170" x2="406.66666666666663" y2="177" stroke="#16181d"/>
+<text x="406.66666666666663" y="194" text-anchor="middle" font-size="13">8 V</text>
+<line x1="493.33333333333337" y1="170" x2="493.33333333333337" y2="177" stroke="#16181d"/>
+<text x="493.33333333333337" y="194" text-anchor="middle" font-size="13">9 V</text>
+<line x1="580.0" y1="170" x2="580.0" y2="177" stroke="#16181d"/>
+<text x="580.0" y="194" text-anchor="middle" font-size="13">10 V</text>
+<line x1="666.6666666666666" y1="170" x2="666.6666666666666" y2="177" stroke="#16181d"/>
+<text x="666.6666666666666" y="194" text-anchor="middle" font-size="13">11 V</text>
+<line x1="753.3333333333333" y1="170" x2="753.3333333333333" y2="177" stroke="#16181d"/>
+<text x="753.3333333333333" y="194" text-anchor="middle" font-size="13">12 V</text>
+<line x1="840.0" y1="170" x2="840.0" y2="177" stroke="#16181d"/>
+<text x="840.0" y="194" text-anchor="middle" font-size="13">13 V</text>
+<text x="200.83333333333334" y="150" text-anchor="middle" font-size="13" font-weight="700">BROWNOUT</text>
+<text x="580.0" y="150" text-anchor="middle" font-size="13" font-weight="700">normal driving (voltage sags under load)</text>
+<line x1="103.33333333333333" y1="101" x2="103.33333333333333" y2="170" stroke="#16181d" stroke-width="2" stroke-dasharray="4 3"/>
+<text x="103.33333333333333" y="79" text-anchor="middle" font-size="13" font-weight="700">about 4.5 V</text>
+<text x="103.33333333333333" y="95" text-anchor="middle" font-size="13">roboRIO may reboot</text>
+<line x1="298.33333333333337" y1="101" x2="298.33333333333337" y2="170" stroke="#16181d" stroke-width="2" stroke-dasharray="4 3"/>
+<text x="298.33333333333337" y="79" text-anchor="end" font-size="13" font-weight="700">6.75 V brownout</text>
+<text x="298.33333333333337" y="95" text-anchor="end" font-size="13">(roboRIO 2 default)</text>
+<line x1="363.3333333333333" y1="101" x2="363.3333333333333" y2="170" stroke="#16181d" stroke-width="2" stroke-dasharray="4 3"/>
+<text x="363.3333333333333" y="79" text-anchor="start" font-size="13" font-weight="700">7.5 V</text>
+<text x="363.3333333333333" y="95" text-anchor="start" font-size="13">rumble starts, brownout recovers</text>
+<line x1="796.6666666666666" y1="101" x2="796.6666666666666" y2="170" stroke="#16181d" stroke-width="2" stroke-dasharray="4 3"/>
+<text x="866" y="79" text-anchor="end" font-size="13" font-weight="700">12.5 V or more</text>
+<text x="866" y="95" text-anchor="end" font-size="13">fresh battery (team guideline)</text>
+<rect x="60" y="225" width="780" height="92" rx="8" fill="#f4f5f9" stroke="#c9ced8"/>
+<text x="74" y="249" font-size="13">In a brownout the roboRIO disables the motor controllers and the 6V/5V/3.3V rails until voltage</text>
+<text x="74" y="271" font-size="13">recovers above 7.5 V. Power light turns amber, the DS shows "Voltage Brownout". (roboRIO 1: fixed at 6.3 V.)</text>
+<text x="74" y="293" font-size="13">Our code rumbles the driver controller from 7.5 V (light) down to the brownout voltage (full).</text>
+</svg>

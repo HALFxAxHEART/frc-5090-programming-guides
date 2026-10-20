@@ -1,0 +1,81 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 430" width="900" height="430" font-family="Inter, Arial, sans-serif" fill="#16181d">
+  <rect width="900" height="430" fill="#fff"/>
+  <text x="450" y="30" text-anchor="middle" font-size="20" font-weight="700">How old is this code? Clues that it won't compile in 2026</text>
+
+  <!-- timeline -->
+  <line x1="40" y1="80" x2="860" y2="80" stroke="#000AB5" stroke-width="4"/>
+  <g font-size="16" font-weight="700" text-anchor="middle">
+    <circle cx="110" cy="80" r="10" fill="#fff" stroke="#000AB5" stroke-width="3"/><text x="110" y="62">2023</text>
+    <circle cx="280" cy="80" r="10" fill="#fff" stroke="#000AB5" stroke-width="3"/><text x="280" y="62">2024</text>
+    <circle cx="450" cy="80" r="10" fill="#fff" stroke="#000AB5" stroke-width="3"/><text x="450" y="62">2025</text>
+    <circle cx="620" cy="80" r="12" fill="#FFA700" stroke="#000AB5" stroke-width="3"/><text x="620" y="62">2026 (us)</text>
+    <circle cx="790" cy="80" r="10" fill="#fff" stroke="#16181d" stroke-width="3" stroke-dasharray="4 3"/><text x="790" y="62">2027</text>
+  </g>
+
+  <!-- cards -->
+  <g font-size="13">
+    <rect x="30" y="105" width="160" height="230" rx="8" fill="#f4f5f9" stroke="#000AB5" stroke-width="2"/>
+    <text x="44" y="128" font-weight="700" font-size="14">Phoenix 6 arrives</text>
+    <text x="44" y="148">Before it: Phoenix 5.</text>
+    <text x="44" y="172" font-weight="700">Old-code clues:</text>
+    <text x="44" y="192" font-family="Consolas, monospace">WPI_TalonFX</text>
+    <text x="44" y="210" font-family="Consolas, monospace">ControlMode.</text>
+    <text x="44" y="226" font-family="Consolas, monospace">  PercentOutput</text>
+    <text x="44" y="244" font-family="Consolas, monospace">config_kP(0,</text>
+    <text x="44" y="262" font-family="Consolas, monospace">  value)</text>
+    <text x="44" y="286">PathPlanner 2023:</text>
+    <text x="44" y="304" font-family="Consolas, monospace">PPSwerveCont-</text>
+    <text x="44" y="320" font-family="Consolas, monospace">  rollerCommand</text>
+
+    <rect x="200" y="105" width="160" height="230" rx="8" fill="#f4f5f9" stroke="#000AB5" stroke-width="2"/>
+    <text x="214" y="128" font-weight="700" font-size="14">PathPlanner 2024</text>
+    <text x="214" y="148">AutoBuilder and</text>
+    <text x="214" y="166">NamedCommands.</text>
+    <text x="214" y="190">Limelight MegaTag2.</text>
+    <text x="214" y="214" font-weight="700">Old-code clues:</text>
+    <text x="214" y="234" font-family="Consolas, monospace">configureHolo-</text>
+    <text x="214" y="250" font-family="Consolas, monospace">  nomic(...)</text>
+    <text x="214" y="268" font-family="Consolas, monospace">HolonomicPath-</text>
+    <text x="214" y="284" font-family="Consolas, monospace">  FollowerConfig</text>
+
+    <rect x="370" y="105" width="160" height="230" rx="8" fill="#f4f5f9" stroke="#000AB5" stroke-width="2"/>
+    <text x="384" y="128" font-weight="700" font-size="14">PathPlanner 2025</text>
+    <text x="384" y="148">RobotConfig from</text>
+    <text x="384" y="166">the GUI settings,</text>
+    <text x="384" y="184">AutoBuilder.configure</text>
+    <text x="384" y="202">with a PPHolonomic-</text>
+    <text x="384" y="220">DriveController.</text>
+    <text x="384" y="244">Our Stingray (2025)</text>
+    <text x="384" y="262">is this year: it uses</text>
+    <text x="384" y="280">WPILib 2025 and still</text>
+    <text x="384" y="298">has Phoenix 5 + REV.</text>
+
+    <rect x="540" y="105" width="160" height="230" rx="8" fill="#fff7e6" stroke="#FFA700" stroke-width="2.5"/>
+    <text x="554" y="128" font-weight="700" font-size="14">What we use</text>
+    <text x="554" y="148">WPILib 2026.2.1</text>
+    <text x="554" y="166">Phoenix 6 26.3.0</text>
+    <text x="554" y="184">PathPlannerLib 2026.1.2</text>
+    <text x="554" y="202">LimelightHelpers 1.14</text>
+    <text x="554" y="226" font-weight="700">2026 changes:</text>
+    <text x="554" y="246" font-family="Consolas, monospace">new Follower(id,</text>
+    <text x="554" y="262" font-family="Consolas, monospace">  MotorAlignment-</text>
+    <text x="554" y="278" font-family="Consolas, monospace">  Value.Opposed)</text>
+    <text x="554" y="296">(not the old</text>
+    <text x="554" y="314">true/false form)</text>
+
+    <rect x="710" y="105" width="160" height="230" rx="8" fill="#fff" stroke="#16181d" stroke-width="2" stroke-dasharray="6 4"/>
+    <text x="724" y="128" font-weight="700" font-size="14">SystemCore</text>
+    <text x="724" y="148">replaces the</text>
+    <text x="724" y="166">roboRIO.</text>
+    <text x="724" y="190">Expect new setup,</text>
+    <text x="724" y="208">new library years,</text>
+    <text x="724" y="226">and code from 2026</text>
+    <text x="724" y="244">(including ours)</text>
+    <text x="724" y="262">needing updates.</text>
+    <text x="724" y="286">Check current docs.</text>
+  </g>
+
+  <rect x="30" y="352" width="840" height="64" rx="8" fill="#f4f5f9" stroke="#c9ced8"/>
+  <text x="46" y="377" font-size="14" font-weight="700">Fastest check: open the repo's build.gradle and vendordeps/ folder.</text>
+  <text x="46" y="399" font-size="13">GradleRIO version = WPILib year. Vendordep file names show Phoenix / PathPlanner / REV years. Not 2026? Translate, don't paste.</text>
+</svg>

@@ -1,0 +1,52 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 470" width="900" height="470">
+<rect width="900" height="470" fill="#ffffff"/>
+<defs>
+  <marker id="arr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse">
+    <path d="M0,0 L10,5 L0,10 z" fill="#000AB5"/>
+  </marker>
+</defs>
+<g font-family="Inter, Arial, sans-serif" fill="#16181d">
+<text x="450" y="30" font-size="19" font-weight="700" text-anchor="middle">What FusedCANcoder does inside the Talon</text>
+
+<!-- inputs -->
+<rect x="30" y="70" width="250" height="110" rx="10" fill="#000AB5"/>
+<text x="155" y="100" font-size="16" font-weight="700" text-anchor="middle" fill="#ffffff">Rotor sensor (built in)</text>
+<text x="155" y="124" font-size="13" text-anchor="middle" fill="#ffffff">fast, no CAN delay</text>
+<text x="155" y="144" font-size="13" text-anchor="middle" fill="#ffffff">very fine after the gearbox</text>
+<text x="155" y="164" font-size="13" text-anchor="middle" fill="#ffffff">but only RELATIVE</text>
+
+<rect x="30" y="230" width="250" height="110" rx="10" fill="#FFA700"/>
+<text x="155" y="260" font-size="16" font-weight="700" text-anchor="middle">CANcoder (over CAN)</text>
+<text x="155" y="284" font-size="13" text-anchor="middle">ABSOLUTE, on the mechanism</text>
+<text x="155" y="304" font-size="13" text-anchor="middle">sees the real angle after backlash</text>
+<text x="155" y="324" font-size="13" text-anchor="middle">but arrives a little late</text>
+
+<!-- fusion block -->
+<rect x="360" y="130" width="210" height="150" rx="12" fill="#f4f5f9" stroke="#000AB5" stroke-width="3"/>
+<text x="465" y="168" font-size="16" font-weight="700" text-anchor="middle">Talon fuses them</text>
+<text x="465" y="194" font-size="13" text-anchor="middle">rotor gives the motion</text>
+<text x="465" y="214" font-size="13" text-anchor="middle">between CAN frames;</text>
+<text x="465" y="234" font-size="13" text-anchor="middle">CANcoder keeps it</text>
+<text x="465" y="254" font-size="13" text-anchor="middle">pinned to the truth</text>
+
+<line x1="282" y1="125" x2="356" y2="175" stroke="#000AB5" stroke-width="3" marker-end="url(#arr)"/>
+<line x1="282" y1="285" x2="356" y2="235" stroke="#000AB5" stroke-width="3" marker-end="url(#arr)"/>
+<text x="300" y="214" font-size="12" text-anchor="middle">RotorToSensor</text>
+<text x="300" y="229" font-size="12" text-anchor="middle">Ratio links them</text>
+
+<!-- output -->
+<rect x="640" y="130" width="230" height="150" rx="12" fill="#ffffff" stroke="#16181d" stroke-width="2"/>
+<text x="755" y="162" font-size="15" font-weight="700" text-anchor="middle">One position + velocity</text>
+<text x="755" y="186" font-size="13" text-anchor="middle">getPosition() / getVelocity()</text>
+<text x="755" y="210" font-size="13" text-anchor="middle">PID + Motion Magic</text>
+<text x="755" y="234" font-size="13" text-anchor="middle">soft limits</text>
+<text x="755" y="258" font-size="13" text-anchor="middle">(after SensorToMechanism)</text>
+<line x1="572" y1="205" x2="636" y2="205" stroke="#000AB5" stroke-width="3" marker-end="url(#arr)"/>
+
+<!-- footer -->
+<rect x="30" y="370" width="840" height="86" rx="8" fill="#f4f5f9" stroke="#c9ced8"/>
+<text x="50" y="396" font-size="14"><tspan font-weight="700">Needs Phoenix Pro on the Talon.</tspan> Without it the Talon quietly uses RemoteCANcoder instead</text>
+<text x="50" y="418" font-size="14">(CANcoder only, no rotor blend) and raises the UsingFusedCANcoderWhileUnlicensed fault.</text>
+<text x="50" y="440" font-size="14"><tspan font-weight="700">Both devices must be on the same CAN bus</tspan>, because the Talon reads the CANcoder's frames directly.</text>
+</g>
+</svg>

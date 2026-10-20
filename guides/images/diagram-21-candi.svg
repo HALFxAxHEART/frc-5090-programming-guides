@@ -1,0 +1,85 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 540" width="900" height="540" font-family="Inter, Arial, sans-serif">
+<rect width="900" height="540" fill="#ffffff"/>
+<text x="450" y="32" font-size="19" font-weight="700" fill="#16181d" text-anchor="middle">A limit switch and a beam break on a CANdi, used by a Talon</text>
+
+<!-- Limit switch -->
+<rect x="30" y="78" width="200" height="82" rx="8" fill="#f4f5f9" stroke="#16181d" stroke-width="1.5"/>
+<text x="130" y="100" font-size="14" font-weight="700" fill="#16181d" text-anchor="middle">Limit switch</text>
+<text x="130" y="118" font-size="13" fill="#16181d" text-anchor="middle">(normally open)</text>
+<text x="222" y="114" font-size="13" fill="#16181d" text-anchor="end">NO</text>
+<text x="222" y="146" font-size="13" fill="#16181d" text-anchor="end">COM</text>
+<line x1="230" y1="110" x2="330" y2="110" stroke="#000AB5" stroke-width="2.5"/>
+<polyline points="230,142 290,142 290,178 330,178" fill="none" stroke="#16181d" stroke-width="2.5"/>
+
+<!-- Beam break -->
+<rect x="20" y="210" width="96" height="84" rx="8" fill="#f4f5f9" stroke="#16181d" stroke-width="1.5"/>
+<text x="68" y="246" font-size="14" font-weight="700" fill="#16181d" text-anchor="middle">Emitter</text>
+<text x="68" y="266" font-size="13" fill="#16181d" text-anchor="middle">5 V + GND</text>
+<line x1="118" y1="252" x2="160" y2="252" stroke="#FFA700" stroke-width="3" stroke-dasharray="7 5"/>
+<polygon points="160,246 172,252 160,258" fill="#FFA700"/>
+<text x="144" y="240" font-size="13" fill="#16181d" text-anchor="middle">beam</text>
+<rect x="174" y="210" width="96" height="84" rx="8" fill="#f4f5f9" stroke="#16181d" stroke-width="1.5"/>
+<text x="222" y="236" font-size="14" font-weight="700" fill="#16181d" text-anchor="middle">Receiver</text>
+<text x="264" y="258" font-size="13" fill="#16181d" text-anchor="end">OUT</text>
+<text x="264" y="276" font-size="13" fill="#16181d" text-anchor="end">5V/GND</text>
+<line x1="270" y1="254" x2="330" y2="254" stroke="#000AB5" stroke-width="2.5"/>
+<polyline points="270,280 300,280 300,296 330,296" fill="none" stroke="#16181d" stroke-width="2.5"/>
+<text x="145" y="318" font-size="13" fill="#16181d" text-anchor="middle">blocked = pulls OUT low</text>
+
+<!-- CANdi -->
+<rect x="330" y="70" width="230" height="260" rx="10" fill="#f4f5f9" stroke="#000AB5" stroke-width="3"/>
+<text x="445" y="200" font-size="22" font-weight="800" fill="#000AB5" text-anchor="middle">CANdi</text>
+<text x="445" y="222" font-size="13" fill="#16181d" text-anchor="middle">CAN ID e.g. 25</text>
+<circle cx="330" cy="110" r="5" fill="#fff" stroke="#000AB5" stroke-width="2"/>
+<circle cx="330" cy="178" r="5" fill="#fff" stroke="#000AB5" stroke-width="2"/>
+<circle cx="330" cy="254" r="5" fill="#fff" stroke="#000AB5" stroke-width="2"/>
+<circle cx="330" cy="296" r="5" fill="#fff" stroke="#000AB5" stroke-width="2"/>
+<text x="342" y="115" font-size="14" font-weight="700" fill="#16181d">S1IN</text>
+<text x="342" y="183" font-size="14" font-weight="700" fill="#16181d">GND</text>
+<text x="342" y="259" font-size="14" font-weight="700" fill="#16181d">S2IN</text>
+<text x="342" y="301" font-size="14" font-weight="700" fill="#16181d">5 V / GND out</text>
+<circle cx="560" cy="110" r="5" fill="#fff" stroke="#000AB5" stroke-width="2"/>
+<circle cx="560" cy="254" r="5" fill="#fff" stroke="#000AB5" stroke-width="2"/>
+<text x="548" y="115" font-size="14" font-weight="700" fill="#16181d" text-anchor="end">V+ / V−</text>
+<text x="548" y="259" font-size="14" font-weight="700" fill="#16181d" text-anchor="end">CAN in / out</text>
+
+<!-- Power hat -->
+<line x1="565" y1="110" x2="620" y2="110" stroke="#16181d" stroke-width="2.5"/>
+<rect x="620" y="76" width="260" height="70" rx="8" fill="#f4f5f9" stroke="#16181d" stroke-width="1.5"/>
+<text x="750" y="104" font-size="14" font-weight="700" fill="#16181d" text-anchor="middle">12 V from the power hat</text>
+<text x="750" y="124" font-size="13" fill="#16181d" text-anchor="middle">on this mechanism's motor</text>
+
+<!-- Talon -->
+<line x1="565" y1="254" x2="620" y2="254" stroke="#FFA700" stroke-width="4"/>
+<rect x="620" y="186" width="260" height="138" rx="8" fill="#ffffff" stroke="#000AB5" stroke-width="2.5"/>
+<text x="750" y="210" font-size="14" font-weight="700" fill="#000AB5" text-anchor="middle">Kraken (Talon FX), same bus</text>
+<text x="634" y="236" font-size="13" fill="#16181d">ReverseLimitSource =</text>
+<text x="646" y="254" font-size="13" fill="#16181d">RemoteCANdiS1</text>
+<text x="634" y="276" font-size="13" fill="#16181d">ReverseLimitRemoteSensorID =</text>
+<text x="646" y="294" font-size="13" fill="#16181d">the CANdi's ID</text>
+<text x="634" y="315" font-size="13" fill="#16181d">(reads S1 itself, no robot code)</text>
+
+<!-- Logic chain -->
+<text x="20" y="372" font-size="15" font-weight="700" fill="#16181d">What happens when the switch is pressed</text>
+<rect x="20" y="386" width="190" height="66" rx="8" fill="#f4f5f9" stroke="#16181d" stroke-width="1.5"/>
+<text x="115" y="412" font-size="14" font-weight="700" fill="#16181d" text-anchor="middle">Switch pressed</text>
+<text x="115" y="432" font-size="13" fill="#16181d" text-anchor="middle">S1IN shorted to GND</text>
+<rect x="240" y="386" width="190" height="66" rx="8" fill="#f4f5f9" stroke="#16181d" stroke-width="1.5"/>
+<text x="335" y="412" font-size="14" font-weight="700" fill="#16181d" text-anchor="middle">getS1State() = Low</text>
+<text x="335" y="432" font-size="13" fill="#16181d" text-anchor="middle">(open: PullHigh = High)</text>
+<rect x="460" y="386" width="190" height="66" rx="8" fill="#FFA700" stroke="#16181d" stroke-width="1.5"/>
+<text x="555" y="408" font-size="13" fill="#16181d" text-anchor="middle">S1CloseState =</text>
+<text x="555" y="424" font-size="13" fill="#16181d" text-anchor="middle">CloseWhenLow, so</text>
+<text x="555" y="442" font-size="14" font-weight="700" fill="#16181d" text-anchor="middle">getS1Closed() = true</text>
+<rect x="680" y="386" width="200" height="66" rx="8" fill="#ffffff" stroke="#000AB5" stroke-width="2.5"/>
+<text x="780" y="412" font-size="14" font-weight="700" fill="#000AB5" text-anchor="middle">Talon stops reverse</text>
+<text x="780" y="432" font-size="13" fill="#16181d" text-anchor="middle">and can re-zero to 0</text>
+<g stroke="#000AB5" stroke-width="2.5" fill="#000AB5">
+<line x1="212" y1="419" x2="228" y2="419"/><polygon points="228,413 238,419 228,425" stroke="none"/>
+<line x1="432" y1="419" x2="448" y2="419"/><polygon points="448,413 458,419 448,425" stroke="none"/>
+<line x1="652" y1="419" x2="668" y2="419"/><polygon points="668,413 678,419 668,425" stroke="none"/>
+</g>
+<text x="20" y="486" font-size="13" fill="#16181d">Wire falls out: nothing pulls S1 low, PullHigh keeps it High, so it reads "not closed". Do the unplug test.</text>
+<text x="20" y="508" font-size="13" fill="#16181d">The beam break on S2 works the same way (S2FloatState, S2CloseState, getS2Closed()).</text>
+<text x="20" y="530" font-size="13" fill="#16181d">Schematic only: check the signal-header pinout in CTRE's CANdi guide before you crimp.</text>
+</svg>

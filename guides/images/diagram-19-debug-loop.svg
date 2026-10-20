@@ -1,0 +1,41 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 390" width="900" height="390" font-family="Inter, Arial, sans-serif" fill="#16181d">
+<defs><marker id="ah" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#000AB5"/></marker><marker id="ahg" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#c07d00"/></marker></defs>
+<rect width="900" height="390" fill="#fff"/>
+<text x="450.0" y="30" text-anchor="middle" font-size="20" font-weight="700">How to debug: one method, every time</text>
+<rect x="22" y="60" width="152" height="90" rx="10" fill="#f4f5f9" stroke="#000AB5" stroke-width="2"/>
+<text x="98.0" y="90" text-anchor="middle" font-size="14" font-weight="700">1. Reproduce</text>
+<text x="98.0" y="116" text-anchor="middle" font-size="13">the smallest thing</text>
+<text x="98.0" y="134" text-anchor="middle" font-size="13">that makes it happen</text>
+<line x1="175" y1="105.0" x2="197" y2="105.0" stroke="#000AB5" stroke-width="3" marker-end="url(#ah)"/>
+<rect x="198" y="60" width="152" height="90" rx="10" fill="#fff4e0" stroke="#FFA700" stroke-width="3"/>
+<text x="274.0" y="90" text-anchor="middle" font-size="14" font-weight="700">2. Look at the logs</text>
+<text x="274.0" y="116" text-anchor="middle" font-size="13">graphs + Events,</text>
+<text x="274.0" y="134" text-anchor="middle" font-size="13">before touching code</text>
+<line x1="351" y1="105.0" x2="373" y2="105.0" stroke="#000AB5" stroke-width="3" marker-end="url(#ah)"/>
+<rect x="374" y="60" width="152" height="90" rx="10" fill="#f4f5f9" stroke="#000AB5" stroke-width="2"/>
+<text x="450.0" y="90" text-anchor="middle" font-size="14" font-weight="700">3. Hypothesis</text>
+<text x="450.0" y="116" text-anchor="middle" font-size="13">one you could</text>
+<text x="450.0" y="134" text-anchor="middle" font-size="13">prove wrong</text>
+<line x1="527" y1="105.0" x2="549" y2="105.0" stroke="#000AB5" stroke-width="3" marker-end="url(#ah)"/>
+<rect x="550" y="60" width="152" height="90" rx="10" fill="#f4f5f9" stroke="#000AB5" stroke-width="2"/>
+<text x="626.0" y="90" text-anchor="middle" font-size="14" font-weight="700">4. Change one thing</text>
+<text x="626.0" y="116" text-anchor="middle" font-size="13">only one, so you</text>
+<text x="626.0" y="134" text-anchor="middle" font-size="13">know what fixed it</text>
+<line x1="703" y1="105.0" x2="725" y2="105.0" stroke="#000AB5" stroke-width="3" marker-end="url(#ah)"/>
+<rect x="726" y="60" width="152" height="90" rx="10" fill="#f4f5f9" stroke="#000AB5" stroke-width="2"/>
+<text x="802.0" y="90" text-anchor="middle" font-size="14" font-weight="700">5. Retest</text>
+<text x="802.0" y="116" text-anchor="middle" font-size="13">the same way you</text>
+<text x="802.0" y="134" text-anchor="middle" font-size="13">reproduced it</text>
+<line x1="802.0" y1="151" x2="802.0" y2="182" stroke="#000AB5" stroke-width="3" marker-end="url(#ah)"/>
+<polygon points="802.0,184 848.0,230 802.0,276 756.0,230" fill="#fff" stroke="#000AB5" stroke-width="2.5"/>
+<text x="802.0" y="235" text-anchor="middle" font-size="15" font-weight="700">Fixed?</text>
+<line x1="802.0" y1="276" x2="802.0" y2="314" stroke="#000AB5" stroke-width="3" marker-end="url(#ah)"/>
+<text x="818.0" y="300" font-size="14" font-weight="700">yes</text>
+<rect x="726.0" y="318" width="152" height="58" rx="10" fill="#000AB5"/>
+<text x="802.0" y="342" text-anchor="middle" font-size="15" font-weight="700" fill="#fff">Commit</text>
+<text x="802.0" y="362" text-anchor="middle" font-size="13" fill="#fff">say what was wrong</text>
+<path d="M756.0,230 L274.0,230 L274.0,154" fill="none" stroke="#c07d00" stroke-width="3" stroke-dasharray="9 6" marker-end="url(#ahg)"/>
+<text x="515.0" y="220" text-anchor="middle" font-size="14" font-weight="700">no: back to step 2, with what you just learned</text>
+<text x="22" y="340" font-size="13">Change three things at once and it works: you don't know which one fixed it,</text>
+<text x="22" y="359" font-size="13">and the other two might have broken something you haven't noticed yet.</text>
+</svg>

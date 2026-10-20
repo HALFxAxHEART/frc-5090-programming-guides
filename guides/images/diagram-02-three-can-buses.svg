@@ -1,0 +1,83 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 880 520" width="880" height="520" font-family="Inter, Arial, sans-serif" fill="#16181d">
+  <rect width="880" height="520" fill="#fff"/>
+  <text x="440" y="30" text-anchor="middle" font-size="20" font-weight="700">Our 2026 robot's three CAN buses</text>
+
+  <!-- roboRIO -->
+  <rect x="20" y="215" width="120" height="80" rx="10" fill="#000AB5"/>
+  <text x="80" y="250" text-anchor="middle" font-size="16" font-weight="700" fill="#fff">roboRIO</text>
+  <text x="80" y="272" text-anchor="middle" font-size="13" fill="#fff">CAN port + USB</text>
+
+  <!-- connectors -->
+  <path d="M140,235 H165 V95 H225" fill="none" stroke="#16181d" stroke-width="3"/>
+  <path d="M140,255 H225" fill="none" stroke="#000AB5" stroke-width="3"/>
+  <path d="M140,275 H165 V420 H225" fill="none" stroke="#000AB5" stroke-width="3"/>
+  <text x="172" y="122" font-size="13">CAN</text><text x="172" y="139" font-size="13">port</text>
+  <text x="172" y="248" font-size="13">USB</text>
+  <text x="172" y="412" font-size="13">USB</text>
+
+  <!-- rio bus -->
+  <rect x="225" y="60" width="635" height="70" rx="10" fill="#f4f5f9" stroke="#c9ced8" stroke-width="2"/>
+  <text x="240" y="86" font-size="16" font-weight="700">"rio" bus</text>
+  <text x="240" y="108" font-size="13">classic CAN 2.0</text>
+  <rect x="440" y="75" width="190" height="40" rx="6" fill="#fff" stroke="#16181d"/>
+  <text x="535" y="100" text-anchor="middle" font-size="14" font-weight="700">PDH  ID 1 (REV)</text>
+  <text x="648" y="100" font-size="13">few or no CTRE devices</text>
+
+  <!-- Jarvis -->
+  <rect x="225" y="150" width="635" height="190" rx="10" fill="#fff" stroke="#000AB5" stroke-width="3"/>
+  <text x="240" y="177" font-size="16" font-weight="700" fill="#000AB5">CANivore "Jarvis" = swerve</text>
+  <text x="240" y="197" font-size="13">CAN FD. All swerve devices must share one bus.</text>
+  <g font-size="13" text-anchor="middle">
+    <g transform="translate(240,212)">
+      <rect width="115" height="110" rx="8" fill="#f4f5f9" stroke="#000AB5"/>
+      <text x="57" y="22" font-size="15" font-weight="700">FL module</text>
+      <text x="57" y="48">steer 30</text><text x="57" y="70">drive 40</text><text x="57" y="92">CANcoder 50</text>
+    </g>
+    <g transform="translate(365,212)">
+      <rect width="115" height="110" rx="8" fill="#f4f5f9" stroke="#000AB5"/>
+      <text x="57" y="22" font-size="15" font-weight="700">FR module</text>
+      <text x="57" y="48">steer 31</text><text x="57" y="70">drive 41</text><text x="57" y="92">CANcoder 51</text>
+    </g>
+    <g transform="translate(490,212)">
+      <rect width="115" height="110" rx="8" fill="#f4f5f9" stroke="#000AB5"/>
+      <text x="57" y="22" font-size="15" font-weight="700">BL module</text>
+      <text x="57" y="48">steer 32</text><text x="57" y="70">drive 42</text><text x="57" y="92">CANcoder 52</text>
+    </g>
+    <g transform="translate(615,212)">
+      <rect width="115" height="110" rx="8" fill="#f4f5f9" stroke="#000AB5"/>
+      <text x="57" y="22" font-size="15" font-weight="700">BR module</text>
+      <text x="57" y="48">steer 33</text><text x="57" y="70">drive 43</text><text x="57" y="92">CANcoder 53</text>
+    </g>
+    <g transform="translate(740,212)">
+      <rect width="105" height="110" rx="8" fill="#FFA700" stroke="#16181d"/>
+      <text x="52" y="40" font-size="15" font-weight="700">Pigeon 2</text>
+      <text x="52" y="66" font-size="15" font-weight="700">ID 0</text>
+      <text x="52" y="92">(not 24!)</text>
+    </g>
+  </g>
+
+  <!-- Upper -->
+  <rect x="225" y="360" width="635" height="145" rx="10" fill="#fff" stroke="#000AB5" stroke-width="3"/>
+  <text x="240" y="387" font-size="16" font-weight="700" fill="#000AB5">CANivore "Upper" = mechanisms (IDs 10-29)</text>
+  <text x="240" y="407" font-size="13">CAN FD. A fault here can't take out the drivetrain.</text>
+  <g font-size="13">
+    <g transform="translate(240,420)">
+      <rect width="195" height="72" rx="8" fill="#f4f5f9" stroke="#c9ced8"/>
+      <text x="10" y="20">intake rack <tspan font-weight="700">11</tspan> (+<tspan font-weight="700">14</tspan>)</text>
+      <text x="10" y="42">intake wheels <tspan font-weight="700">12</tspan></text>
+      <text x="10" y="64">floor roller <tspan font-weight="700">13</tspan></text>
+    </g>
+    <g transform="translate(445,420)">
+      <rect width="195" height="72" rx="8" fill="#f4f5f9" stroke="#c9ced8"/>
+      <text x="10" y="20">belts <tspan font-weight="700">21</tspan> / <tspan font-weight="700">22</tspan></text>
+      <text x="10" y="42">shooter <tspan font-weight="700">27</tspan> (+<tspan font-weight="700">15</tspan>)</text>
+      <text x="10" y="64">hood <tspan font-weight="700">20</tspan></text>
+    </g>
+    <g transform="translate(650,420)">
+      <rect width="195" height="72" rx="8" fill="#f4f5f9" stroke="#c9ced8"/>
+      <text x="10" y="20">turret <tspan font-weight="700">16</tspan></text>
+      <text x="10" y="42">(Talon FXS)</text>
+      <text x="10" y="64">(+N) = follower motor</text>
+    </g>
+  </g>
+</svg>

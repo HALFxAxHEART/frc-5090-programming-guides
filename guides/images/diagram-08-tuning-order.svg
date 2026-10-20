@@ -1,0 +1,38 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 880 285" width="880" height="285" font-family="Inter, Arial, sans-serif" fill="#16181d">
+  <defs>
+    <marker id="ah" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#000AB5"/></marker>
+    <marker id="ahi" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#16181d"/></marker>
+    <marker id="ahg" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#c07d00"/></marker>
+  </defs>
+  <rect width="880" height="285" fill="#fff"/>
+<text x="440" y="28" font-size="18" text-anchor="middle" font-weight="700">Tuning order: feedforward first, feedback last</text>
+  <text x="20" y="80" font-size="15" text-anchor="start" font-weight="700">Velocity</text>
+  <text x="20" y="99" font-size="13" text-anchor="start" fill="#5a6070">shooter, rollers</text>
+  <rect x="260" y="60" width="78" height="44" rx="8" fill="#fff8e8" stroke="#c07d00" stroke-width="2.5"/><text x="299" y="88" font-size="17" text-anchor="middle" font-weight="700">kS</text>
+  <polyline points="340,82 364,82" fill="none" stroke="#000AB5" stroke-width="2" marker-end="url(#ah)"/>
+  <rect x="366" y="60" width="78" height="44" rx="8" fill="#fff8e8" stroke="#c07d00" stroke-width="2.5"/><text x="405" y="88" font-size="17" text-anchor="middle" font-weight="700">kV</text>
+  <polyline points="446,82 470,82" fill="none" stroke="#000AB5" stroke-width="2" marker-end="url(#ah)"/>
+  <rect x="472" y="60" width="78" height="44" rx="8" fill="#f4f5f9" stroke="#000AB5" stroke-width="2.5"/><text x="511" y="88" font-size="17" text-anchor="middle" font-weight="700">kP</text>
+  <polyline points="552,82 576,82" fill="none" stroke="#000AB5" stroke-width="2" marker-end="url(#ah)"/>
+  <rect x="578" y="60" width="78" height="44" rx="8" fill="#f4f5f9" stroke="#000AB5" stroke-width="2.5" stroke-dasharray="6 4"/><text x="617" y="88" font-size="17" text-anchor="middle" font-weight="700">(kD)</text>
+  <text x="20" y="160" font-size="15" text-anchor="start" font-weight="700">Position</text>
+  <text x="20" y="179" font-size="13" text-anchor="start" fill="#5a6070">turret, hood, arm, elevator</text>
+  <rect x="260" y="140" width="78" height="44" rx="8" fill="#fff8e8" stroke="#c07d00" stroke-width="2.5"/><text x="299" y="168" font-size="17" text-anchor="middle" font-weight="700">kG</text>
+  <polyline points="340,162 364,162" fill="none" stroke="#000AB5" stroke-width="2" marker-end="url(#ah)"/>
+  <rect x="366" y="140" width="78" height="44" rx="8" fill="#fff8e8" stroke="#c07d00" stroke-width="2.5"/><text x="405" y="168" font-size="17" text-anchor="middle" font-weight="700">kS</text>
+  <polyline points="446,162 470,162" fill="none" stroke="#000AB5" stroke-width="2" marker-end="url(#ah)"/>
+  <rect x="472" y="140" width="78" height="44" rx="8" fill="#fff8e8" stroke="#c07d00" stroke-width="2.5"/><text x="511" y="168" font-size="17" text-anchor="middle" font-weight="700">kV</text>
+  <polyline points="552,162 576,162" fill="none" stroke="#000AB5" stroke-width="2" marker-end="url(#ah)"/>
+  <rect x="578" y="140" width="78" height="44" rx="8" fill="#fff8e8" stroke="#c07d00" stroke-width="2.5" stroke-dasharray="6 4"/><text x="617" y="168" font-size="17" text-anchor="middle" font-weight="700">(kA)</text>
+  <polyline points="658,162 682,162" fill="none" stroke="#000AB5" stroke-width="2" marker-end="url(#ah)"/>
+  <rect x="684" y="140" width="78" height="44" rx="8" fill="#f4f5f9" stroke="#000AB5" stroke-width="2.5"/><text x="723" y="168" font-size="17" text-anchor="middle" font-weight="700">kP</text>
+  <polyline points="764,162 788,162" fill="none" stroke="#000AB5" stroke-width="2" marker-end="url(#ah)"/>
+  <rect x="790" y="140" width="78" height="44" rx="8" fill="#f4f5f9" stroke="#000AB5" stroke-width="2.5"/><text x="829" y="168" font-size="17" text-anchor="middle" font-weight="700">kD</text>
+  <rect x="20" y="222" width="26" height="20" rx="8" fill="#fff8e8" stroke="#c07d00" stroke-width="2.5"/>
+  <text x="54" y="237" font-size="13" text-anchor="start">feedforward: gets you close with no error needed</text>
+  <rect x="400" y="222" width="26" height="20" rx="8" fill="#f4f5f9" stroke="#000AB5" stroke-width="2.5"/>
+  <text x="434" y="237" font-size="13" text-anchor="start">feedback: fixes what's left</text>
+  <rect x="640" y="222" width="26" height="20" rx="8" fill="#fff" stroke="#16181d" stroke-width="2" stroke-dasharray="5 3"/>
+  <text x="674" y="237" font-size="13" text-anchor="start">( ) = only if needed</text>
+  <text x="440" y="270" font-size="13" text-anchor="middle" fill="#5a6070">kG only for mechanisms gravity pulls on. kI stays at 0.</text>
+</svg>

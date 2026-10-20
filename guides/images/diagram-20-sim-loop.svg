@@ -1,0 +1,46 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 400" width="900" height="400" font-family="Inter, Arial, sans-serif" fill="#16181d">
+  <defs>
+    <marker id="ah" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#000AB5"/></marker>
+    <marker id="ahg" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#c07d00"/></marker>
+  </defs>
+  <rect width="900" height="400" fill="#fff"/>
+  <text x="450" y="30" text-anchor="middle" font-size="20" font-weight="700">simulationPeriodic(): one trip around the loop every 20 ms</text>
+
+  <!-- battery -->
+  <rect x="30" y="70" width="170" height="70" rx="8" fill="#f4f5f9" stroke="#16181d" stroke-width="1.5"/>
+  <text x="115" y="98" text-anchor="middle" font-size="15" font-weight="700">Simulated battery</text>
+  <text x="115" y="120" text-anchor="middle" font-size="13">RobotController</text>
+  <text x="115" y="135" text-anchor="middle" font-size="13">.getBatteryVoltage()</text>
+
+  <!-- Talon -->
+  <rect x="30" y="185" width="270" height="140" rx="10" fill="#fff" stroke="#000AB5" stroke-width="3"/>
+  <text x="165" y="214" text-anchor="middle" font-size="16" font-weight="700">Talon FX (sim state)</text>
+  <text x="165" y="240" text-anchor="middle" font-size="13">motor.getSimState()</text>
+  <text x="165" y="266" text-anchor="middle" font-size="13">Your PID / Motion Magic runs</text>
+  <text x="165" y="283" text-anchor="middle" font-size="13">as usual and picks a voltage.</text>
+  <text x="165" y="308" text-anchor="middle" font-size="13" font-weight="700" fill="#000AB5">Units: rotor rotations</text>
+
+  <!-- Physics model -->
+  <rect x="600" y="185" width="270" height="140" rx="10" fill="#fff" stroke="#000AB5" stroke-width="3"/>
+  <text x="735" y="214" text-anchor="middle" font-size="16" font-weight="700">WPILib physics model</text>
+  <text x="735" y="240" text-anchor="middle" font-size="13">SingleJointedArmSim, FlywheelSim,</text>
+  <text x="735" y="257" text-anchor="middle" font-size="13">ElevatorSim or DCMotorSim</text>
+  <text x="735" y="283" text-anchor="middle" font-size="13">3. update(0.020): step 20 ms</text>
+  <text x="735" y="308" text-anchor="middle" font-size="13" font-weight="700" fill="#000AB5">Units: radians, meters</text>
+
+  <!-- arrows -->
+  <line x1="115" y1="140" x2="115" y2="181" stroke="#000AB5" stroke-width="3" marker-end="url(#ah)"/>
+  <text x="128" y="167" font-size="13" font-weight="700">1. setSupplyVoltage(...)</text>
+
+  <line x1="302" y1="225" x2="596" y2="225" stroke="#000AB5" stroke-width="3" marker-end="url(#ah)"/>
+  <text x="450" y="208" text-anchor="middle" font-size="13" font-weight="700">2. getMotorVoltage() → setInputVoltage(...)</text>
+  <text x="450" y="246" text-anchor="middle" font-size="13">motor volts</text>
+
+  <line x1="598" y1="292" x2="304" y2="292" stroke="#c07d00" stroke-width="3" marker-end="url(#ahg)"/>
+  <text x="450" y="280" text-anchor="middle" font-size="13" font-weight="700">4. setRawRotorPosition / setRotorVelocity</text>
+  <text x="450" y="314" text-anchor="middle" font-size="13">mechanism position and velocity</text>
+  <rect x="335" y="324" width="230" height="28" rx="6" fill="#fff4e0" stroke="#FFA700" stroke-width="2"/>
+  <text x="450" y="343" text-anchor="middle" font-size="13" font-weight="700">× gear ratio (Talon reads its rotor)</text>
+
+  <text x="450" y="384" text-anchor="middle" font-size="13">Convert at the boundary: Units.radiansToRotations(...), then multiply by the gear ratio. 1 rotation = 360° = 2π rad.</text>
+</svg>

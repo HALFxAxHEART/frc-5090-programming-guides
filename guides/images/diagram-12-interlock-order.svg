@@ -1,0 +1,51 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 860 360" width="860" height="360" font-family="Inter, Arial, sans-serif">
+  <rect x="0" y="0" width="860" height="360" fill="#ffffff"/>
+  <defs>
+    <marker id="arr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#000AB5"/>
+    </marker>
+  </defs>
+
+  <!-- loop frame -->
+  <rect x="15" y="15" width="830" height="330" rx="14" fill="none" stroke="#c9ced8" stroke-width="2" stroke-dasharray="8 5"/>
+  <text x="35" y="42" font-size="15" font-weight="700" fill="#16181d">Every 20 ms, the command scheduler does this, in this order:</text>
+
+  <!-- step 1 -->
+  <rect x="35" y="70" width="230" height="110" rx="10" fill="#f4f5f9" stroke="#000AB5" stroke-width="2.5"/>
+  <text x="150" y="96" text-anchor="middle" font-size="15" font-weight="700" fill="#000AB5">1. Hood.periodic()</text>
+  <text x="150" y="122" text-anchor="middle" font-size="13" fill="#16181d">m_forcedDown =</text>
+  <text x="150" y="140" text-anchor="middle" font-size="13" fill="#16181d">heading into trench?</text>
+  <text x="150" y="162" text-anchor="middle" font-size="13" fill="#16181d">(looks 0.5 s ahead)</text>
+
+  <!-- step 2 -->
+  <rect x="315" y="70" width="230" height="110" rx="10" fill="#f4f5f9" stroke="#000AB5" stroke-width="2.5"/>
+  <text x="430" y="96" text-anchor="middle" font-size="15" font-weight="700" fill="#000AB5">2. Commands run</text>
+  <text x="430" y="122" text-anchor="middle" font-size="13" fill="#16181d">shoot command asks:</text>
+  <text x="430" y="140" text-anchor="middle" font-size="13" fill="#16181d">"raise hood to setpoint"</text>
+
+  <!-- gate -->
+  <polygon points="700,60 815,125 700,190 585,125" fill="#FFA700" stroke="#16181d" stroke-width="2"/>
+  <text x="700" y="116" text-anchor="middle" font-size="14" font-weight="700" fill="#16181d">applySetpoint()</text>
+  <text x="700" y="136" text-anchor="middle" font-size="13" fill="#16181d">m_forcedDown?</text>
+
+  <line x1="265" y1="125" x2="310" y2="125" stroke="#000AB5" stroke-width="3" marker-end="url(#arr)"/>
+  <line x1="545" y1="125" x2="580" y2="125" stroke="#000AB5" stroke-width="3" marker-end="url(#arr)"/>
+
+  <!-- outcomes -->
+  <line x1="660" y1="168" x2="560" y2="245" stroke="#000AB5" stroke-width="3" marker-end="url(#arr)"/>
+  <text x="585" y="200" text-anchor="end" font-size="14" font-weight="700" fill="#16181d">yes</text>
+  <line x1="740" y1="168" x2="760" y2="245" stroke="#000AB5" stroke-width="3" marker-end="url(#arr)"/>
+  <text x="768" y="200" font-size="14" font-weight="700" fill="#16181d">no</text>
+
+  <rect x="400" y="250" width="240" height="70" rx="10" fill="#000AB5"/>
+  <text x="520" y="280" text-anchor="middle" font-size="15" font-weight="700" fill="#ffffff">kHoodStowed</text>
+  <text x="520" y="302" text-anchor="middle" font-size="13" fill="#ffffff">hood goes DOWN, command ignored</text>
+
+  <rect x="660" y="250" width="170" height="70" rx="10" fill="#f4f5f9" stroke="#000AB5" stroke-width="2.5"/>
+  <text x="745" y="280" text-anchor="middle" font-size="15" font-weight="700" fill="#16181d">setpoint</text>
+  <text x="745" y="302" text-anchor="middle" font-size="13" fill="#16181d">hood goes up</text>
+
+  <text x="35" y="260" font-size="13" fill="#16181d">periodic() decides first, and every</text>
+  <text x="35" y="278" font-size="13" fill="#16181d">setpoint passes the same gate, so</text>
+  <text x="35" y="296" font-size="13" fill="#16181d">no command can get around it.</text>
+</svg>

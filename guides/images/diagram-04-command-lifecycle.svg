@@ -1,0 +1,61 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 840 400" font-family="Inter, Arial, sans-serif">
+  <defs>
+    <marker id="a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="4.5" markerHeight="4.5" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#000AB5"/>
+    </marker>
+    <marker id="g" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="4.5" markerHeight="4.5" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#16181d"/>
+    </marker>
+  </defs>
+  <rect width="840" height="400" fill="#ffffff"/>
+  <text x="420" y="30" text-anchor="middle" font-size="20" font-weight="700" fill="#16181d">The life of one command</text>
+
+  <!-- start -->
+  <rect x="20" y="120" width="130" height="64" rx="32" fill="#f4f5f9" stroke="#c9ced8" stroke-width="2"/>
+  <text x="85" y="147" text-anchor="middle" font-size="15" font-weight="700" fill="#16181d">Scheduled</text>
+  <text x="85" y="167" text-anchor="middle" font-size="13" fill="#16181d">button pressed</text>
+
+  <!-- initialize -->
+  <rect x="190" y="120" width="140" height="64" rx="8" fill="#000AB5"/>
+  <text x="260" y="149" text-anchor="middle" font-size="16" font-weight="700" fill="#fff">initialize()</text>
+  <text x="260" y="169" text-anchor="middle" font-size="13" fill="#fff">once</text>
+
+  <!-- execute -->
+  <rect x="370" y="120" width="140" height="64" rx="8" fill="#000AB5"/>
+  <text x="440" y="149" text-anchor="middle" font-size="16" font-weight="700" fill="#fff">execute()</text>
+  <text x="440" y="169" text-anchor="middle" font-size="13" fill="#fff">every loop</text>
+
+  <!-- isFinished diamond -->
+  <polygon points="630,92 710,152 630,212 550,152" fill="#ffffff" stroke="#000AB5" stroke-width="3"/>
+  <text x="630" y="150" text-anchor="middle" font-size="15" font-weight="700" fill="#16181d">isFinished()</text>
+  <text x="630" y="168" text-anchor="middle" font-size="13" fill="#16181d">true?</text>
+
+  <!-- end(false) -->
+  <rect x="730" y="120" width="100" height="64" rx="8" fill="#FFA700" stroke="#16181d" stroke-width="1.5"/>
+  <text x="780" y="149" text-anchor="middle" font-size="15" font-weight="700" fill="#16181d">end(false)</text>
+  <text x="780" y="169" text-anchor="middle" font-size="13" fill="#16181d">finished</text>
+
+  <!-- arrows main -->
+  <line x1="150" y1="152" x2="186" y2="152" stroke="#000AB5" stroke-width="3" marker-end="url(#a)"/>
+  <line x1="330" y1="152" x2="366" y2="152" stroke="#000AB5" stroke-width="3" marker-end="url(#a)"/>
+  <line x1="510" y1="152" x2="546" y2="152" stroke="#000AB5" stroke-width="3" marker-end="url(#a)"/>
+  <line x1="710" y1="152" x2="726" y2="152" stroke="#000AB5" stroke-width="3" marker-end="url(#a)"/>
+  <text x="716" y="110" text-anchor="middle" font-size="13" font-weight="700" fill="#000AB5">yes</text>
+
+  <!-- loop back -->
+  <path d="M630,92 L630,64 L440,64 L440,116" fill="none" stroke="#000AB5" stroke-width="3" marker-end="url(#a)"/>
+  <text x="535" y="56" text-anchor="middle" font-size="13" font-weight="700" fill="#000AB5">no: run again next loop (20 ms later)</text>
+
+  <!-- interrupted path -->
+  
+  <path d="M440,184 L440,300 L716,300" fill="none" stroke="#16181d" stroke-width="2.5" stroke-dasharray="7 5" marker-end="url(#g)"/>
+  <rect x="720" y="270" width="110" height="60" rx="8" fill="#ffffff" stroke="#16181d" stroke-width="2"/>
+  <text x="775" y="297" text-anchor="middle" font-size="15" font-weight="700" fill="#16181d">end(true)</text>
+  <text x="775" y="316" text-anchor="middle" font-size="13" fill="#16181d">interrupted</text>
+  <text x="460" y="230" font-size="13" font-weight="700" fill="#16181d">Cancelled at any time while running:</text>
+  <text x="460" y="250" font-size="13" fill="#16181d">button released (whileTrue), or another</text>
+  <text x="460" y="268" font-size="13" fill="#16181d">command needs the same subsystem</text>
+  <text x="460" y="290" font-size="13" fill="#16181d">(isFinished() is not checked)</text>
+
+  <text x="420" y="370" text-anchor="middle" font-size="14" fill="#16181d">Either way, end() runs exactly once. If no other command needs the subsystem, its default command starts.</text>
+</svg>

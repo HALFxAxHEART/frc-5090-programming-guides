@@ -1,0 +1,81 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 470" width="900" height="470" font-family="Inter, Arial, sans-serif" fill="#16181d">
+  <defs>
+    <marker id="ah" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#000AB5"/>
+    </marker>
+    <marker id="ahg" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#c07d00"/>
+    </marker>
+  </defs>
+  <rect width="900" height="470" fill="#fff"/>
+  <text x="450" y="30" text-anchor="middle" font-size="20" font-weight="700">Team 5090 robot network: 10.50.90.x</text>
+
+  <!-- DS laptop -->
+  <rect x="20" y="150" width="140" height="90" rx="8" fill="#f4f5f9" stroke="#000AB5" stroke-width="2"/>
+  <text x="90" y="178" text-anchor="middle" font-size="15" font-weight="700">Driver Station</text>
+  <text x="90" y="196" text-anchor="middle" font-size="15" font-weight="700">laptop</text>
+  <text x="90" y="216" text-anchor="middle" font-size="13">DHCP (field:</text>
+  <text x="90" y="232" text-anchor="middle" font-size="13">.20 to .199)</text>
+
+  <!-- AP -->
+  <rect x="190" y="150" width="150" height="90" rx="8" fill="#f4f5f9" stroke="#000AB5" stroke-width="2"/>
+  <text x="265" y="176" text-anchor="middle" font-size="15" font-weight="700">Access point</text>
+  <text x="265" y="196" text-anchor="middle" font-size="13">field AP, or our</text>
+  <text x="265" y="212" text-anchor="middle" font-size="13">AP-mode VH-109</text>
+  <text x="265" y="231" text-anchor="middle" font-size="14" font-weight="700" fill="#000AB5">10.50.90.4</text>
+  <line x1="160" y1="195" x2="188" y2="195" stroke="#000AB5" stroke-width="3"/>
+  <text x="174" y="262" text-anchor="middle" font-size="13">Ethernet</text>
+  <line x1="174" y1="248" x2="174" y2="200" stroke="#c9ced8" stroke-width="1"/>
+
+  <!-- wifi -->
+  <path d="M346,195 q8,-12 16,0 t16,0 t16,0 t16,0 t16,0 t16,0 l9,0" fill="none" stroke="#000AB5" stroke-width="3" marker-start="url(#ah)" marker-end="url(#ah)"/>
+  <text x="394" y="168" text-anchor="middle" font-size="13" font-weight="700">Wi-Fi</text>
+  <text x="394" y="226" text-anchor="middle" font-size="13" font-weight="700">6 GHz</text>
+
+  <!-- robot boundary -->
+  <rect x="425" y="55" width="460" height="330" rx="12" fill="none" stroke="#16181d" stroke-width="2" stroke-dasharray="8 6"/>
+  <text x="870" y="80" text-anchor="end" font-size="15" font-weight="700">ROBOT</text>
+
+  <!-- radio -->
+  <rect x="445" y="100" width="165" height="250" rx="8" fill="#000AB5"/>
+  <text x="527" y="128" text-anchor="middle" font-size="16" font-weight="700" fill="#fff">VH-109 radio</text>
+  <text x="527" y="148" text-anchor="middle" font-size="15" font-weight="700" fill="#FFA700">10.50.90.1</text>
+  <!-- ports -->
+  <g font-size="14" font-weight="700">
+    <rect x="555" y="160" width="55" height="30" fill="#fff" stroke="#000AB5" stroke-width="2"/><text x="582" y="180" text-anchor="middle">RIO</text>
+    <rect x="555" y="215" width="55" height="30" fill="#fff" stroke="#000AB5" stroke-width="2"/><text x="582" y="235" text-anchor="middle">AUX1</text>
+    <rect x="555" y="260" width="55" height="30" fill="#fff" stroke="#000AB5" stroke-width="2"/><text x="582" y="280" text-anchor="middle">AUX2</text>
+    <rect x="555" y="305" width="55" height="30" fill="#FFA700" stroke="#000AB5" stroke-width="2"/><text x="582" y="325" text-anchor="middle">DS</text>
+  </g>
+  <text x="497" y="188" text-anchor="middle" font-size="13" fill="#fff">ports</text>
+  <text x="497" y="205" text-anchor="middle" font-size="13" fill="#fff">(order on</text>
+  <text x="497" y="222" text-anchor="middle" font-size="13" fill="#fff">real radio</text>
+  <text x="497" y="239" text-anchor="middle" font-size="13" fill="#fff">may differ)</text>
+
+  <!-- devices -->
+  <rect x="665" y="150" width="180" height="50" rx="8" fill="#f4f5f9" stroke="#000AB5" stroke-width="2"/>
+  <text x="755" y="171" text-anchor="middle" font-size="15" font-weight="700">roboRIO</text>
+  <text x="755" y="190" text-anchor="middle" font-size="13">10.50.90.2 (from DHCP)</text>
+  <line x1="610" y1="175" x2="663" y2="175" stroke="#000AB5" stroke-width="3"/>
+
+  <rect x="665" y="210" width="180" height="50" rx="8" fill="#f4f5f9" stroke="#000AB5" stroke-width="2"/>
+  <text x="755" y="231" text-anchor="middle" font-size="15" font-weight="700">Limelight "limelight"</text>
+  <text x="755" y="250" text-anchor="middle" font-size="13">10.50.90.11 (static)</text>
+  <line x1="610" y1="230" x2="663" y2="230" stroke="#000AB5" stroke-width="3"/>
+
+  <text x="625" y="280" font-size="13" fill="#555">free (switch, extra camera)</text>
+
+  <rect x="665" y="300" width="180" height="50" rx="8" fill="#f4f5f9" stroke="#000AB5" stroke-width="2"/>
+  <text x="755" y="321" text-anchor="middle" font-size="15" font-weight="700">Pit laptop (tether)</text>
+  <text x="755" y="340" text-anchor="middle" font-size="13">DHCP .200 to .219</text>
+  <line x1="610" y1="320" x2="663" y2="320" stroke="#000AB5" stroke-width="3"/>
+
+  <!-- USB fallback -->
+  <path d="M845,315 h12 v-140 h-10" fill="none" stroke="#c07d00" stroke-width="3" stroke-dasharray="7 5" marker-end="url(#ahg)"/>
+
+  <!-- legend -->
+  <rect x="20" y="400" width="865" height="58" rx="8" fill="#f4f5f9" stroke="#c9ced8"/>
+  <line x1="36" y1="420" x2="76" y2="420" stroke="#c07d00" stroke-width="3" stroke-dasharray="7 5"/>
+  <text x="86" y="425" font-size="13">USB cable to the roboRIO: always 172.22.11.2 (the fallback when the network is broken)</text>
+  <text x="36" y="447" font-size="13">Reserved: .3 and .4 (field).  Static devices: .6 to .19.  Radio setup page: 192.168.69.1</text>
+</svg>

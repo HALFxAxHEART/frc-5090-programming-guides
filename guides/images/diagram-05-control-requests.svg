@@ -1,0 +1,99 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 880 560" font-family="Inter, Arial, sans-serif">
+  <rect width="880" height="560" fill="#ffffff"/>
+  <text x="440" y="30" text-anchor="middle" font-size="20" font-weight="700" fill="#16181d">Which control request?</text>
+
+  <!-- root -->
+  <rect x="300" y="48" width="280" height="50" rx="8" fill="#000AB5"/>
+  <text x="440" y="70" text-anchor="middle" font-size="16" font-weight="700" fill="#fff">motor.setControl(request)</text>
+  <text x="440" y="89" text-anchor="middle" font-size="13" fill="#fff">"what to do right now"</text>
+
+  <!-- connectors -->
+  <g stroke="#000AB5" stroke-width="2.5" fill="none">
+    <path d="M440,98 L440,118 M150,118 L730,118 M150,118 L150,138 M440,118 L440,138 M730,118 L730,138"/>
+  </g>
+
+  <!-- branch headers -->
+  <rect x="20" y="138" width="260" height="58" rx="8" fill="#f4f5f9" stroke="#000AB5" stroke-width="2"/>
+  <text x="150" y="162" text-anchor="middle" font-size="15" font-weight="700" fill="#16181d">Open loop</text>
+  <text x="150" y="182" text-anchor="middle" font-size="13" fill="#16181d">you pick the output directly</text>
+
+  <rect x="310" y="138" width="260" height="58" rx="8" fill="#f4f5f9" stroke="#000AB5" stroke-width="2"/>
+  <text x="440" y="162" text-anchor="middle" font-size="15" font-weight="700" fill="#16181d">Closed loop (PID in the motor)</text>
+  <text x="440" y="182" text-anchor="middle" font-size="13" fill="#16181d">you pick a target, gains in Slot0</text>
+
+  <rect x="600" y="138" width="260" height="58" rx="8" fill="#f4f5f9" stroke="#000AB5" stroke-width="2"/>
+  <text x="730" y="162" text-anchor="middle" font-size="15" font-weight="700" fill="#16181d">Special</text>
+  <text x="730" y="182" text-anchor="middle" font-size="13" fill="#16181d">stop, or copy another motor</text>
+
+  <!-- leaves helper: each leaf box 240 wide, 62 tall -->
+  <g stroke="#c9ced8" stroke-width="2.5" fill="none">
+    <path d="M40,196 L40,401 M40,241 L50,241 M40,321 L50,321 M40,401 L50,401"/>
+    <path d="M330,196 L330,481 M330,241 L340,241 M330,321 L340,321 M330,401 L340,401 M330,481 L340,481"/>
+    <path d="M620,196 L620,321 M620,241 L630,241 M620,321 L630,321"/>
+  </g>
+
+  <!-- Open loop leaves -->
+  <g font-size="13" fill="#16181d">
+    <rect x="50" y="210" width="230" height="62" rx="6" fill="#fff" stroke="#000AB5" stroke-width="2"/>
+    <text x="62" y="232" font-size="15" font-weight="700">DutyCycleOut</text>
+    <text x="62" y="250">-1 to 1 (fraction of battery)</text>
+    <text x="62" y="266">ours: intake wheels</text>
+
+    <rect x="50" y="290" width="230" height="62" rx="6" fill="#fff" stroke="#000AB5" stroke-width="2"/>
+    <text x="62" y="312" font-size="15" font-weight="700">VoltageOut</text>
+    <text x="62" y="330">volts, steady as battery sags</text>
+    <text x="62" y="346">ours: intake homing, roller stop</text>
+
+    <rect x="50" y="370" width="230" height="62" rx="6" fill="#fff" stroke="#000AB5" stroke-width="2" stroke-dasharray="6 4"/>
+    <text x="62" y="392" font-size="15" font-weight="700">TorqueCurrentFOC</text>
+    <text x="62" y="410">amps of torque current</text>
+    <text x="62" y="426">Pro only, advanced; not used yet</text>
+  </g>
+
+  <!-- Closed loop leaves -->
+  <g font-size="13" fill="#16181d">
+    <rect x="340" y="210" width="230" height="62" rx="6" fill="#fff" stroke="#000AB5" stroke-width="2"/>
+    <text x="352" y="232" font-size="15" font-weight="700">VelocityVoltage</text>
+    <text x="352" y="250">hold a speed (RPS)</text>
+    <text x="352" y="266">ours: shooter, rollers</text>
+
+    <rect x="340" y="290" width="230" height="62" rx="6" fill="#fff" stroke="#000AB5" stroke-width="2"/>
+    <text x="352" y="312" font-size="15" font-weight="700">PositionVoltage</text>
+    <text x="352" y="330">go to rotations, no speed limit</text>
+    <text x="352" y="346">ours: hood</text>
+
+    <rect x="340" y="370" width="230" height="62" rx="6" fill="#fff" stroke="#000AB5" stroke-width="2"/>
+    <text x="352" y="392" font-size="15" font-weight="700">MotionMagicVoltage</text>
+    <text x="352" y="410">smooth, speed-limited move</text>
+    <text x="352" y="426">ours: turret</text>
+
+    <rect x="340" y="450" width="230" height="62" rx="6" fill="#fff" stroke="#000AB5" stroke-width="2"/>
+    <text x="352" y="472" font-size="15" font-weight="700">DynamicMotionMagicVoltage</text>
+    <text x="352" y="490">limits change on the fly</text>
+    <text x="352" y="506">ours: intake rack</text>
+  </g>
+
+  <!-- Special leaves -->
+  <g font-size="13" fill="#16181d">
+    <rect x="630" y="210" width="230" height="62" rx="6" fill="#fff" stroke="#000AB5" stroke-width="2"/>
+    <text x="642" y="232" font-size="15" font-weight="700">NeutralOut</text>
+    <text x="642" y="250">stop; brake/coast takes over</text>
+    <text x="642" y="266">ours: intake, ExampleRoller</text>
+
+    <rect x="630" y="290" width="230" height="62" rx="6" fill="#fff" stroke="#000AB5" stroke-width="2"/>
+    <text x="642" y="312" font-size="15" font-weight="700">Follower</text>
+    <text x="642" y="330">leader ID + MotorAlignmentValue</text>
+    <text x="642" y="346">ours: shooter, intake rack</text>
+  </g>
+
+  <!-- note box -->
+  <rect x="630" y="378" width="230" height="134" rx="8" fill="#FFA700" fill-opacity="0.18" stroke="#FFA700" stroke-width="2.5"/>
+  <text x="642" y="402" font-size="14" font-weight="700" fill="#16181d">Always:</text>
+  <text x="642" y="424" font-size="13" fill="#16181d">make each request once</text>
+  <text x="642" y="442" font-size="13" fill="#16181d">(a field), reuse it with</text>
+  <text x="642" y="460" font-size="13" fill="#16181d">.withVelocity(...) etc.,</text>
+  <text x="642" y="478" font-size="13" fill="#16181d">and, where offered:</text>
+  <text x="642" y="496" font-size="13" font-weight="700" fill="#16181d">.withEnableFOC(true)</text>
+
+  <text x="440" y="545" text-anchor="middle" font-size="13" fill="#16181d">"Voltage" closed-loop requests: the PID output is volts, so kP and kV are in volts. Dashed box = not used on our robot yet.</text>
+</svg>
