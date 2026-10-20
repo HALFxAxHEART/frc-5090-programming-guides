@@ -233,6 +233,12 @@ snaps onto the target, back off if it wobbles. If it stops a degree or two short
 [visual servoing tutorial](https://docs.limelightvision.io/docs/docs-limelight/tutorials/tutorial-aiming-with-visual-servoing)
 adds a small minimum command, the same trick our `DriveToPose` uses. A camera mounted facing **backward** flips the sign.
 
+If the thing you're aiming is a **turret** rather than the whole drivetrain, this `tx` loop is one of two genuinely
+different ways to do it — and it's the one with real limits once the robot starts moving. [13 Turrets, section 11](13-turrets.md)
+walks through both: a camera-on-the-turret `tx` servo like this one (simple, but can't lead a moving shot and goes
+blind the moment `tv` is false) versus our pose-only field math (works for shoot-on-the-move, but fails silently if
+the pose drifts). Worth reading before you commit to one for a mechanism that has to shoot while driving.
+
 ---
 
 ## 5. 3D localization: botpose, MegaTag1, MegaTag2

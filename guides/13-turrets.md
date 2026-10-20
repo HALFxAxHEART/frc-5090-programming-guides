@@ -13,7 +13,7 @@ A **turret** is a mechanism that spins a shooter (or camera, or intake) around a
 - How to configure Motion Magic for a turret that has to keep up with a spinning robot.
 - The field-relative aiming math, step by step, exactly as `Turret.java` does it.
 - Shoot-on-the-move lead, heading lead, picking pass targets, and logging the turret pose for AdvantageScope.
-- When to aim with Limelight `tx` instead, and why we didn't.
+- Two ways to aim with vision: a camera-on-turret `tx` servo vs. our pose-only field math, and why shoot-on-the-move needs the second one.
 
 ---
 
@@ -357,9 +357,15 @@ Bound at [line 169](https://github.com/TorqueNados-FRC5090/Hephaestus/blob/c2f0c
 
 ---
 
-## 11. The simpler alternative: aim with Limelight `tx`
+## 11. Two ways to aim a turret with vision
 
-`tx` is the horizontal angle (degrees) from the camera's center to the target it sees. If the camera is **on the turret**, aiming is just "turn until tx is zero":
+There are two genuinely different ways to answer "which way should the turret point?" Our 2026 robot uses the second one, on purpose.
+
+![Way 1 (camera on the turret, closes the loop on tx) side by side with Way 2 (pose-only field math, what Turret.java does). Both read the same pose estimate; they differ in what feeds the turret's angle.](images/diagram-13-two-aiming-ways.svg "100")
+
+### Way 1: mount the camera on the turret, close the loop on `tx`
+
+`tx` is the horizontal angle (degrees) from the camera's center to the target it sees. If the camera is **on the turret** (it turns with the shooter), aiming is just "turn until tx is zero":
 
 ```java
 private final double kMaxMotorRotations = kMaxTurretRotations * kTurretGearRatio;   // 3.75
@@ -379,26 +385,50 @@ public void aimWithCamera() {
 }
 ```
 
-(Our 2026 file is named `Limelighthelpers` with a lowercase h; the official file is `LimelightHelpers`.) If the camera is fixed to the chassis instead, tx is relative to the robot, and you'd use it as the robot-relative angle in step 3 (still needing the zero offset and wrap).
+(Our 2026 file is named `Limelighthelpers` with a lowercase h; the official file is `LimelightHelpers`.) If the camera is fixed to the chassis instead of the turret, `tx` is relative to the robot, not the turret, and you'd use it as the robot-relative angle in step 3 of the math (section 4) instead — still needing the zero offset and the wrap.
 
-Why we use pose-based aiming instead:
+This is a plain **vision servo**: the error signal is "how far off-center is the target in THIS frame", and the controller just chases it to zero. It's simple, self-correcting, and honest about when it's blind (`tv` goes false). That's exactly why it falls apart for a moving shot:
 
-| | `tx` aiming | Pose-based aiming |
+- **It only knows the error right now.** By the time the turret has turned to correct it, the robot (and the target, in camera space) has moved again, so a translating robot is always a frame or two behind. There's no way to add a lead term, because `tx` alone carries no information about *where the target will be* — only where it was in the last image.
+- **Losing the target loses the error signal.** Motion blur during a fast slew, glare off the hub's reflective trim, or the tag drifting out of frame all drop `tv` to false, and the loop has nothing left to steer with until it reacquires.
+- **It can't aim at something it can't see.** A pass landing spot has no AprilTag sitting on it, and our blind spot (section 1) can't be resolved by turning toward where the camera thinks the target is, because the camera's view is pointed wherever the turret currently is.
+
+**Good for:** a standing shot, with the robot (and the turret, if it can) holding still while the loop settles. Many teams ship exactly this and it works fine for that case.
+
+### Way 2: pose-only, field math (what we do)
+
+The camera does **not** need to be anywhere near the turret. Ours is bolted to the fixed chassis, pointed at AprilTags, doing one job: keeping the pose estimator's `x, y, heading` honest (guide 17). The turret itself never reads a camera value. Every loop, `periodic()` (section 4) computes a vector in field space — from "where the turret physically is right now" to "where the target physically is" — using only the pose estimate and known field geometry:
+
+```
+targetAngle = atan2(target - turretFieldPosition) - robotHeading - turretZeroOffset
+```
+
+Because that's vector math and not pixels, it can do three things Way 1 structurally cannot:
+
+- **Aim at something it can't currently see.** The hub while it's in the turret's blind spot, or a pass landing spot with no tag anywhere near it (section 6) — the math doesn't care whether a camera is pointed at it.
+- **Lead a moving shot.** Section 5's `leadTarget()` just subtracts `robotVelocity * timeOfFlight` from the target point before the angle math runs. That's the whole trick behind shoot-on-the-move, and there's no equivalent for a raw `tx` loop, because `tx` has no velocity term to subtract from.
+- **Keep tracking through a brief vision dropout.** Odometry (wheel encoders + gyro) carries the pose between tag sightings; the camera is there to correct *drift*, not to run the aim loop directly.
+
+The trade is that Way 2 is only as good as the pose estimate, and unlike Way 1 it **fails silently**. A vision-servo loop tells you the instant it can't see the target (`tv = false`); pose-only aiming will confidently point at the wrong spot if the heading is wrong or the pose has drifted, with nothing on the dashboard screaming about it. That's exactly why section 9 has the turret log its own field pose to AdvantageScope — comparing the `Turret` arrow against `Turret aim point` is how you catch a silent miss that a pure vision-servo loop would have announced on its own.
+
+### Which one for your robot
+
+| | Way 1: camera on turret, `tx` servo | Way 2: pose-only (field math) |
 |---|---|---|
-| Needs to see the target now | Yes | No (odometry carries it between tag sightings) |
-| Works for passes (no tag at the landing spot) | No | Yes |
-| Shoot-on-the-move lead | Hard | Easy, it's just math on the target point |
-| Handles a back-facing, limited turret | Poorly: when the target is in the blind spot the camera can't see it, so you don't know which way to tell the driver to turn | Knows the target angle even in the blind spot, can say "point your back at it" |
-| Camera latency | Turret chases an old image, can oscillate | Pose is latency-compensated by the pose estimator |
-| Simplicity | Very simple | More code, needs a good pose |
+| Needs to see the target right now | Yes | No (odometry carries it between tag sightings) |
+| Works for passes / blind-spot targets (no tag there) | No | Yes |
+| Shoot-on-the-move lead | Structurally can't (no velocity term in `tx`) | Natural — one subtraction (section 5) |
+| Tells you when it's wrong | Yes — `tv` goes false | No — a bad pose just aims wrong, silently |
+| What it needs | A camera + a simple P loop | A trustworthy pose estimator (gyro + odometry + vision corrections) |
+| Camera placement | Must ride the turret, pointed where it points | Anywhere that can see tags — ours is fixed to the chassis |
+| Code | A few lines | A full field model (this guide) |
+| What we use | — | ✅ this one |
 
-`tx` is a fine first turret, or a backup. Pose-based is better for our robot.
+A reasonable middle ground some teams run: use Way 2 for the coarse aim all the time, and if a camera (turret-mounted or not) *also* happens to see the target right as the shot goes off, nudge the last degree or two with `tx` as a trim correction. We don't do this — one less camera to mount, one less failure mode — but it's worth knowing if your pose-based aim is consistently off by a small, repeatable amount and you'd rather patch it in software than re-measure the offset.
 
 The simplest alternative of all is **no turret**: the driver holds a button and the code rotates the whole drivetrain to
-face the hub, using the same pose math. Guide 16, section 5 ("drivers aligning to the hub") shows how, with CTRE's
-`FieldCentricFacingAngle` request. Either way, the pose is only as good as the gyro and vision: when the Pigeon ID was wrong in code (24 instead of 0), the heading froze and the robot only aimed correctly when it could see a tag.
-
----
+face the hub, using the same pose math as Way 2. Guide 16, section 5 ("drivers aligning to the hub") shows how, with CTRE's
+`FieldCentricFacingAngle` request. Whichever way you aim, the pose is only as good as the gyro and vision: when the Pigeon ID was wrong in code (24 instead of 0), the heading froze and the robot only aimed correctly when it could see a tag.
 
 ## Common mistakes
 
@@ -412,6 +442,7 @@ face the hub, using the same pose math. Guide 16, section 5 ("drivers aligning t
 - **Wrong gyro ID.** Pigeon ID 24 in code vs 0 on the robot: heading frozen, turret only right when a tag corrected the pose. Always check IDs in Tuner X.
 - **Testing in the shop with no tags.** Pose is (0, 0), target unreachable. Use the View-button shop pose.
 - **Target at exactly 0.0.** `canShootFromHere()` treats `m_targetMotorRotations == 0.0` as "no target yet". Harmless in practice but surprising; a separate `hasTarget` flag would be clearer.
+- **Expecting a `tx` servo (Way 1) to lead a moving shot.** It structurally can't — `tx` carries no velocity information to subtract. If you need shoot-on-the-move, you need pose-only aiming (Way 2), not a faster PID loop on Way 1.
 
 ## Checklist
 
@@ -429,7 +460,8 @@ face the hub, using the same pose math. Guide 16, section 5 ("drivers aligning t
 1. **Pencil math.** The robot is blue, at (3.0, 6.0), heading 90°. Using our offsets and zero offset, compute the turret motor rotations to aim at the blue hub (4.625, 4.035). Is it reachable? Then check your answer by putting the pose into a simulation and reading `Turret/Target_Turret_Rots`.
 2. **Find the blind spot.** In simulation, reset the pose to the shop pose, then rotate the robot in 30° steps. Write down the headings where `Turret/Target_Reachable` goes false. Compare with ±108° plus the tolerance.
 3. **Lead tuning.** In sim or on the robot, spin in place and watch the `Turret` vs `Turret aim point` poses in AdvantageScope. Try `kHeadingLeadSeconds` at 0, 0.10 and 0.20 and describe the difference.
-4. **tx version.** Write `aimWithCamera()` into a copy of the turret as a second command bound to a test button, and compare how it behaves when the tag leaves the camera's view.
+4. **Way 1 version.** Write `aimWithCamera()` into a copy of the turret as a second command bound to a test button, and compare how it behaves when the tag leaves the camera's view, versus Way 2's behavior in the same situation.
+5. **Way 1 vs Way 2 while moving.** In simulation, drive the robot in a straight line at a few different speeds with Way 1's `aimWithCamera()` bound, and watch how far off a shot would land. Repeat with Way 2 and `kEstimatedShotSpeedMPS` lead on. Describe the difference in your own words.
 
 ## Go further
 
