@@ -48,8 +48,7 @@ so the robot can't do something dangerous.
 
 ### You've already used one
 
-Our 2026 intake has a real, working state machine. `EvilIntake` (a better name would be `IntakeRack`) is always in
-one of four states:
+Our 2026 intake has a real, working state machine. `EvilIntake` is always in one of four states:
 
 [EvilIntake.java, lines 131–132 (the states)](https://github.com/TorqueNados-FRC5090/Hephaestus/blob/c2f0cee6f61db3f26f911d3f5623ed7fa27a5b03/src/main/java/frc/robot/subsystems/EvilIntake.java#L131-L132)
 
@@ -254,11 +253,6 @@ to L4 with an algae in the claw and finding out the hard way that it doesn't fit
 Here's what "tuck, move, extend" looks like for L2 → L4:
 
 ![Timeline of a safe L2 to L4 move: tuck the arm and wrist, move the elevator, then extend.](images/diagram-26-l4-timeline.svg)
-
-> **AI can help:** paste your goal table and your one safety rule into an AI assistant and ask it to fill in the
-> transition table for every pair of goals, and to point out any pair where the rule might not be enough (for
-> example a wrist that sticks out even when tucked). Then **you** check every row against the CAD with the build
-> team. The AI has never seen your robot; it's a fast way to make a first draft, not the answer.
 
 ---
 

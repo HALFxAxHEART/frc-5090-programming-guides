@@ -347,8 +347,6 @@ SmartDashboard.putBoolean("Pro/Swerve FL steer licensed",
 
 (Reading these every loop is cheap; they're normal status signals.)
 
-> **AI can help:** paste a device's Tuner X Self Test snapshot (the "Copy Self Test" button) into an AI assistant and ask it to explain each fault and license line in plain words, and what you should check first. Then confirm each explanation in CTRE's device faults page before you act on it. It's a fast way to learn the fault names, but you're the one who decides what's actually wrong with the robot.
-
 ---
 
 ## 11. Anything new for 2026?
@@ -408,8 +406,6 @@ We found no brand-new Pro-only feature for 2026 beyond those. Check the changelo
 2. **FOC A/B test (robot on blocks, shooter).** On a branch, log shooter velocity and stator current while firing (or loading the wheel by hand with a glove) five times with FOC on. Then temporarily set `.withEnableFOC(false)` and repeat. Compare spin-up time and recovery time in AdvantageScope. Put FOC back and write up what you measured.
 3. **Torque-current flywheel in sim.** Pro works in simulation without a license. Build the `VelocityTorqueCurrentFOC` flywheel example in a sim project with a `DCMotorSim` (see [20](20-simulation-and-testing.md)), then tune kS, kV and kP using CTRE's order (kS at 10% speed, kV at 80% speed, repeat, then raise kP). Compare with a `VelocityVoltage` version.
 4. **Better license check (code).** On a branch, add `Pro/... licensed` booleans for the shooter leader, one rack motor and one swerve steer motor. Deploy and confirm they show true. Bonus: make one combined `Pro/All licensed` light for the drive team.
-
-> **AI can help:** for Practice 2, ask an AI assistant to draft a short test plan: what to log, how many trials, how to measure recovery time from the velocity plot. Edit it so it fits our robot and safety rules, run it yourself, and draw your own conclusions from the data.
 
 ---
 

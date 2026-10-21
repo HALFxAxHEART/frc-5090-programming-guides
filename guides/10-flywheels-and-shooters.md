@@ -152,7 +152,7 @@ Short dips from a ball going through are ignored, so the feed doesn't stop and s
 
 ### A feeder that waits
 
-Our feeder command (`theYappy`, which in new code should be named something like `FeedWhenReady`) does two things:
+Our feeder command, `theYappy`, does two things:
 
 1. **Prime:** for the first 0.2 s, run the feed path **backwards**. This pulls balls already sitting in the tunnel
    down and away from the flywheel, so the whole column starts moving together, and no ball is touching the
@@ -239,10 +239,6 @@ Robot on blocks or the shooter clear of people. Safety glasses. Nothing in the f
    recovering in time: more kP, more inertia, or feed slower.
 7. **Ready tolerance.** Tighten it until shots are consistent but feeding still flows. 5% / 1.5 RPS is our start.
 8. **Copy the numbers into `Constants`** with the date and what they were tuned on.
-
-> **AI can help:** paste your 3/6/9 V readings and your kV/kS arithmetic into an AI assistant and ask it to check the
-> math, or to explain what a Tuner X plot of a dip and recovery is telling you. Do the calculation yourself first,
-> then confirm the numbers on the robot: the wheel landing on target is the real test.
 
 ## Step by step: build a distance table
 

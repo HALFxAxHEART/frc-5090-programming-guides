@@ -369,11 +369,6 @@ against the CANcoder the whole match. On a Pro-licensed robot like ours, fusing 
 arm or hood; seeding is the right choice when the absolute answer is only trustworthy while still (the CRT turret in
 guide 29).
 
-> **AI can help:** describe your gear train to an AI assistant ("Kraken, 9:1 MAXPlanetary, 18T sprocket to 54T
-> sprocket on the arm, sensor on the gearbox output, arm swings 120°") and ask it to work out the sensor turns over the
-> travel and whether it stays absolute. Then check the answer yourself: turn the mechanism through its travel by hand
-> and watch the sensor reading in Tuner X. If the AI's number and the real sensor disagree, the real sensor wins.
-
 ---
 
 ## Common mistakes

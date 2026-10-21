@@ -333,8 +333,6 @@ The DS shows errors like *"CAN frames not received / device not found"* for an I
 3. **Plot a motor.** With the robot on blocks and the DS enabled, open the floor roller (ID 13 on Upper). Plot `Velocity` and `StatorCurrent` while you run it at 5% duty cycle from the Control tab. Then note what happens to current when you lightly load the roller with a gloved hand. *(Make sure no command is using the rollers first.)*
 4. **Clean-up PR.** On a branch, move the hood's `20` into `Constants.CANIds` with a comment, and fix the stale "ID 24" comment in `CommandSwerveDrivetrain`. Build, then deploy and check the hood still works.
 
-> **AI can help:** after the ID audit, give an AI your written device list and the IDs from `Constants.java` and `TunerConstants.java`, and ask it to point out anything that doesn't match. Then go to the robot and confirm every mismatch yourself in Tuner X before you change anything.
-
 ---
 
 ## Go further

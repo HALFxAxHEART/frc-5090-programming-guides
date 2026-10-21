@@ -725,11 +725,6 @@ Limelight's current recommended path (their "Training a Custom Detector Model" p
 6. **Upload** the downloaded model file plus `labels.txt` to the Neural Detector pipeline, and test it in the shop and
    on the practice field before trusting it.
 
-> **AI can help:** ask an AI assistant to quiz you on the difference between training and inference, confidence and
-> class, or detector and classifier, until you can explain them to a new member. You can also ask it to draft a
-> shot list for collecting training images ("near/far, left/center/right, under the bumper, in shadow..."). Then go
-> take the photos and label them yourselves: the labeling rules are a team decision.
-
 ---
 
 ## 8. Common mistakes

@@ -364,7 +364,6 @@ shop it often isn't. That's why the intake adds strategy 4 on top.
 ### Strategy 4 in our code: the intake's hard-stop homing
 
 The intake is a rack and pinion with a hard stop at 16" out. Homing pushes it out gently and waits for it to stop.
-(Recall `EvilIntake` would be better named `IntakeRack`.)
 
 [EvilIntake.java, lines 72–82 (homing constants)](https://github.com/TorqueNados-FRC5090/Hephaestus/blob/c2f0cee6f61db3f26f911d3f5623ed7fa27a5b03/src/main/java/frc/robot/subsystems/EvilIntake.java#L72-L82)
 and [lines 349–374 (runHoming)](https://github.com/TorqueNados-FRC5090/Hephaestus/blob/c2f0cee6f61db3f26f911d3f5623ed7fa27a5b03/src/main/java/frc/robot/subsystems/EvilIntake.java#L349-L374):

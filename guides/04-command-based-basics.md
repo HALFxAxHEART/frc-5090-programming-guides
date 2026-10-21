@@ -291,7 +291,7 @@ Rule of thumb: **if the value can change while the command is running, pass a su
 In most subsystems, commands call `motor.setControl(...)` directly. That works, but it gets messy when a mechanism
 needs a state machine (homing, fault handling, interlocks): every command would have to know about every state.
 
-`EvilIntake` (better name: `IntakeRack` or `IntakeSubsystem`) uses a cleaner pattern for its rack motors:
+`EvilIntake` (we'd call it `IntakeRack` today — see guide 22 on naming) uses a cleaner pattern for its rack motors:
 
 - Commands only **set a target** (`setTargetInches(...)`).
 - `periodic()` is **the one place** that sends requests to the rack motors. It decides, based on its state
@@ -453,7 +453,6 @@ with the state machine.
 ### `theYappy`: a full Command class
 
 [theYappy.java, lines 27–74](https://github.com/TorqueNados-FRC5090/Hephaestus/blob/c2f0cee6f61db3f26f911d3f5623ed7fa27a5b03/src/main/java/frc/robot/commands/theYappy.java#L27-L74)
-(better name: `FeedWhenReady`)
 
 ```java
 public theYappy(RollerSystem rollers, BooleanSupplier runCondition, Runnable onFeedStart){
@@ -535,11 +534,6 @@ sequence. Ones that don't must be the non-deadline part of a deadline group, or 
    ([line 21](https://github.com/TorqueNados-FRC5090/Hephaestus/blob/c2f0cee6f61db3f26f911d3f5623ed7fa27a5b03/src/main/java/frc/robot/commands/EvilIntakeToggle.java#L21))
    assigns `false` and is always false, so the toggle can never go out. For booleans, write `if (!isOut)`.
    (WPILib's `toggleOnTrue` does toggling for you, without a class.)
-
-> **AI can help:** when robot code crashes at startup, paste the full error and stack trace (for example the
-> "multiple commands in a parallel composition cannot require the same subsystems" error) into an AI chat and ask
-> it to explain what the error means and which line of *your* code the trace points to. Then open that line
-> yourself, decide on the fix, and check in simulation that the robot starts cleanly.
 
 ---
 

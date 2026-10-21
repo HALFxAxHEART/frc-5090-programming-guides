@@ -325,7 +325,6 @@ public void updateShotDiagnostics() {
 - The feeder command itself publishes `Feeder/State` ("Priming (backwards)", "FEEDING", "Waiting for Ready (see
   Ready/ lights)") in
   [theYappy.java, lines 43–61](https://github.com/TorqueNados-FRC5090/Hephaestus/blob/c2f0cee6f61db3f26f911d3f5623ed7fa27a5b03/src/main/java/frc/robot/commands/theYappy.java#L43-L61).
-  (`theYappy` should really be called `FeedWhenReady`.)
 
 Other examples of the same pattern: `Intake/Status` and `Intake/Zero from` (which tells you whether the intake's
 zero came from power-on or from homing, and says `HOMING FAILED - check for a jam` if it failed), and in the

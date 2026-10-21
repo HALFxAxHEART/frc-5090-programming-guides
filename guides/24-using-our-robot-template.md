@@ -309,8 +309,6 @@ public class ExampleRoller extends SubsystemBase {
 
 9. **Test:** build → simulate (the dashboard shows `IntakeRollers/Target RPS` change when you press the button) → robot on blocks → check direction and that it stops on release → real game pieces.
 
-> **AI can help:** after you've copied and renamed the file, paste it into an AI tool and ask: "This is a WPILib 2026 / Phoenix 6 subsystem I copied from a template. Are there any leftover names from the original, unit mistakes, or missing current limits?" It's good at spotting the `ExampleRoller/` dashboard key you forgot. You still check every suggestion against this guide and the CTRE docs, and the robot on blocks is the real test. Don't ask it to write the subsystem for you: you learn the pattern by doing the copy yourself.
-
 ---
 
 ## 5. Autos: named commands and the chooser

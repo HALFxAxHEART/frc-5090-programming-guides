@@ -211,7 +211,7 @@ No stick means logs go to the roboRIO's small built-in storage, or (for CTRE log
                         // power-on and that zero is correct. Don't spend auto time homing.
                         m_state = State.READY;
   ```
-  If the intake was sticking out at power-on, every intake position is wrong for the whole match. (A better name for this class is `Intake`.)
+  If the intake was sticking out at power-on, every intake position is wrong for the whole match.
 - **Hood.** [Hood.java, line 24](https://github.com/TorqueNados-FRC5090/Hephaestus/blob/c2f0cee6f61db3f26f911d3f5623ed7fa27a5b03/src/main/java/frc/robot/subsystems/Hood.java#L24): "The hood encoder zeroes wherever the hood is at power-on, so always boot with it at rest." A raised hood at boot also shifts its soft limits.
 - **Turret.** It calls `setPosition(0)` when the code starts ([Turret.java, line 160](https://github.com/TorqueNados-FRC5090/Hephaestus/blob/c2f0cee6f61db3f26f911d3f5623ed7fa27a5b03/src/main/java/frc/robot/subsystems/Turret.java#L160)). It must be centered (facing the robot's back) when the robot is turned on.
 
@@ -276,8 +276,6 @@ Don't start by changing code. Most "weird robot" problems turn out to be **power
 4. **CAN.** Error messages naming a device ID ("not found", "CAN frames not received") point at wiring or IDs. Plug into Tuner X in the pit. If it's intermittent, wiggle the harness while watching LEDs.
 5. **Our logs.** Open the `.wpilog` from the USB stick in **AdvantageScope**. Look at the **Events** entry (our `BROWNOUT`, `Slow robot code loop`, intake homing messages), the **Commands** entry (which command was running), and the robot pose vs. vision pose. The CTRE `.hoot` files have every motor's current, temperature, and faults. The full method is in [19 Logging and Debugging](19-logging-and-debugging.md).
 6. **Then code.** Only once the logs point at logic: reproduce it in simulation or on blocks, fix it on a branch, and check that `Code Version` shows the new commit.
-
-> **AI can help:** when the Messages tab or the DS log shows an error or stack trace you don't understand, paste the exact text into an AI and ask what it means and where to look first. Then check its answer yourself against the log and our code, and test any fix on blocks before it goes on the field.
 
 Our own examples, by the step that would have found them:
 - **Step 3:** stuttering under load was the 120 A `kSlipCurrent` (brownouts).

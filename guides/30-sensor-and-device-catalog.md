@@ -491,8 +491,6 @@ A smart camera on **Ethernet** (not CAN) at 10.50.90.11 that finds AprilTags, ta
 8. **Put the raw reading on the dashboard** (`Feeder/Range distance (m)`, `Feeder/Range detected`) and test it by hand before any code depends on it.
 9. **Unplug test:** with it unplugged, does the robot do the safe thing?
 
-> **AI can help:** paste a device's section from this guide and the vendor's page into an AI assistant and ask it to quiz you: "Which bus does a Canandcolor go on and why?" "What class reads a WCP ThroughBore?" Then check its answers against this guide and the official docs. AI tools often mix up Phoenix 5 and Phoenix 6 names (the CANdle especially), so treat any code it suggests as a draft, compile it against our vendordep, and test it on the robot.
-
 ---
 
 ## In our code (summary)

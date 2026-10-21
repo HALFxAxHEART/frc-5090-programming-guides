@@ -240,11 +240,6 @@ https://github.com/Mechanical-Advantage/RobotCode2025Public/tree/main/src/main/j
 
 ![The same mechanism organized our way and the AdvantageKit way.](images/diagram-34-files-normal-vs-advantagekit.svg)
 
-> **AI can help:** when you're reading another team's AdvantageKit code and get lost, paste one subsystem and its IO
-> files into an AI assistant and ask it to explain the data flow: "where does the encoder value come from, and where
-> does the motor voltage go?". Then find each step in the code yourself. It's a quick way to learn the pattern; just
-> don't take its word for anything specific to that team's robot without checking.
-
 ---
 
 ## 4. Why 5090 isn't using it in our template (for now)

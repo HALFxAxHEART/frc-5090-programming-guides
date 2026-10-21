@@ -314,10 +314,6 @@ You'll regenerate after replacing a module or CANcoder, changing gear ratio, or 
    differences.
 6. Test in order (blocks, slow floor, full speed), then commit both files together.
 
-> **AI can help:** paste the old and new `TunerConstants.java` into an AI assistant and ask it to list every value
-> that changed. Then you decide which changes are expected (new offset) and which are lost hand edits
-> (`kSlipCurrent` back to 120). You check each one against this guide; don't let it "merge" the files for you.
-
 > In 2027 we move to the SystemCore controller. Check CTRE's current docs for how Tuner X connects and how the
 > generator handles SystemCore's CAN buses before following these steps exactly.
 
@@ -729,7 +725,6 @@ The template's drivetrain is the same generated code, cleaned up:
 - [RobotContainer.java, lines 80–95](https://github.com/TorqueNados-FRC5090/Robot-Template/blob/b8dddd0e338841e867c0cc260162e6097adecd7b/src/main/java/frc/robot/RobotContainer.java#L80-L95):
   same default command, with the deadband and slow-mode numbers in `Constants.OperatorConstants`.
 - It also logs a CAN-disconnect event for every swerve device, so a dead CANcoder shows up in the log by name.
-
 
 ### `tuner-project.json`: the saved generator project
 

@@ -62,11 +62,6 @@ fast enough:
 - Time to reach full acceleration ≈ `acceleration / jerk`
 - Time to reach cruise speed ≈ `cruise / acceleration` (plus a little for the jerk ramp)
 
-> **AI can help:** once you've worked out `acceleration / jerk` and `cruise / acceleration` for your mechanism, ask
-> an AI to check your arithmetic, or to convert the numbers between motor rotations, mechanism rotations, degrees and
-> inches. Write down your own answer first, then confirm the real behavior on the robot by plotting Closed Loop
-> Reference.
-
 A profile is kinder to the mechanism (less shock on gears, chain and belts), easier on the battery (no current
 spikes), and easier to tune (small, consistent error the whole way, so kV and kP do predictable jobs).
 

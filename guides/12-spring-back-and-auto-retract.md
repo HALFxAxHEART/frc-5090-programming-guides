@@ -162,7 +162,7 @@ public Command eject() {
 }
 ```
 
-What to notice: `run(...)` alone would leave the intake out forever. `.finallyDo(...)` is what pulls it back in and stops the wheels. It is bound with `whileTrue` on the left trigger ([RobotContainer.java, line 164](https://github.com/TorqueNados-FRC5090/Hephaestus/blob/c2f0cee6f61db3f26f911d3f5623ed7fa27a5b03/src/main/java/frc/robot/RobotContainer.java#L164)), so releasing the trigger ends it. (`evilyummy` would be better named `moveToPosition`; the joke names are from the 2026 season.)
+What to notice: `run(...)` alone would leave the intake out forever. `.finallyDo(...)` is what pulls it back in and stops the wheels. It is bound with `whileTrue` on the left trigger ([RobotContainer.java, line 164](https://github.com/TorqueNados-FRC5090/Hephaestus/blob/c2f0cee6f61db3f26f911d3f5623ed7fa27a5b03/src/main/java/frc/robot/RobotContainer.java#L164)), so releasing the trigger ends it.
 
 [EvilIntake.java, lines 219–235 (agitate with an end position)](https://github.com/TorqueNados-FRC5090/Hephaestus/blob/c2f0cee6f61db3f26f911d3f5623ed7fa27a5b03/src/main/java/frc/robot/subsystems/EvilIntake.java#L219-L235)
 

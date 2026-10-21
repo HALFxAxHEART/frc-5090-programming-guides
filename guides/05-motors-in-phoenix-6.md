@@ -451,10 +451,6 @@ What the motor actually runs: **kP 0.8, kD 0, kV 0.145**. The first block is dea
 "Changed to 2.0" next to a value of 0.8: comments go stale. Fix: delete one of the two blocks and keep the gains in
 one place (ideally `Constants`).
 
-> **AI can help:** paste a subsystem's constructor into an AI chat and ask it to list every config `apply()` in
-> order and say which values the motor ends up with. Compare its answer to your own reading, then check the real
-> values in Tuner X (the device's Configs page). The motor is the final word, not you or the AI.
-
 Two more things to notice in the same file:
 
 - [Shooter.java, lines 63–70 (follower gets its own current limits, then follows Opposed)](https://github.com/TorqueNados-FRC5090/Hephaestus/blob/c2f0cee6f61db3f26f911d3f5623ed7fa27a5b03/src/main/java/frc/robot/subsystems/Shooter.java#L63-L70).

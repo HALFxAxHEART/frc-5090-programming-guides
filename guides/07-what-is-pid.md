@@ -200,10 +200,6 @@ rotation, so one motor rotation is 360 / 12.5 = 28.8 degrees of turret. If the t
 5 / 28.8 = 0.17 motor rotations of error, and P outputs `8 * 0.17 = 1.4 V`. That's a gentle push. At 20 degrees off
 it's 5.6 V.
 
-> **AI can help:** after you work a units problem like this one by hand, ask an AI to check your conversion step by
-> step, or to quiz you with a new one (a different gear ratio, a different error). Do the math yourself first. If its
-> answer disagrees with yours, find out which step is wrong instead of trusting either one.
-
 Other output types exist: `...DutyCycle` requests (gains are "fraction of full power per rotation") and
 `...TorqueCurrentFOC` (gains are amps, Pro only). We use Voltage requests: volts are predictable because they don't
 change when the battery sags. A duty cycle of 0.5 gives 6.25 V on a fresh battery and 5.5 V on a tired one; a
