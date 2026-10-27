@@ -283,6 +283,9 @@ and
 
 ![Auto-align's two stages, from a simulation of the real code. Blue: PathPlanner pathfinds around the blocked (pink) navgrid squares to the dashed approach pose in front of the target. Green: DriveToPose drives the last bit straight in to the final pose in front of the tag.](images/autoalign-two-stages.png "85")
 
+The full walkthrough — the code, the safety layers, and worked examples for lining up to shoot, climb, and score —
+is its own guide: [35 Teleop Auto-Align with PathPlanner](35-teleop-auto-align-with-pathplanner.md).
+
 ---
 
 ## 8. In our code

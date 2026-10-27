@@ -17,7 +17,7 @@ wrote so you can see how we did it on a real robot.
 | **4. Control** | [07 What is PID](07-what-is-pid.md), [08 Tuning step by step](08-tuning-pid-step-by-step.md), [09 Motion Magic](09-motion-magic-and-position-control.md) | Make a mechanism hit a speed or a position quickly and repeatably |
 | **5. Mechanisms** | [10 Flywheels](10-flywheels-and-shooters.md), [11 Intakes](11-intakes-and-rollers.md), [12 Spring-back](12-spring-back-and-auto-retract.md), [13 Turrets](13-turrets.md), [14 Arms](14-arms-single-and-double-jointed.md), [15 Elevators](15-elevators.md), [26 State machines](26-state-machines-for-pick-and-place.md) | Configure and tune whatever the build team hands you, and make several mechanisms work together |
 | **6. Sensors and encoders** | [21 Sensors and homing](21-sensors-and-homing.md), [27 Relative vs absolute encoders](27-relative-vs-absolute-encoders.md), [28 Fusing sensors to a motor](28-fusing-sensors-to-a-motor.md), [29 Chinese Remainder Theorem](29-chinese-remainder-theorem-turrets.md) | Know where every mechanism is, from the moment the robot turns on |
-| **7. Driving, vision and autos** | [16 Swerve](16-swerve-drive-ctre.md), [17 Limelight](17-limelight-and-vision.md), [32 Object detection](32-limelight-object-detection.md), [33 Calibrating at events](33-limelight-field-calibration-at-events.md), [18 PathPlanner](18-pathplanner-autos.md) | Drive accurately, know where the robot and game pieces are, and run autos |
+| **7. Driving, vision and autos** | [16 Swerve](16-swerve-drive-ctre.md), [17 Limelight](17-limelight-and-vision.md), [32 Object detection](32-limelight-object-detection.md), [33 Calibrating at events](33-limelight-field-calibration-at-events.md), [18 PathPlanner](18-pathplanner-autos.md), [35 Teleop auto-align](35-teleop-auto-align-with-pathplanner.md) | Drive accurately, know where the robot and game pieces are, run autos, and line up on a button press |
 | **8. Finding problems** | [19 Logging and debugging](19-logging-and-debugging.md), [20 Simulation and testing](20-simulation-and-testing.md), [34 AdvantageKit and AdvantageScope](34-advantagekit-and-advantagescope.md) | Work out why the robot did something, and test before it touches the floor |
 
 The binder is printed in this order, and the gold tab on the page edge moves down one step for each stage.
@@ -55,6 +55,7 @@ The binder is printed in this order, and the gold tab on the page edge moves dow
 | Find game pieces with a Limelight | [32](32-limelight-object-detection.md) |
 | Check the cameras during field calibration at an event | [33](33-limelight-field-calibration-at-events.md) |
 | Make an auto | [18](18-pathplanner-autos.md) |
+| Hold a button and have the robot drive itself to shoot, climb, or score | [35](35-teleop-auto-align-with-pathplanner.md) |
 | Find out why the robot did something weird | [19](19-logging-and-debugging.md) |
 | Test without the robot | [20](20-simulation-and-testing.md) |
 | Understand AdvantageKit when I see it in another team's code | [34](34-advantagekit-and-advantagescope.md) |
